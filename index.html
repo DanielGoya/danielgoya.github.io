@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; background: #eef2f7; }
+    * { box-sizing: border-box; }
+    a { text-decoration: none; transition: opacity 0.12s; }
+    a:hover { opacity: 0.72; }
+    .recent-card { border: 1px solid #e2e8f0; border-radius: 10px; padding: 18px 20px; background: white; transition: box-shadow 0.15s, border-color 0.15s; cursor: pointer; display: block; color: inherit; }
+    .recent-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-color: #cbd5e1; opacity: 1; }
+    .lang-btn { background: none; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; color: #94a3b8; padding: 0 10px; height: 56px; transition: color 0.15s; }
+    .lang-btn:hover { color: #1d4ed8; }
+  </style>
+</helmet>
+
+<div style="max-width: 960px; margin: 0 auto; background: white; min-height: 100vh; box-shadow: 0 0 60px rgba(0,0,0,0.07);">
+
+  <!-- NAV -->
+  <nav style="display:flex; align-items:stretch; padding:0 40px; border-bottom:1px solid #e2e8f0; position:sticky; top:0; background:white; z-index:10;">
+    <span style="font-family:'Source Serif 4',Georgia,serif; font-size:20px; font-weight:700; color:#1d4ed8; display:flex; align-items:center; padding:0 24px 0 0; flex:1;">Daniel Goya</span>
+    <div style="display:flex; align-items:stretch;">
+      <span style="display:flex; align-items:center; padding:0 14px; font-family:'DM Sans',sans-serif; font-size:13px; color:#1d4ed8; font-weight:600; border-bottom:2px solid #1d4ed8; height:56px;">Home</span>
+      <a href="cv.html" style="display:flex; align-items:center; padding:0 14px; font-family:'DM Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">CV</a>
+      <a href="research.html" style="display:flex; align-items:center; padding:0 14px; font-family:'DM Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">Research</a>
+      <a href="opinion.html" style="display:flex; align-items:center; padding:0 14px; font-family:'DM Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">{{ opinionLabel }}</a>
+      <a href="teaching.html" style="display:flex; align-items:center; padding:0 14px; font-family:'DM Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">Teaching</a>
+      <button onClick="{{ toggleLang }}" class="lang-btn">{{ langBtn }}</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div style="padding: 64px 40px 52px; border-bottom: 1px solid #e2e8f0; display: grid; grid-template-columns: 1fr 190px; gap: 48px; align-items: start;">
+    <div>
+      <p style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:#2563eb; margin:0 0 18px;">{{ tagline }}</p>
+      <h1 style="font-family:'Source Serif 4',Georgia,serif; font-size:33px; font-weight:700; color:#0f172a; margin:0 0 20px; line-height:1.15; letter-spacing:-0.5px;">{{ h1l1 }}<br>{{ h1l2 }}<br><em style="font-weight:400; color:#475569;">{{ h1em }}</em></h1>
+
+      <div style="{{ bioEsStyle }}">
+        <p style="font-family:'DM Sans',sans-serif; font-size:15px; color:#475569; line-height:1.8; margin:0 0 28px; max-width:520px; text-wrap:pretty;">Profesor Asistente en la Escuela de Negocios y Economía de la <strong style="color:#334155; font-weight:500;">Pontificia Universidad Católica de Valparaíso</strong>. Mi investigación se centra en innovación, comercio y cambio estructural, con énfasis en economías en desarrollo.</p>
+      </div>
+      <div style="{{ bioEnStyle }}">
+        <p style="font-family:'DM Sans',sans-serif; font-size:15px; color:#475569; line-height:1.8; margin:0 0 28px; max-width:520px; text-wrap:pretty;">Assistant Professor at the School of Business and Economics, <strong style="color:#334155; font-weight:500;">Pontificia Universidad Católica de Valparaíso</strong>. Research focuses on innovation, trade and structural change in developing economies.</p>
+      </div>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a href="mailto:daniel.goya@pucv.cl" style="font-family:'DM Sans',sans-serif; font-size:13px; color:#475569; background:#f1f5f9; padding:7px 14px; border-radius:6px; border:1px solid #e2e8f0;">daniel.goya@pucv.cl</a>
+        <a href="https://scholar.google.com/citations?user=goyaecon" style="font-family:'DM Sans',sans-serif; font-size:13px; color:#475569; background:#f1f5f9; padding:7px 14px; border-radius:6px; border:1px solid #e2e8f0;">Google Scholar ↗</a>
+        <a href="https://www.linkedin.com/in/dgoya/" style="font-family:'DM Sans',sans-serif; font-size:13px; color:#475569; background:#f1f5f9; padding:7px 14px; border-radius:6px; border:1px solid #e2e8f0;">LinkedIn ↗</a>
+        <a href="https://www.researchgate.net/profile/Daniel_Goya" style="font-family:'DM Sans',sans-serif; font-size:13px; color:#475569; background:#f1f5f9; padding:7px 14px; border-radius:6px; border:1px solid #e2e8f0;">ResearchGate ↗</a>
+        <a href="cv.html" style="font-family:'DM Sans',sans-serif; font-size:13px; color:#1d4ed8; background:#eff6ff; padding:7px 14px; border-radius:6px; border:1px solid #bfdbfe;">CV →</a>
+      </div>
+    </div>
+
+    <!-- Photo -->
+    <div style="width:180px; height:180px; border-radius:50%; overflow:hidden; flex-shrink:0; margin-top:4px; border:3px solid white; box-shadow:0 0 0 1px #e2e8f0;">
+      <img src="uploads/foto%20daniel.jpg" alt="Daniel Goya" style="width:100%; height:100%; object-fit:cover; object-position:center top;"/>
+    </div>
+  </div>
+
+  <!-- RECENT ACTIVITY -->
+  <div style="padding: 44px 40px 64px;">
+    <p style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#94a3b8; margin:0 0 22px;">{{ recentTitle }}</p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px;">
+
+      <!-- Paper 2024 -->
+      <a href="research.html" class="recent-card">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:6px; margin-bottom:10px;">
+          <span style="font-family:'DM Sans',sans-serif; font-size:10.5px; font-weight:600; color:#1d4ed8; background:#dbeafe; padding:2px 8px; border-radius:3px; letter-spacing:0.04em; flex-shrink:0;">Paper 2024</span>
+          <span style="font-family:'DM Sans',sans-serif; font-size:10.5px; color:#94a3b8; text-align:right; line-height:1.3;">Papers in<br>Regional Science</span>
+        </div>
+        <p style="font-family:'Source Serif 4',serif; font-size:14px; color:#1e3a5f; margin:0; line-height:1.45; text-wrap:pretty;">Marshallian and Jacobian externalities in creative industries</p>
+      </a>
+
+      <!-- Nobel Article 2025 -->
+      <a href="opinion.html" class="recent-card">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:6px; margin-bottom:10px;">
+          <span style="font-family:'DM Sans',sans-serif; font-size:10.5px; font-weight:600; color:#1d4ed8; background:#eff6ff; padding:2px 8px; border-radius:3px; letter-spacing:0.04em; flex-shrink:0;">{{ article2025label }}</span>
+          <span style="font-family:'DM Sans',sans-serif; font-size:10.5px; color:#94a3b8; text-align:right; line-height:1.3;">ENE Perspectivas · PUCV</span>
+        </div>
+        <p style="font-family:'Source Serif 4',serif; font-size:14px; color:#1e3a5f; margin:0 0 8px; line-height:1.45; text-wrap:pretty;">{{ article2025title }}</p>
+        <span style="{{ esLangBadgeStyle }}">en español</span>
+      </a>
+
+    </div>
+
+    <!-- WIP full width -->
+    <a href="research.html" class="recent-card" style="border-left:3px solid #2563eb; border-radius:0 10px 10px 3px; display:block; margin-bottom:0;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:6px; margin-bottom:10px;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:10.5px; font-weight:600; color:#6d28d9; background:#ede9fe; padding:2px 8px; border-radius:3px; letter-spacing:0.04em; flex-shrink:0;">{{ wipLabel }}</span>
+      </div>
+      <p style="font-family:'Source Serif 4',serif; font-size:14px; color:#1e3a5f; margin:0; line-height:1.45; text-wrap:pretty;">Sustainability transitions in mining: forces of lock in and change</p>
+      <p style="font-family:'DM Sans',sans-serif; font-size:12px; color:#94a3b8; margin:8px 0 0;">{{ wipCoauthor }}</p>
+    </a>
+
+    <!-- View all links -->
+    <div style="display:flex; gap:24px; margin-top:28px; padding-top:24px; border-top:1px solid #f1f5f9;">
+      <a href="research.html" style="font-family:'DM Sans',sans-serif; font-size:13px; color:#2563eb; font-weight:500;">{{ seeResearch }}</a>
+      <a href="opinion.html" style="font-family:'DM Sans',sans-serif; font-size:13px; color:#0891b2; font-weight:500;">{{ seeOpinion }}</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer style="border-top:1px solid #e2e8f0; padding:24px 40px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; background:#fafcff;">
+    <span style="font-family:'DM Sans',sans-serif; font-size:12px; color:#94a3b8;">daniel.goya AT pucv.cl · +56 32 227 3585</span>
+    <span style="font-family:'DM Sans',sans-serif; font-size:12px; color:#94a3b8;">Av. Brasil 2830, piso 9 · Valparaíso, Chile</span>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+
+class Component extends DCLogic {
+  state = {
+    lang: (typeof navigator !== 'undefined' && !(navigator.language || 'es').toLowerCase().startsWith('es')) ? 'en' : 'es'
+  };
+
+  toggleLang() {
+    this.setState(s => ({ lang: s.lang === 'es' ? 'en' : 'es' }));
+  }
+
+  renderVals() {
+    const es = this.state.lang === 'es';
+
+    return {
+      toggleLang: () => this.toggleLang(),
+      langBtn: es ? 'EN' : 'ES',
+
+      opinionLabel: es ? 'Opinión' : 'Opinion',
+
+      tagline: es ? 'Economista · PUCV · Valparaíso, Chile' : 'Economist · PUCV · Valparaíso, Chile',
+      h1l1:   es ? 'Innovación, comercio'      : 'Innovation, trade',
+      h1l2:   es ? 'y cambio estructural'       : 'and structural change',
+      h1em:   es ? 'en economías en desarrollo.' : 'in developing economies.',
+
+      bioEsStyle: { display: es ? 'block' : 'none' },
+      bioEnStyle: { display: es ? 'none'  : 'block' },
+
+      recentTitle:      es ? 'Actividad reciente' : 'Recent activity',
+      article2025label: es ? 'Artículo 2025'       : 'Article 2025',
+      article2025title: es
+        ? 'Análisis al Premio Nobel de Economía 2025'
+        : 'Analysis of the 2025 Nobel Prize in Economics',
+
+      // "(en español)" badge — only visible in EN mode
+      esLangBadgeStyle: {
+        display:     es ? 'none' : 'inline-block',
+        fontFamily:  "'DM Sans',sans-serif",
+        fontSize:    '11px',
+        color:       '#94a3b8',
+        background:  '#f1f5f9',
+        padding:     '1px 7px',
+        borderRadius:'4px',
+      },
+
+      wipLabel:    es ? 'En curso'        : 'In progress',
+      wipCoauthor: es ? 'con Anabel Marín' : 'with Anabel Marín',
+
+      seeResearch: es ? 'Ver toda la investigación →' : 'View all research →',
+      seeOpinion:  es ? 'Ver columnas y divulgación →' : 'View opinion & outreach (in Spanish) →',
+    };
+  }
+}
+
+</script>
+</body>
+</html>

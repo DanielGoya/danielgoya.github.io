@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #eef2f7; }
+    * { box-sizing: border-box; }
+    a { text-decoration: none; transition: opacity 0.12s; }
+    a:hover { opacity: 0.72; }
+    .cv-section { scroll-margin-top: 116px; }
+    .jump-chip { font-family:'DM Sans',sans-serif; font-size:12px; font-weight:500; color:#475569; background:#f1f5f9; padding:5px 12px; border-radius:20px; transition:background 0.15s,color 0.15s; }
+    .jump-chip:hover { background:#dbeafe; color:#1d4ed8; opacity:1; }
+  </style>
+</helmet>
+
+<div style="max-width: 960px; margin: 0 auto; background: white; min-height: 100vh; box-shadow: 0 0 60px rgba(0,0,0,0.07);">
+
+  <!-- NAV -->
+  <nav style="display:flex; align-items:stretch; padding:0 40px; border-bottom:1px solid #e2e8f0; position:sticky; top:0; background:white; z-index:10;">
+    <a href="index.html" style="font-family:'Source Serif 4',Georgia,serif; font-size:20px; font-weight:700; color:#1d4ed8; display:flex; align-items:center; padding:0 24px 0 0; flex:1;">Daniel Goya</a>
+    <div style="display:flex;">
+      <a href="index.html" style="display:flex; align-items:center; padding:0 14px; font-family:'DM Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">Home</a>
+      <span style="display:flex; align-items:center; padding:0 14px; font-family:'DM Sans',sans-serif; font-size:13px; color:#1d4ed8; font-weight:600; border-bottom:2px solid #1d4ed8; height:56px;">CV</span>
+      <a href="research.html" style="display:flex; align-items:center; padding:0 14px; font-family:'DM Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">Research</a>
+      <a href="opinion.html" style="display:flex; align-items:center; padding:0 14px; font-family:'DM Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">Opinión</a>
+      <a href="teaching.html" style="display:flex; align-items:center; padding:0 14px; font-family:'DM Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">Teaching</a>
+    </div>
+  </nav>
+
+  <div style="padding:52px 40px 80px;">
+
+    <!-- HEADER -->
+    <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-bottom:28px;">
+      <div>
+        <h1 style="font-family:'Source Serif 4',Georgia,serif; font-size:32px; font-weight:700; color:#0f172a; margin:0 0 8px; letter-spacing:-0.3px;">Curriculum Vitae</h1>
+        <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#64748b; margin:0; line-height:1.6;">Ph.D. in Economics, University of Cambridge<br>Assistant Professor · School of Business and Economics, PUCV</p>
+      </div>
+      <a href="uploads/CV Goya, Daniel latest.pdf" download style="display:inline-flex; align-items:center; gap:8px; font-family:'DM Sans',sans-serif; font-size:13px; font-weight:600; color:white; background:#1d4ed8; padding:9px 18px; border-radius:7px; flex-shrink:0;">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v7M4 7l3 3 3-3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 11h10" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+        Descargar PDF
+      </a>
+    </div>
+
+    <!-- CONTACT STRIP -->
+    <div style="display:flex; gap:22px; flex-wrap:wrap; padding:14px 0 22px; border-bottom:1px solid #e2e8f0; margin-bottom:22px;">
+      <span style="font-family:'DM Sans',sans-serif; font-size:13px; color:#475569;">daniel.goya AT pucv.cl</span>
+      <span style="font-family:'DM Sans',sans-serif; font-size:13px; color:#475569;">+56 32 227 3585</span>
+      <span style="font-family:'DM Sans',sans-serif; font-size:13px; color:#475569;">Av. Brasil 2830, piso 9 · Valparaíso, Chile</span>
+    </div>
+
+    <!-- JUMP NAV -->
+    <div style="display:flex; gap:8px; flex-wrap:wrap; position:sticky; top:56px; background:white; z-index:9; padding:10px 0; margin:0 -40px 36px; padding-left:40px; padding-right:40px; border-bottom:1px solid #e2e8f0;">
+      <a href="#education" class="jump-chip">Education</a>
+      <a href="#appointments" class="jump-chip">Appointments</a>
+      <a href="#publications" class="jump-chip">Publications</a>
+      <a href="#wip" class="jump-chip">Work in Progress</a>
+      <a href="#consultancy" class="jump-chip">Consultancy</a>
+      <a href="#teaching" class="jump-chip">Teaching</a>
+      <a href="#seminars" class="jump-chip">Seminars</a>
+      <a href="#awards" class="jump-chip">Grants &amp; Awards</a>
+      <a href="#service" class="jump-chip">Service &amp; Languages</a>
+    </div>
+
+    <!-- EDUCATION -->
+    <section id="education" class="cv-section" style="margin-bottom:52px;">
+      <h2 style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#94a3b8; margin:0 0 6px; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">Education</h2>
+
+      <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2012–2017</span>
+        <div style="flex:1;"><p style="font-family:'Source Serif 4',serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">Ph.D. in Economics</p><p style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">University of Cambridge, UK</p></div>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2009–2010</span>
+        <div style="flex:1;"><p style="font-family:'Source Serif 4',serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">MSc in Economics</p><p style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">University College London, UK</p></div>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2006–2009</span>
+        <div style="flex:1;"><p style="font-family:'Source Serif 4',serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">Industrial Engineer</p><p style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Pontificia Universidad Católica de Valparaíso, Chile</p></div>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2007–2008</span>
+        <div style="flex:1;"><p style="font-family:'Source Serif 4',serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">Exchange student</p><p style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">INSA-Lyon, France</p></div>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2002–2006</span>
+        <div style="flex:1;"><p style="font-family:'Source Serif 4',serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">BSc Engineering</p><p style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Pontificia Universidad Católica de Valparaíso, Chile</p></div>
+      </div>
+    </section>
+
+    <!-- APPOINTMENTS -->
+    <section id="appointments" class="cv-section" style="margin-bottom:52px;">
+      <h2 style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#94a3b8; margin:0 0 6px; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">Appointments</h2>
+
+      <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2017–</span>
+        <div style="flex:1;"><p style="font-family:'Source Serif 4',serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">Assistant Professor</p><p style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">School of Business and Economics, PUCV</p></div>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2023–2026</span>
+        <div style="flex:1;"><p style="font-family:'Source Serif 4',serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">Coordinator of Policies and Institutions</p><p style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Sustainable Productive Development Division, Ministry of Economy, Chile</p></div>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2022–2023</span>
+        <div style="flex:1;"><p style="font-family:'Source Serif 4',serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">Advisor on productive transformation policies</p><p style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Cabinet of the Minister, Ministry of Economy, Chile</p></div>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2019–2022</span>
+        <div style="flex:1;"><p style="font-family:'Source Serif 4',serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">Coordinator</p><p style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Red Chilena de Investigadores en Innovación</p></div>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2018–2021</span>
+        <div style="flex:1;"><p style="font-family:'Source Serif 4',serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">Member of the Board</p><p style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Elun SpA and Notros SpA</p></div>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2018–2021</span>
+        <div style="flex:1;"><p style="font-family:'Source Serif 4',serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">Investment Committee member</p><p style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Chrysalis business incubator</p></div>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2017–2022</span>
+        <div style="flex:1;"><p style="font-family:'Source Serif 4',serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">Senior Economist</p><p style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Valparaíso Labour Observatory, CEAL, PUCV</p></div>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2011–2012</span>
+        <div style="flex:1;"><p style="font-family:'Source Serif 4',serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">Young researcher</p><p style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Intelis Centre on the Economics of Innovation, Universidad de Chile</p></div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications" class="cv-section" style="margin-bottom:52px;">
+      <div style="display:flex; align-items:baseline; justify-content:space-between; gap:12px; padding-bottom:14px; border-bottom:2px solid #e2e8f0; margin-bottom:6px; flex-wrap:wrap;">
+        <h2 style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#94a3b8; margin:0;">Publications &amp; Working Papers</h2>
+        <a href="research.html" style="font-family:'DM Sans',sans-serif; font-size:12px; color:#2563eb;">Resúmenes y figuras en Research ↗</a>
+      </div>
+
+      <div style="display:flex; gap:18px; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:600; color:#cbd5e1; min-width:34px; flex-shrink:0; padding-top:2px;">2024</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><a href="https://doi.org/10.1016/j.pirs.2024.100028" style="font-family:'Source Serif 4',serif; font-size:15px; color:#1e3a5f;">Marshallian and Jacobian externalities in creative industries: Evidence from Chile</a>. <span style="font-style:italic; color:#94a3b8;">Papers in Regional Science</span>, 103(4), 100028.</p>
+      </div>
+      <div style="display:flex; gap:18px; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:600; color:#cbd5e1; min-width:34px; flex-shrink:0; padding-top:2px;">2023</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><a href="https://doi.org/10.1371/journal.pone.0282461" style="font-family:'Source Serif 4',serif; font-size:15px; color:#1e3a5f;">The fear-increasing and fear-decreasing effects of a pilot policy to reduce fear of crime</a>. With J.M. Benavente. <span style="font-style:italic; color:#94a3b8;">PLoS ONE</span> 18(3): e0282461.</p>
+      </div>
+      <div style="display:flex; gap:18px; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:600; color:#cbd5e1; min-width:34px; flex-shrink:0; padding-top:2px;">2022</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><a href="https://doi.org/10.1016/j.techfore.2021.121199" style="font-family:'Source Serif 4',serif; font-size:15px; color:#1e3a5f;">The primacy of demand and financial obstacles in hindering innovation</a>. With A. Zahler and M. Caamaño. <span style="font-style:italic; color:#94a3b8;">Technological Forecasting &amp; Social Change</span>, 174, 121199.</p>
+      </div>
+      <div style="display:flex; gap:18px; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:600; color:#cbd5e1; min-width:34px; flex-shrink:0; padding-top:2px;">2021</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><a href="https://doi.org/10.1016/j.eist.2021.09.011" style="font-family:'Source Serif 4',serif; font-size:15px; color:#1e3a5f;">Mining — The dark side of the energy transition</a>. With A. Marín. <span style="font-style:italic; color:#94a3b8;">Environmental Innovation and Societal Transitions</span>, 41, 86-88.</p>
+      </div>
+      <div style="display:flex; gap:18px; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:600; color:#cbd5e1; min-width:34px; flex-shrink:0; padding-top:2px;">2021</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><a href="https://doi.org/10.1016/j.econmod.2021.105544" style="font-family:'Source Serif 4',serif; font-size:15px; color:#1e3a5f;">The network effect of Chinese competition on what domestic suppliers produce</a>. <span style="font-style:italic; color:#94a3b8;">Economic Modelling</span>, 102:105544.</p>
+      </div>
+      <div style="display:flex; gap:18px; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:600; color:#cbd5e1; min-width:34px; flex-shrink:0; padding-top:2px;">2020</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><a href="https://doi.org/10.1016/j.iref.2020.07.001" style="font-family:'Source Serif 4',serif; font-size:15px; color:#1e3a5f;">The Exchange Rate and Export Variety: A cross-country analysis with long panel estimators</a>. <span style="font-style:italic; color:#94a3b8;">International Review of Economics and Finance</span>, 70: 649-665.</p>
+      </div>
+      <div style="display:flex; gap:18px; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:600; color:#cbd5e1; min-width:34px; flex-shrink:0; padding-top:2px;">2019</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><a href="https://doi.org/10.1111/twec.12835" style="font-family:'Source Serif 4',serif; font-size:15px; color:#1e3a5f;">Distance from core competences and new export survival: Evidence from multi-product exporters</a>. With A. Zahler. <span style="font-style:italic; color:#94a3b8;">World Economy</span>, 42: 3253–3286.</p>
+      </div>
+      <div style="display:flex; gap:18px; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:600; color:#cbd5e1; min-width:34px; flex-shrink:0; padding-top:2px;">2014</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><a href="https://publications.iadb.org/en/public-private-collaboration-productive-development-chile" style="font-family:'Source Serif 4',serif; font-size:15px; color:#1e3a5f;">Public-Private Collaboration on Productive Development in Chile</a>. With A. Zahler, C. Bravo-Ortega and J.M. Benavente. <span style="font-style:italic; color:#94a3b8;">Inter-American Development Bank</span> Working Paper IDB-WP-502.</p>
+      </div>
+      <div style="display:flex; gap:18px; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:600; color:#cbd5e1; min-width:34px; flex-shrink:0; padding-top:2px;">2014</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><span style="font-family:'Source Serif 4',serif; font-size:15px; color:#1e3a5f;">Complex Networks: a case study of scientific collaboration</span>. With J.P. Cárdenas, F. Cabrera, G. Olivares, R. Alfaro, J. Gibert, H. Samaniego and A. Palacios. In: <span style="font-style:italic; color:#94a3b8;">Las Rutas de la Complejidad</span>. Ediciones ISCV, Valparaíso, Chile.</p>
+      </div>
+      <div style="display:flex; gap:18px; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:600; color:#cbd5e1; min-width:34px; flex-shrink:0; padding-top:2px;">2012</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><span style="font-family:'Source Serif 4',serif; font-size:15px; color:#1e3a5f;">Copper Mining in Chile</span>. IDRC Project "Opening up natural resource-based industries for innovation". With J.M. Benavente. <span style="font-style:italic; color:#f97316;">Enlace del proyecto pendiente</span>.</p>
+      </div>
+      <div style="display:flex; gap:18px; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:600; color:#cbd5e1; min-width:34px; flex-shrink:0; padding-top:2px;">2012</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><span style="font-family:'Source Serif 4',serif; font-size:15px; color:#1e3a5f;">Biodiversity and Natural Resources for Sustainability</span>. <span style="font-style:italic; color:#94a3b8;">Parcerias Estratégicas</span>, Edição especial Rio+20, 17(35), Brasília-DF.</p>
+      </div>
+      <div style="display:flex; gap:18px; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:600; color:#cbd5e1; min-width:34px; flex-shrink:0; padding-top:2px;">2010</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><span style="font-family:'Source Serif 4',serif; font-size:15px; color:#1e3a5f;">Innovation Networks as a factor in Economic Development</span>. With J. Vrsalovic and N. Sáinz. Ediciones Universitarias de Valparaíso. ISBN 978-956-17-0467-1.</p>
+      </div>
+      <div style="display:flex; gap:18px; padding:16px 0;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:600; color:#cbd5e1; min-width:34px; flex-shrink:0; padding-top:2px;">2007</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><span style="font-family:'Source Serif 4',serif; font-size:15px; color:#1e3a5f;">Caracterización de los hogares bajo la línea de pobreza: un análisis econométrico para la quinta región</span>. With H. De la Fuente and J. Cartagena. <span style="font-style:italic; color:#94a3b8;">Revista Ingenerare</span>, 21, pp. 27-36.</p>
+      </div>
+    </section>
+
+    <!-- WORK IN PROGRESS -->
+    <section id="wip" class="cv-section" style="margin-bottom:52px;">
+      <h2 style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#94a3b8; margin:0 0 6px; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">Work in Progress</h2>
+      <div style="padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <p style="font-family:'Source Serif 4',serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px; line-height:1.45;">Sustainability transitions in mining: forces of lock in and change</p>
+        <p style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">with Anabel Marín</p>
+      </div>
+      <div style="padding:16px 0;">
+        <p style="font-family:'Source Serif 4',serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px; line-height:1.45;">Una aplicación crítica de Políticas Orientadas por Misión a nivel subnacional en América Latina: el caso de la Región de Valparaíso, Chile</p>
+        <p style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">with Diego Cabello</p>
+      </div>
+    </section>
+
+    <!-- CONSULTANCY -->
+    <section id="consultancy" class="cv-section" style="margin-bottom:52px;">
+      <h2 style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#94a3b8; margin:0 0 6px; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">Consultancy</h2>
+
+      <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2021</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;"><span style="font-family:'Source Serif 4',serif; color:#1e3a5f;">Inter-American Development Bank</span> — cost-effectiveness analysis of government modernization project loan to the Chilean government.</p>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2020</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;"><span style="font-family:'Source Serif 4',serif; color:#1e3a5f;">Phibrand</span> — design of innovation survey for mining suppliers.</p>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2019–2020</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;"><span style="font-family:'Source Serif 4',serif; color:#1e3a5f;">Inter-American Development Bank</span> — research consultancy on the economics of creative industries.</p>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2017–2019</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;"><span style="font-family:'Source Serif 4',serif; color:#1e3a5f;">Inter-American Development Bank</span> — design and execution of impact evaluation of a pilot policy to reduce crime-related insecurity.</p>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2017–2018</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;"><span style="font-family:'Source Serif 4',serif; color:#1e3a5f;">Inter-American Development Bank</span> — research consultancy on obstacles to innovation in Chile. Project led by Andrés Zahler.</p>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2017</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;"><span style="font-family:'Source Serif 4',serif; color:#1e3a5f;">Budget Office, Ministry of Finance, Chile</span> — outcome evaluation, Corfo innovation support policies.</p>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2014</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;"><span style="font-family:'Source Serif 4',serif; color:#1e3a5f;">UNIDO-GIZ</span> — Research Assistant, Enhancing the Quality of Industrial Policies project.</p>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2010–2012</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;"><span style="font-family:'Source Serif 4',serif; color:#1e3a5f;">International Development Research Center</span> — research project on sustainable technological trajectories. With José Miguel Benavente, project led by Anabel Marín.</p>
+      </div>
+    </section>
+
+    <!-- TEACHING EXPERIENCE -->
+    <section id="teaching" class="cv-section" style="margin-bottom:52px;">
+      <div style="display:flex; align-items:baseline; justify-content:space-between; gap:12px; padding-bottom:14px; border-bottom:2px solid #e2e8f0; margin-bottom:6px; flex-wrap:wrap;">
+        <h2 style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#94a3b8; margin:0;">Teaching Experience</h2>
+        <span style="font-family:'DM Sans',sans-serif; font-size:11px; color:#cbd5e1;">Average evaluation</span>
+      </div>
+
+      <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:80px; flex-shrink:0;">2023</span>
+        <div style="flex:1;"><p style="font-family:'Source Serif 4',serif; font-size:15px; color:#1e3a5f; margin:0 0 2px;">Lecturer · Economics of Innovation</p><p style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Master in Public Administration, PUCV</p></div>
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; color:#cbd5e1; flex-shrink:0;">N/A</span>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:80px; flex-shrink:0;">2021</span>
+        <div style="flex:1;"><p style="font-family:'Source Serif 4',serif; font-size:15px; color:#1e3a5f; margin:0 0 2px;">Lecturer · Economics of Innovation</p><p style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Short course for CONACYT Paraguay and Inter-American Development Bank</p></div>
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; color:#cbd5e1; flex-shrink:0;">N/A</span>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:80px; flex-shrink:0;">2019–</span>
+        <div style="flex:1;"><p style="font-family:'Source Serif 4',serif; font-size:15px; color:#1e3a5f; margin:0 0 2px;">Lecturer · Econometrics</p><p style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Business School, PUCV</p></div>
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#1d4ed8; background:#eff6ff; padding:2px 9px; border-radius:4px; flex-shrink:0;">3.92/4</span>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:80px; flex-shrink:0;">2018–</span>
+        <div style="flex:1;"><p style="font-family:'Source Serif 4',serif; font-size:15px; color:#1e3a5f; margin:0 0 2px;">Lecturer · Innovation and Economic Development</p><p style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Business School, PUCV</p></div>
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#1d4ed8; background:#eff6ff; padding:2px 9px; border-radius:4px; flex-shrink:0;">3.94/4</span>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:80px; flex-shrink:0;">2013–2016</span>
+        <div style="flex:1;"><p style="font-family:'Source Serif 4',serif; font-size:15px; color:#1e3a5f; margin:0 0 2px;">TA · Econometrics</p><p style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Diploma in Economics, University of Cambridge</p></div>
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#1d4ed8; background:#eff6ff; padding:2px 9px; border-radius:4px; flex-shrink:0;">4.7/5.0</span>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:80px; flex-shrink:0;">2014–2016</span>
+        <div style="flex:1;"><p style="font-family:'Source Serif 4',serif; font-size:15px; color:#1e3a5f; margin:0 0 2px;">TA · Microeconometrics</p><p style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">MPhil in Economics, University of Cambridge</p></div>
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#1d4ed8; background:#eff6ff; padding:2px 9px; border-radius:4px; flex-shrink:0;">4.4/5.0</span>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:80px; flex-shrink:0;">2015–2016</span>
+        <div style="flex:1;"><p style="font-family:'Source Serif 4',serif; font-size:15px; color:#1e3a5f; margin:0 0 2px;">TA · Statistical Methods II</p><p style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">PhD students, London Business School</p></div>
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; color:#cbd5e1; flex-shrink:0;">N/A</span>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:80px; flex-shrink:0;">2011–2012</span>
+        <div style="flex:1;"><p style="font-family:'Source Serif 4',serif; font-size:15px; color:#1e3a5f; margin:0 0 2px;">Lecturer · Innovation policy</p><p style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">MPP, Universidad de Chile</p></div>
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#1d4ed8; background:#eff6ff; padding:2px 9px; border-radius:4px; flex-shrink:0;">6.2/7.0</span>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:80px; flex-shrink:0;">2011–2012</span>
+        <div style="flex:1;"><p style="font-family:'Source Serif 4',serif; font-size:15px; color:#1e3a5f; margin:0 0 2px;">Lecturer · Globalisation and Innovation</p><p style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Industrial engineering, PUCV</p></div>
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#1d4ed8; background:#eff6ff; padding:2px 9px; border-radius:4px; flex-shrink:0;">4.7/5.0</span>
+      </div>
+    </section>
+
+    <!-- SEMINARS -->
+    <section id="seminars" class="cv-section" style="margin-bottom:52px;">
+      <h2 style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#94a3b8; margin:0 0 6px; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">Seminars &amp; Conferences</h2>
+
+      <div style="display:flex; gap:20px; align-items:baseline; padding:14px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2023</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:13.5px; color:#475569; margin:0; line-height:1.65; flex:1; text-wrap:pretty;">Segundo Encuentro Red Chilena de Investigadores en Innovación.</p>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:14px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2021</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:13.5px; color:#475569; margin:0; line-height:1.65; flex:1; text-wrap:pretty;">Sociedad Chilena de Políticas Públicas · SECHI 2021 · 12th International Sustainability Transitions Conference · Globelics 2021 · RIE/MEIDE 2021.</p>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:14px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2020</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:13.5px; color:#475569; margin:0; line-height:1.65; flex:1; text-wrap:pretty;">Academic webinar, Red Chilena de Investigadores en Innovación · ENEFA 2020.</p>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:14px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2019</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:13.5px; color:#475569; margin:0; line-height:1.65; flex:1; text-wrap:pretty;">Encuentro Red Chilena de Investigadores en Innovación, Talca · Economics Seminars, Universidad de Talca.</p>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:14px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2018</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:13.5px; color:#475569; margin:0; line-height:1.65; flex:1; text-wrap:pretty;">LALICS 2018, Mexico City · International Schumpeter Society Conference, Seoul · INET's YSI Latin America Convening, Buenos Aires · SECHI 2018, Valparaíso · Seminarios de innovación &amp; Escuela de Negocios, Universidad Adolfo Ibáñez.</p>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:14px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2017</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:13.5px; color:#475569; margin:0; line-height:1.65; flex:1; text-wrap:pretty;">MEIDE 2017, Montevideo · LACEA 2017, Buenos Aires · SECHI 2017, Santa Cruz.</p>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:14px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2016</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:13.5px; color:#475569; margin:0; line-height:1.65; flex:1; text-wrap:pretty;">Departamento de Economía, Universidad de Chile · Universidad de Santiago · Escuela de Negocios, Universidad Adolfo Ibáñez, Santiago.</p>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:14px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2014, 2015</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:13.5px; color:#475569; margin:0; line-height:1.65; flex:1; text-wrap:pretty;">European Trade Study Group Conference — Paris (2015), Munich (2014).</p>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:14px 0;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2012–2016</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:13.5px; color:#475569; margin:0; line-height:1.65; flex:1; text-wrap:pretty;">Faculty of Economics, University of Cambridge — Econometrics, Empirical Micro, Macroeconomics and Networks working groups · Intelis Seminars on the Economics of Innovation, Universidad de Chile (2012–2013).</p>
+      </div>
+    </section>
+
+    <!-- AWARDS -->
+    <section id="awards" class="cv-section" style="margin-bottom:52px;">
+      <h2 style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#94a3b8; margin:0 0 6px; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">Grants &amp; Awards</h2>
+
+      <div style="display:flex; gap:20px; align-items:baseline; padding:14px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:50px; flex-shrink:0;">2019</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;">CYTED Network "Políticas de Ciencia, Tecnología e Innovación orientada a la solución de problemas nacionales" — coordinator for Chile.</p>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:14px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:50px; flex-shrink:0;">2019</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;">Inter-American Development Bank Call for Papers on "Creative Economy, Innovation and Economic Development".</p>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:14px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:50px; flex-shrink:0;">2017</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;">IDB-RedSur joint call "Obstacles to Innovation in Latin America and the Caribbean" — with Andrés Zahler and Matías Caamaño.</p>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:14px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:50px; flex-shrink:0;">2016</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;">Wrenbury Fund Award, Faculty of Economics, Cambridge.</p>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:14px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:50px; flex-shrink:0;">2015</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;">Raymond Burton Fund Award, Faculty of Economics, Cambridge.</p>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:14px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:50px; flex-shrink:0;">2012</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;">CONICYT scholarship (Becas Chile) for PhD studies at Cambridge University.</p>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:14px 0;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:50px; flex-shrink:0;">2009</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;">CONICYT scholarship (Becas Chile) for Master's studies at University College London.</p>
+      </div>
+
+      <h3 style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#94a3b8; margin:36px 0 6px; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">Teaching Awards</h3>
+
+      <div style="display:flex; gap:20px; align-items:baseline; padding:14px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:50px; flex-shrink:0;">2023</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;">Distinguished Teaching Award 2023, Pontificia Universidad Católica de Valparaíso.</p>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:14px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:50px; flex-shrink:0;">2021</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;">Distinguished Teaching Award 2021, Pontificia Universidad Católica de Valparaíso.</p>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:14px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:50px; flex-shrink:0;">2020</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;">Distinguished Teaching Award 2020, Pontificia Universidad Católica de Valparaíso.</p>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:14px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:50px; flex-shrink:0;">2015</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;">Best Graduate Teaching Assistant 2014–2015, Faculty of Economics, Cambridge.</p>
+      </div>
+      <div style="display:flex; gap:20px; align-items:baseline; padding:14px 0;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:50px; flex-shrink:0;">2014</span>
+        <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;">Cambridge University Students' Union's Teaching Excellence Award.</p>
+      </div>
+    </section>
+
+    <!-- SERVICE & LANGUAGES -->
+    <section id="service" class="cv-section" style="margin-bottom:8px;">
+      <h2 style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#94a3b8; margin:0 0 18px; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">Refereeing &amp; Languages</h2>
+
+      <div style="display:grid; grid-template-columns:1fr 220px; gap:36px;">
+        <div>
+          <p style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#cbd5e1; margin:0 0 12px;">Refereeing activity</p>
+          <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.85; text-wrap:pretty;">Research Policy · Cambridge Journal of Economics · American Economic Journal: Microeconomics · Empirical Economics · Journal of Technology Management &amp; Innovation · Academia Revista Latinoamericana de Administración · Estudios Públicos · Revista INNOVAR.</p>
+        </div>
+        <div>
+          <p style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#cbd5e1; margin:0 0 12px;">Languages</p>
+          <div style="display:flex; justify-content:space-between; padding:7px 0; border-bottom:1px solid #f1f5f9;"><span style="font-family:'Source Serif 4',serif; font-size:14px; color:#1e3a5f;">Spanish</span><span style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#94a3b8;">Native</span></div>
+          <div style="display:flex; justify-content:space-between; padding:7px 0; border-bottom:1px solid #f1f5f9;"><span style="font-family:'Source Serif 4',serif; font-size:14px; color:#1e3a5f;">English</span><span style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#94a3b8;">Advanced</span></div>
+          <div style="display:flex; justify-content:space-between; padding:7px 0;"><span style="font-family:'Source Serif 4',serif; font-size:14px; color:#1e3a5f;">French</span><span style="font-family:'DM Sans',sans-serif; font-size:12.5px; color:#94a3b8;">Advanced</span></div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer style="border-top:1px solid #e2e8f0; padding:24px 40px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; background:#fafcff;">
+    <span style="font-family:'DM Sans',sans-serif; font-size:12px; color:#94a3b8;">daniel.goya AT pucv.cl</span>
+    <span style="font-family:'DM Sans',sans-serif; font-size:12px; color:#94a3b8;">Av. Brasil 2830, piso 9 · Valparaíso, Chile</span>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {}
+</script>
+</body>
+</html>
