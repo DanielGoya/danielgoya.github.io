@@ -15,6 +15,21 @@
     * { box-sizing: border-box; }
     a { text-decoration: none; transition: opacity 0.12s; }
     a:hover { opacity: 0.72; }
+
+    @media (max-width: 640px) {
+      .r-nav { padding: 0 !important; flex-wrap: wrap !important; }
+      .r-nav-brand { padding: 0 0 0 16px !important; font-size: 18px !important; border-bottom: 1px solid #f1f5f9; width: 100% !important; flex: none !important; }
+      .r-nav-links { width: 100% !important; overflow-x: auto !important; scrollbar-width: none !important; }
+      .r-nav-links::-webkit-scrollbar { display: none; }
+      .r-nav-links a, .r-nav-links span, .r-nav-links button { height: 42px !important; font-size: 12px !important; padding: 0 10px !important; }
+      .lang-btn { height: 42px !important; }
+      .r-hero { grid-template-columns: 1fr !important; padding: 32px 16px 36px !important; gap: 20px !important; }
+      .r-photo { width: 88px !important; height: 88px !important; }
+      .r-main { padding: 28px 16px 52px !important; }
+      .r-activity-grid { grid-template-columns: 1fr !important; }
+      .r-footer { padding: 20px 16px !important; }
+    }
+
     .recent-card { border: 1px solid #e2e8f0; border-radius: 10px; padding: 18px 20px; background: white; transition: box-shadow 0.15s, border-color 0.15s; cursor: pointer; display: block; color: inherit; }
     .recent-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-color: #cbd5e1; opacity: 1; }
     .lang-btn { background: none; border: none; cursor: pointer; font-family: 'IBM Plex Sans',sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; color: #94a3b8; padding: 0 10px; height: 56px; transition: color 0.15s; }
@@ -25,9 +40,9 @@
 <div style="max-width: 820px; margin: 0 auto; background: white; min-height: 100vh; box-shadow: 0 0 60px rgba(0,0,0,0.07);">
 
   <!-- NAV -->
-  <nav style="display:flex; align-items:stretch; padding:0 40px; border-bottom:1px solid #e2e8f0; position:sticky; top:0; background:white; z-index:10;">
-    <span style="font-family:'IBM Plex Sans',sans-serif; font-size:20px; font-weight:700; color:#1d4ed8; display:flex; align-items:center; padding:0 24px 0 0; flex:1;">Daniel Goya</span>
-    <div style="display:flex; align-items:stretch;">
+  <nav class="r-nav" style="display:flex; align-items:stretch; padding:0 40px; border-bottom:1px solid #e2e8f0; position:sticky; top:0; background:white; z-index:10;">
+    <span class="r-nav-brand" style="font-family:'IBM Plex Sans',sans-serif; font-size:20px; font-weight:700; color:#1d4ed8; display:flex; align-items:center; padding:0 24px 0 0; flex:1;">Daniel Goya</span>
+    <div class="r-nav-links" style="display:flex; align-items:stretch;">
       <span style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#1d4ed8; font-weight:600; border-bottom:2px solid #1d4ed8; height:56px;">Home</span>
       <a href="cv.html" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">CV</a>
       <a href="research.html" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">Research</a>
@@ -38,7 +53,7 @@
   </nav>
 
   <!-- HERO -->
-  <div style="padding: 64px 40px 52px; border-bottom: 1px solid #e2e8f0; display: grid; grid-template-columns: 1fr 190px; gap: 48px; align-items: start;">
+  <div class="r-hero" style="padding: 64px 40px 52px; border-bottom: 1px solid #e2e8f0; display: grid; grid-template-columns: 1fr 190px; gap: 48px; align-items: start;">
     <div>
       <p style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:#2563eb; margin:0 0 18px;">{{ tagline }}</p>
       <h1 style="font-family:'IBM Plex Sans',sans-serif; font-size:33px; font-weight:700; color:#0f172a; margin:0 0 20px; line-height:1.15; letter-spacing:-0.5px;">{{ h1l1 }}<br>{{ h1l2 }}<br><em style="font-weight:400; color:#475569;">{{ h1em }}</em></h1>
@@ -60,16 +75,16 @@
     </div>
 
     <!-- Photo -->
-    <div style="width:180px; height:180px; border-radius:50%; overflow:hidden; flex-shrink:0; margin-top:4px; border:3px solid white; box-shadow:0 0 0 1px #e2e8f0;">
+    <div class="r-photo" style="width:180px; height:180px; border-radius:50%; overflow:hidden; flex-shrink:0; margin-top:4px; border:3px solid white; box-shadow:0 0 0 1px #e2e8f0;">
       <img src="uploads/foto%20ICA%20-%20cuadrada%20m%C3%A1s%20lejos.jpg" alt="Daniel Goya" style="width:100%; height:100%; object-fit:cover; object-position:center top;"/>
     </div>
   </div>
 
   <!-- RECENT ACTIVITY -->
-  <div style="padding: 44px 40px 64px;">
+  <div class="r-main" style="padding: 44px 40px 64px;">
     <p style="font-family:'IBM Plex Sans',sans-serif; font-size:10px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#94a3b8; margin:0 0 22px;">{{ recentTitle }}</p>
 
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px;">
+    <div class="r-activity-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px;">
 
       <!-- Paper 2024 -->
       <a href="research.html#journal-articles" class="recent-card">
@@ -109,7 +124,7 @@
   </div>
 
   <!-- FOOTER -->
-  <footer style="border-top:1px solid #e2e8f0; padding:24px 40px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; background:#fafcff;">
+  <footer class="r-footer" style="border-top:1px solid #e2e8f0; padding:24px 40px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; background:#fafcff;">
     <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#94a3b8;">daniel.goya AT pucv.cl · +56 32 227 3585</span>
     <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#94a3b8;">Amunátegui 1838, Recreo, Viña del Mar, Chile</span>
   </footer>

@@ -17,36 +17,55 @@
     a { text-decoration: none; transition: opacity 0.12s; }
     a:hover { opacity: 0.72; }
     .cv-section { scroll-margin-top: 116px; }
-    .jump-chip { font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:500; color:#475569; background:#f1f5f9; padding:5px 12px; border-radius:20px; transition:background 0.15s,color 0.15s; }
+    .jump-chip { font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:500; color:#475569; background:#f1f5f9; padding:5px 12px; border-radius:20px; transition:background 0.15s,color 0.15s; white-space:nowrap; flex-shrink:0; }
     .jump-chip:hover { background:#dbeafe; color:#1d4ed8; opacity:1; }
+    .lang-btn { background:none; border:none; cursor:pointer; font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.07em; color:#94a3b8; padding:0 12px; height:56px; transition:color 0.15s; flex-shrink:0; }
+    .lang-btn:hover { color:#1d4ed8; }
+
+    @media (max-width: 640px) {
+      .r-nav { padding: 0 !important; flex-wrap: wrap !important; }
+      .r-nav-brand { padding: 0 0 0 16px !important; font-size: 18px !important; border-bottom: 1px solid #f1f5f9; width: 100% !important; flex: none !important; }
+      .r-nav-links { width: 100% !important; overflow-x: auto !important; scrollbar-width: none !important; }
+      .r-nav-links::-webkit-scrollbar { display: none; }
+      .r-nav-links a, .r-nav-links span { height: 42px !important; font-size: 12px !important; padding: 0 10px !important; }
+      .lang-btn { height: 42px !important; }
+      .r-main { padding: 28px 16px 60px !important; }
+      .r-hero { flex-direction: column !important; gap: 12px !important; }
+      .r-jump { position: static !important; margin: 0 -16px 28px !important; padding: 10px 16px !important; overflow-x: auto !important; flex-wrap: nowrap !important; scrollbar-width: none !important; }
+      .r-jump::-webkit-scrollbar { display: none; }
+      .r-service-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
+      .r-footer { padding: 20px 16px !important; flex-direction: column !important; align-items: flex-start !important; }
+      .cv-section { scroll-margin-top: 20px !important; }
+    }
   </style>
 </helmet>
 
-<div style="max-width: 820px; margin: 0 auto; background: white; min-height: 100vh; box-shadow: 0 0 60px rgba(0,0,0,0.07);">
+<div style="max-width:820px; margin:0 auto; background:white; min-height:100vh; box-shadow:0 0 60px rgba(0,0,0,0.07);">
 
   <!-- NAV -->
-  <nav style="display:flex; align-items:stretch; padding:0 40px; border-bottom:1px solid #e2e8f0; position:sticky; top:0; background:white; z-index:10;">
-    <a href="index.html" style="font-family:'IBM Plex Sans',sans-serif; font-size:20px; font-weight:700; color:#1d4ed8; display:flex; align-items:center; padding:0 24px 0 0; flex:1;">Daniel Goya</a>
-    <div style="display:flex;">
-      <a href="index.html" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">Home</a>
+  <nav class="r-nav" style="display:flex; align-items:stretch; padding:0 40px; border-bottom:1px solid #e2e8f0; position:sticky; top:0; background:white; z-index:10;">
+    <a href="index.html" class="r-nav-brand" style="font-family:'IBM Plex Sans',sans-serif; font-size:20px; font-weight:700; color:#1d4ed8; display:flex; align-items:center; padding:0 24px 0 0; flex:1;">Daniel Goya</a>
+    <div class="r-nav-links" style="display:flex;">
+      <a href="index.html" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">{{ t.navHome }}</a>
       <span style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#1d4ed8; font-weight:600; border-bottom:2px solid #1d4ed8; height:56px;">CV</span>
       <a href="research.html" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">Research</a>
       <a href="opinion.html" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">Opinión</a>
       <a href="teaching.html" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">Teaching</a>
+      <button onClick="{{ toggleLang }}" class="lang-btn">{{ t.langBtn }}</button>
     </div>
   </nav>
 
-  <div style="padding:52px 40px 80px;">
+  <div class="r-main" style="padding:52px 40px 80px;">
 
     <!-- HEADER -->
-    <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-bottom:28px;">
+    <div class="r-hero" style="display:flex; align-items:flex-start; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-bottom:28px;">
       <div>
-        <h1 style="font-family:'IBM Plex Sans',sans-serif; font-size:32px; font-weight:700; color:#0f172a; margin:0 0 8px; letter-spacing:-0.3px;">Curriculum Vitae</h1>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#64748b; margin:0; line-height:1.6;">Ph.D. in Economics, University of Cambridge<br>Assistant Professor · School of Business and Economics, PUCV</p>
+        <h1 style="font-family:'IBM Plex Sans',sans-serif; font-size:32px; font-weight:700; color:#0f172a; margin:0 0 8px; letter-spacing:-0.3px;">{{ t.cvTitle }}</h1>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#64748b; margin:0; line-height:1.65;">{{ t.subtitle1 }}<br>{{ t.subtitle2 }}</p>
       </div>
       <a href="uploads/CV Goya, Daniel latest.pdf" download style="display:inline-flex; align-items:center; gap:8px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; color:white; background:#1d4ed8; padding:9px 18px; border-radius:7px; flex-shrink:0;">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v7M4 7l3 3 3-3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 11h10" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
-        Descargar PDF
+        {{ t.downloadPdf }}
       </a>
     </div>
 
@@ -58,103 +77,126 @@
     </div>
 
     <!-- JUMP NAV -->
-    <div style="display:flex; gap:8px; flex-wrap:wrap; position:sticky; top:56px; background:white; z-index:9; padding:10px 0; margin:0 -40px 36px; padding-left:40px; padding-right:40px; border-bottom:1px solid #e2e8f0;">
-      <a href="#education" class="jump-chip">Education</a>
-      <a href="#appointments" class="jump-chip">Appointments</a>
-      <a href="#publications" class="jump-chip">Publications</a>
-      <a href="#wip" class="jump-chip">Work in Progress</a>
-      <a href="#consultancy" class="jump-chip">Consultancy</a>
-      <a href="#teaching" class="jump-chip">Teaching</a>
-      <a href="#seminars" class="jump-chip">Seminars</a>
-      <a href="#awards" class="jump-chip">Grants &amp; Awards</a>
-      <a href="#service" class="jump-chip">Service &amp; Languages</a>
+    <div class="r-jump" style="display:flex; gap:8px; flex-wrap:wrap; position:sticky; top:56px; background:white; z-index:9; padding:10px 0; margin:0 -40px 36px; padding-left:40px; padding-right:40px; border-bottom:1px solid #e2e8f0;">
+      <a href="#education" class="jump-chip">{{ t.jEducation }}</a>
+      <a href="#appointments" class="jump-chip">{{ t.jAppointments }}</a>
+      <a href="#publications" class="jump-chip">{{ t.jPublications }}</a>
+      <a href="#wip" class="jump-chip">{{ t.jWip }}</a>
+      <a href="#consultancy" class="jump-chip">{{ t.jConsultancy }}</a>
+      <a href="#teaching-exp" class="jump-chip">{{ t.jTeaching }}</a>
+      <a href="#seminars" class="jump-chip">{{ t.jSeminars }}</a>
+      <a href="#awards" class="jump-chip">{{ t.jAwards }}</a>
+      <a href="#service" class="jump-chip">{{ t.jService }}</a>
     </div>
 
     <!-- EDUCATION -->
     <section id="education" class="cv-section" style="margin-bottom:52px;">
-      <h2 style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:0 0 6px; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">Education</h2>
+      <h2 style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:0 0 6px; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">{{ t.sEducation }}</h2>
 
       <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2012–2017</span>
-        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">Ph.D. in Economics</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">University of Cambridge, UK</p></div>
+        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">{{ t.edPhd }}</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">University of Cambridge, UK</p></div>
       </div>
       <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2009–2010</span>
-        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">MSc in Economics</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">University College London, UK</p></div>
+        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">{{ t.edMsc }}</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">University College London, UK</p></div>
       </div>
       <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2006–2009</span>
-        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">Industrial Engineer</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Pontificia Universidad Católica de Valparaíso, Chile</p></div>
+        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">{{ t.edEngineer }}</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Pontificia Universidad Católica de Valparaíso, Chile</p></div>
       </div>
       <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2007–2008</span>
-        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">Exchange student</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">INSA-Lyon, France</p></div>
+        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">{{ t.edExchange }}</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">INSA-Lyon, France</p></div>
       </div>
       <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2002–2006</span>
-        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">BSc Engineering</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Pontificia Universidad Católica de Valparaíso, Chile</p></div>
+        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">{{ t.edBsc }}</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Pontificia Universidad Católica de Valparaíso, Chile</p></div>
       </div>
     </section>
 
     <!-- APPOINTMENTS -->
     <section id="appointments" class="cv-section" style="margin-bottom:52px;">
-      <h2 style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:0 0 6px; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">Appointments</h2>
+      <h2 style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:0 0 6px; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">{{ t.sAppointments }}</h2>
 
       <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2017–</span>
-        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">Assistant Professor</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">School of Business and Economics, PUCV</p></div>
+        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">{{ t.apProf }}</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">{{ t.apProfInst }}</p></div>
       </div>
+
+      <!-- Ministry — highlighted entry -->
       <div style="display:flex; gap:20px; padding:18px 0 18px; border-bottom:1px solid #f1f5f9; border-left:3px solid #2563eb; padding-left:16px; margin-left:-16px;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#2563eb; min-width:86px; flex-shrink:0; padding-top:2px;">2022–2026</span>
         <div style="flex:1;">
-          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:15.5px; color:#1e3a5f; margin:0 0 2px; font-weight:600;">Policy Advisor &amp; Coordinator of Policies and Institutions</p>
-          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#64748b; margin:0 0 10px;">Ministry of Economy, Chile &mdash; Cabinet of the Minister (2022–23) · Sustainable Productive Development Division (2023–26)</p>
+          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:15.5px; color:#1e3a5f; margin:0 0 2px; font-weight:600;">{{ t.apCoord }}</p>
+          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#64748b; margin:0 0 10px;">{{ t.apCoordSub }}</p>
           <details style="cursor:pointer;">
-            <summary style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#2563eb; list-style:none; display:inline-flex; align-items:center; gap:4px; user-select:none;">Policy work &amp; projects ↓</summary>
-            <ul style="font-family:'IBM Plex Sans',sans-serif; font-size:13.5px; color:#475569; margin:10px 0 0; padding-left:18px; line-height:1.8; text-wrap:pretty;">
-              <li>Creación del Programa Desarrollo Productivo Sostenible</li>
-              <li>Política Nacional de Desarrollo Productivo Sostenible</li>
-              <li>Diseño e implementación de la Estrategia Nacional del Litio</li>
-              <li>Compra Pública de Innovación (ley, pilotos, reglamento, política)</li>
-              <li>Acuerdo de descarbonización e innovación en la minería</li>
-              <li>Plan de acción y actualización de la Estrategia Nacional de H2V</li>
-              <li>Pacto de Magallanes con proyectos de Hidrógeno Verde</li>
-              <li>Trabajo con Comités de Desarrollo Productivo Regionales (CDPRs)</li>
-              <li>Instrumentos financieros para el desarrollo productivo</li>
-              <li>Documento <em>Futuro de la Manufactura en Chile</em></li>
-              <li>Proyecto de generación de información de patentes para el desarrollo productivo sostenible con INAPI</li>
-              <li>Mesas Ejecutivas para la Productividad</li>
-            </ul>
+            <summary style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#2563eb; list-style:none; display:inline-flex; align-items:center; gap:4px; user-select:none;">{{ t.apPolicyWork }}</summary>
+            <!-- ES -->
+            <div style="{{ esDisplay }}">
+              <ul style="font-family:'IBM Plex Sans',sans-serif; font-size:13.5px; color:#475569; margin:10px 0 0; padding-left:18px; line-height:1.8; text-wrap:pretty;">
+                <li>Creación del Programa Desarrollo Productivo Sostenible</li>
+                <li>Política Nacional de Desarrollo Productivo Sostenible</li>
+                <li>Diseño e implementación de la Estrategia Nacional del Litio</li>
+                <li>Compra Pública de Innovación (ley, pilotos, reglamento, política)</li>
+                <li>Acuerdo de descarbonización e innovación en la minería</li>
+                <li>Plan de acción y actualización de la Estrategia Nacional de H2V</li>
+                <li>Pacto de Magallanes con proyectos de Hidrógeno Verde</li>
+                <li>Trabajo con Comités de Desarrollo Productivo Regionales (CDPRs)</li>
+                <li>Instrumentos financieros para el desarrollo productivo</li>
+                <li>Documento <em>Futuro de la Manufactura en Chile</em></li>
+                <li>Proyecto de información de patentes para el DPS con INAPI</li>
+                <li>Mesas Ejecutivas para la Productividad</li>
+              </ul>
+            </div>
+            <!-- EN -->
+            <div style="{{ enDisplay }}">
+              <ul style="font-family:'IBM Plex Sans',sans-serif; font-size:13.5px; color:#475569; margin:10px 0 0; padding-left:18px; line-height:1.8; text-wrap:pretty;">
+                <li>Creation of the Sustainable Productive Development Programme</li>
+                <li>National Policy for Sustainable Productive Development</li>
+                <li>Design and implementation of the National Lithium Strategy</li>
+                <li>Public Procurement of Innovation (legislation, pilots, regulations, policy)</li>
+                <li>Decarbonisation and innovation agreement in mining</li>
+                <li>Action plan and update of the National Green Hydrogen Strategy</li>
+                <li>Magallanes Pact with Green Hydrogen projects</li>
+                <li>Work with Regional Productive Development Committees (CDPRs)</li>
+                <li>Financial instruments for productive development</li>
+                <li><em>Future of Manufacturing in Chile</em> policy document</li>
+                <li>Patent information project for sustainable productive development with INAPI</li>
+                <li>Executive Roundtables for Productivity</li>
+              </ul>
+            </div>
           </details>
         </div>
       </div>
+
       <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2019–2022</span>
-        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">Coordinator</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Red Chilena de Investigadores en Innovación</p></div>
+        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">{{ t.apRcii }}</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Red Chilena de Investigadores en Innovación</p></div>
       </div>
       <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2018–2021</span>
-        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">Member of the Board</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Elun SpA and Notros SpA</p></div>
+        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">{{ t.apBoard }}</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Elun SpA and Notros SpA</p></div>
       </div>
       <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2018–2021</span>
-        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">Investment Committee member</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Chrysalis business incubator</p></div>
+        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">{{ t.apInvest }}</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">{{ t.apChrysalis }}</p></div>
       </div>
       <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2017–2022</span>
-        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">Senior Economist</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Valparaíso Labour Observatory, CEAL, PUCV</p></div>
+        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">{{ t.apSenior }}</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">{{ t.apSeniorInst }}</p></div>
       </div>
       <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2011–2012</span>
-        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">Young researcher</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Intelis Centre on the Economics of Innovation, Universidad de Chile</p></div>
+        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">{{ t.apYoung }}</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">{{ t.apYoungInst }}</p></div>
       </div>
     </section>
 
     <!-- PUBLICATIONS -->
     <section id="publications" class="cv-section" style="margin-bottom:52px;">
       <div style="display:flex; align-items:baseline; justify-content:space-between; gap:12px; padding-bottom:14px; border-bottom:2px solid #e2e8f0; margin-bottom:6px; flex-wrap:wrap;">
-        <h2 style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:0;">Publications &amp; Working Papers</h2>
-        <a href="research.html" style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#2563eb;">Resúmenes y figuras en Research ↗</a>
+        <h2 style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:0;">{{ t.sPublications }}</h2>
+        <a href="research.html" style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#2563eb;">{{ t.researchLink }}</a>
       </div>
 
       <div style="display:flex; gap:18px; padding:16px 0; border-bottom:1px solid #f1f5f9;">
@@ -163,15 +205,15 @@
       </div>
       <div style="display:flex; gap:18px; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; color:#cbd5e1; min-width:34px; flex-shrink:0; padding-top:2px;">2023</span>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><a href="https://doi.org/10.1371/journal.pone.0282461" style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f;">The fear-increasing and fear-decreasing effects of a pilot policy to reduce fear of crime</a>. With J.M. Benavente. <span style="font-style:italic; color:#94a3b8;">PLoS ONE</span> 18(3): e0282461.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><a href="https://doi.org/10.1371/journal.pone.0282461" style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f;">The fear-increasing and fear-decreasing effects of a pilot policy to reduce fear of crime</a>. {{ t.W }} J.M. Benavente. <span style="font-style:italic; color:#94a3b8;">PLoS ONE</span> 18(3): e0282461.</p>
       </div>
       <div style="display:flex; gap:18px; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; color:#cbd5e1; min-width:34px; flex-shrink:0; padding-top:2px;">2022</span>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><a href="https://doi.org/10.1016/j.techfore.2021.121199" style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f;">The primacy of demand and financial obstacles in hindering innovation</a>. With A. Zahler and M. Caamaño. <span style="font-style:italic; color:#94a3b8;">Technological Forecasting &amp; Social Change</span>, 174, 121199.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><a href="https://doi.org/10.1016/j.techfore.2021.121199" style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f;">The primacy of demand and financial obstacles in hindering innovation</a>. {{ t.W }} A. Zahler {{ t.A }} M. Caamaño. <span style="font-style:italic; color:#94a3b8;">Technological Forecasting &amp; Social Change</span>, 174, 121199.</p>
       </div>
       <div style="display:flex; gap:18px; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; color:#cbd5e1; min-width:34px; flex-shrink:0; padding-top:2px;">2021</span>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><a href="https://doi.org/10.1016/j.eist.2021.09.011" style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f;">Mining — The dark side of the energy transition</a>. With A. Marín. <span style="font-style:italic; color:#94a3b8;">Environmental Innovation and Societal Transitions</span>, 41, 86-88.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><a href="https://doi.org/10.1016/j.eist.2021.09.011" style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f;">Mining — The dark side of the energy transition</a>. {{ t.W }} A. Marín. <span style="font-style:italic; color:#94a3b8;">Environmental Innovation and Societal Transitions</span>, 41, 86–88.</p>
       </div>
       <div style="display:flex; gap:18px; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; color:#cbd5e1; min-width:34px; flex-shrink:0; padding-top:2px;">2021</span>
@@ -179,160 +221,152 @@
       </div>
       <div style="display:flex; gap:18px; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; color:#cbd5e1; min-width:34px; flex-shrink:0; padding-top:2px;">2020</span>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><a href="https://doi.org/10.1016/j.iref.2020.07.001" style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f;">The Exchange Rate and Export Variety: A cross-country analysis with long panel estimators</a>. <span style="font-style:italic; color:#94a3b8;">International Review of Economics and Finance</span>, 70: 649-665.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><a href="https://doi.org/10.1016/j.iref.2020.07.001" style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f;">The Exchange Rate and Export Variety: A cross-country analysis with long panel estimators</a>. <span style="font-style:italic; color:#94a3b8;">International Review of Economics and Finance</span>, 70: 649–665.</p>
       </div>
       <div style="display:flex; gap:18px; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; color:#cbd5e1; min-width:34px; flex-shrink:0; padding-top:2px;">2019</span>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><a href="https://doi.org/10.1111/twec.12835" style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f;">Distance from core competences and new export survival: Evidence from multi-product exporters</a>. With A. Zahler. <span style="font-style:italic; color:#94a3b8;">World Economy</span>, 42: 3253–3286.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><a href="https://doi.org/10.1111/twec.12835" style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f;">Distance from core competences and new export survival: Evidence from multi-product exporters</a>. {{ t.W }} A. Zahler. <span style="font-style:italic; color:#94a3b8;">World Economy</span>, 42: 3253–3286.</p>
       </div>
       <div style="display:flex; gap:18px; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; color:#cbd5e1; min-width:34px; flex-shrink:0; padding-top:2px;">2014</span>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><a href="https://publications.iadb.org/en/public-private-collaboration-productive-development-chile" style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f;">Public-Private Collaboration on Productive Development in Chile</a>. With A. Zahler, C. Bravo-Ortega and J.M. Benavente. <span style="font-style:italic; color:#94a3b8;">Inter-American Development Bank</span> Working Paper IDB-WP-502.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><a href="https://publications.iadb.org/en/public-private-collaboration-productive-development-chile" style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f;">Public-Private Collaboration on Productive Development in Chile</a>. {{ t.W }} A. Zahler, C. Bravo-Ortega {{ t.A }} J.M. Benavente. <span style="font-style:italic; color:#94a3b8;">Inter-American Development Bank</span> Working Paper IDB-WP-502.</p>
       </div>
       <div style="display:flex; gap:18px; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; color:#cbd5e1; min-width:34px; flex-shrink:0; padding-top:2px;">2014</span>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><span style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f;">Complex Networks: a case study of scientific collaboration</span>. With J.P. Cárdenas, F. Cabrera, G. Olivares, R. Alfaro, J. Gibert, H. Samaniego and A. Palacios. In: <span style="font-style:italic; color:#94a3b8;">Las Rutas de la Complejidad</span>. Ediciones ISCV, Valparaíso, Chile.</p>
-      </div>
-      <div style="display:flex; gap:18px; padding:16px 0; border-bottom:1px solid #f1f5f9;">
-        <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; color:#cbd5e1; min-width:34px; flex-shrink:0; padding-top:2px;">2012</span>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><span style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f;">Copper Mining in Chile</span>. IDRC Project "Opening up natural resource-based industries for innovation". With J.M. Benavente. <a href="research.html#other-research" style="color:#2563eb;">Ver documentos del proyecto →</a>.</p>
-      </div>
-      <div style="display:flex; gap:18px; padding:16px 0; border-bottom:1px solid #f1f5f9;">
-        <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; color:#cbd5e1; min-width:34px; flex-shrink:0; padding-top:2px;">2012</span>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><a href="https://seer.cgee.org.br/parcerias_estrategicas/article/view/679" style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f;">Biodiversity and Natural Resources for Sustainability</a>. <span style="font-style:italic; color:#94a3b8;">Parcerias Estratégicas</span>, Edição especial Rio+20, 17(35), Brasília-DF.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><span style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f;">{{ t.complexNetworks }}</span>. {{ t.W }} J.P. Cárdenas, F. Cabrera, G. Olivares, R. Alfaro, J. Gibert, H. Samaniego {{ t.A }} A. Palacios. {{ t.inBook }} <span style="font-style:italic; color:#94a3b8;">Las Rutas de la Complejidad</span>. Ediciones ISCV, Valparaíso.</p>
       </div>
       <div style="display:flex; gap:18px; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; color:#cbd5e1; min-width:34px; flex-shrink:0; padding-top:2px;">2012</span>
         <div style="flex:1;">
-          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><a href="http://ideas.repec.org/p/udc/wpaper/wp350.html" style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f;">The Economics of IP in the Context of a Middle Income Country</a>. With J.M. Benavente.</p>
-          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#94a3b8; margin:4px 0 0;">Background report for the <em>World Intellectual Property Report 2011: The Changing Face of Innovation</em> (WIPO).</p>
+          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><span style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f;">Copper Mining in Chile</span>. IDRC Project "Opening up natural resource-based industries for innovation". {{ t.W }} J.M. Benavente. <a href="research.html#other-research" style="color:#2563eb;">{{ t.verDocumentos }}</a></p>
+        </div>
+      </div>
+      <div style="display:flex; gap:18px; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; color:#cbd5e1; min-width:34px; flex-shrink:0; padding-top:2px;">2012</span>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><a href="https://seer.cgee.org.br/parcerias_estrategicas/article/view/679" style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f;">Biodiversity and Natural Resources for Sustainability</a>. <span style="font-style:italic; color:#94a3b8;">Parcerias Estratégicas</span>, Rio+20, 17(35), Brasília-DF.</p>
+      </div>
+      <div style="display:flex; gap:18px; padding:16px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; color:#cbd5e1; min-width:34px; flex-shrink:0; padding-top:2px;">2012</span>
+        <div style="flex:1;">
+          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><a href="http://ideas.repec.org/p/udc/wpaper/wp350.html" style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f;">The Economics of IP in the Context of a Middle Income Country</a>. {{ t.W }} J.M. Benavente.</p>
+          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#94a3b8; margin:4px 0 0;">{{ t.wipoNote }}</p>
         </div>
       </div>
       <div style="display:flex; gap:18px; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; color:#cbd5e1; min-width:34px; flex-shrink:0; padding-top:2px;">2012</span>
         <div style="flex:1;">
-          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><a href="uploads/informe_FINAL%20versi%C3%B3n%2024%20Mayo.PDF" style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f;">Estudio de la Colaboración Científica de la región de Valparaíso de Chile desde la Perspectiva de las Redes Complejas</a>. With J.P. Cárdenas, G. Olivares, R. Alfaro, F. Cabrera, J. Gibert, H. Samaniego and A. Palacios.</p>
+          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><a href="uploads/informe_FINAL%20versi%C3%B3n%2024%20Mayo.PDF" style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f;">Estudio de la Colaboración Científica de la región de Valparaíso desde la Perspectiva de las Redes Complejas</a>. {{ t.W }} J.P. Cárdenas, G. Olivares, R. Alfaro, F. Cabrera, J. Gibert, H. Samaniego {{ t.A }} A. Palacios.</p>
           <p style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#94a3b8; margin:4px 0 0;">Working paper. <em>Instituto de Sistemas Complejos de Valparaíso (ISCV)</em>.</p>
         </div>
       </div>
       <div style="display:flex; gap:18px; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; color:#cbd5e1; min-width:34px; flex-shrink:0; padding-top:2px;">2010</span>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><span style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f;">Innovation Networks as a factor in Economic Development</span>. With J. Vrsalovic and N. Sáinz. Ediciones Universitarias de Valparaíso. ISBN 978-956-17-0467-1.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><span style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f;">{{ t.innovNetworks }}</span>. {{ t.W }} J. Vrsalovic {{ t.A }} N. Sáinz. Ediciones Universitarias de Valparaíso. ISBN 978-956-17-0467-1.</p>
       </div>
       <div style="display:flex; gap:18px; padding:16px 0;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; color:#cbd5e1; min-width:34px; flex-shrink:0; padding-top:2px;">2007</span>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><span style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f;">Caracterización de los hogares bajo la línea de pobreza: un análisis econométrico para la quinta región</span>. With H. De la Fuente and J. Cartagena. <span style="font-style:italic; color:#94a3b8;">Revista Ingenerare</span>, 21, pp. 27-36.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; text-wrap:pretty;"><span style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f;">Caracterización de los hogares bajo la línea de pobreza: un análisis econométrico para la quinta región</span>. {{ t.W }} H. De la Fuente {{ t.A }} J. Cartagena. <span style="font-style:italic; color:#94a3b8;">Revista Ingenerare</span>, 21, pp. 27–36.</p>
       </div>
     </section>
 
     <!-- WORK IN PROGRESS -->
     <section id="wip" class="cv-section" style="margin-bottom:52px;">
-      <h2 style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:0 0 6px; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">Work in Progress</h2>
+      <h2 style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:0 0 6px; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">{{ t.sWip }}</h2>
       <div style="padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <p style="font-family:'IBM Plex Sans',sans-serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px; line-height:1.45;">Sustainability transitions in mining: forces of lock in and change</p>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">with Anabel Marín</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">{{ t.wipMarin }}</p>
       </div>
       <div style="padding:16px 0;">
         <p style="font-family:'IBM Plex Sans',sans-serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px; line-height:1.45;">Una aplicación crítica de Políticas Orientadas por Misión a nivel subnacional en América Latina: el caso de la Región de Valparaíso, Chile</p>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">with Diego Cabello</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">{{ t.wipCabello }}</p>
       </div>
     </section>
 
     <!-- CONSULTANCY -->
     <section id="consultancy" class="cv-section" style="margin-bottom:52px;">
-      <h2 style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:0 0 6px; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">Consultancy</h2>
+      <h2 style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:0 0 6px; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">{{ t.sConsultancy }}</h2>
 
       <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2021</span>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;"><span style="font-family:'IBM Plex Sans',sans-serif; color:#1e3a5f;">Inter-American Development Bank</span> — cost-effectiveness analysis of government modernization project loan to the Chilean government.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;"><span style="color:#1e3a5f;">Inter-American Development Bank</span> — {{ t.con2021 }}</p>
       </div>
       <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2020</span>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;"><span style="font-family:'IBM Plex Sans',sans-serif; color:#1e3a5f;">Phibrand</span> — design of innovation survey for mining suppliers.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;"><span style="color:#1e3a5f;">Phibrand</span> — {{ t.con2020phibrand }}</p>
       </div>
       <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2019–2020</span>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;"><span style="font-family:'IBM Plex Sans',sans-serif; color:#1e3a5f;">Inter-American Development Bank</span> — research consultancy on the economics of creative industries.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;"><span style="color:#1e3a5f;">Inter-American Development Bank</span> — {{ t.con20192020 }}</p>
       </div>
       <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2017–2019</span>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;"><span style="font-family:'IBM Plex Sans',sans-serif; color:#1e3a5f;">Inter-American Development Bank</span> — design and execution of impact evaluation of a pilot policy to reduce crime-related insecurity.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;"><span style="color:#1e3a5f;">Inter-American Development Bank</span> — {{ t.con20172019 }}</p>
       </div>
       <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2017–2018</span>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;"><span style="font-family:'IBM Plex Sans',sans-serif; color:#1e3a5f;">Inter-American Development Bank</span> — research consultancy on obstacles to innovation in Chile. Project led by Andrés Zahler.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;"><span style="color:#1e3a5f;">Inter-American Development Bank</span> — {{ t.con20172018 }}</p>
       </div>
       <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2017</span>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;"><span style="font-family:'IBM Plex Sans',sans-serif; color:#1e3a5f;">Budget Office, Ministry of Finance, Chile</span> — outcome evaluation, Corfo innovation support policies.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;"><span style="color:#1e3a5f;">{{ t.conBudgetClient }}</span> — {{ t.con2017budget }}</p>
       </div>
       <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2014</span>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;"><span style="font-family:'IBM Plex Sans',sans-serif; color:#1e3a5f;">UNIDO-GIZ</span> — Research Assistant, Enhancing the Quality of Industrial Policies project.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;"><span style="color:#1e3a5f;">UNIDO-GIZ</span> — {{ t.con2014 }}</p>
       </div>
       <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2010–2012</span>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;"><span style="font-family:'IBM Plex Sans',sans-serif; color:#1e3a5f;">International Development Research Center</span> — research project on sustainable technological trajectories. With José Miguel Benavente, project led by Anabel Marín.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;"><span style="color:#1e3a5f;">{{ t.conIDRC }}</span> — {{ t.con20102012 }}</p>
       </div>
     </section>
 
     <!-- TEACHING EXPERIENCE -->
-    <section id="teaching" class="cv-section" style="margin-bottom:52px;">
+    <section id="teaching-exp" class="cv-section" style="margin-bottom:52px;">
       <div style="display:flex; align-items:baseline; justify-content:space-between; gap:12px; padding-bottom:14px; border-bottom:2px solid #e2e8f0; margin-bottom:6px; flex-wrap:wrap;">
-        <h2 style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:0;">Teaching Experience</h2>
-        <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#cbd5e1; display:none;">Average evaluation</span>
+        <h2 style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:0;">{{ t.sTeaching }}</h2>
       </div>
 
       <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:80px; flex-shrink:0;">2023</span>
-        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f; margin:0 0 2px;">Lecturer · Economics of Innovation</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Master in Public Administration, PUCV</p></div>
-        <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#cbd5e1; flex-shrink:0; display:none;">N/A</span>
+        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f; margin:0 0 2px;">{{ t.tLecturer }} · {{ t.tCourseEconINNOV }}</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">{{ t.tMasterPA }}</p></div>
       </div>
       <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:80px; flex-shrink:0;">2021</span>
-        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f; margin:0 0 2px;">Lecturer · Economics of Innovation</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Short course for CONACYT Paraguay and Inter-American Development Bank</p></div>
-        <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#cbd5e1; flex-shrink:0; display:none;">N/A</span>
+        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f; margin:0 0 2px;">{{ t.tLecturer }} · {{ t.tCourseEconINNOV }}</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">{{ t.tConacyt }}</p></div>
       </div>
       <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:80px; flex-shrink:0;">2019–</span>
-        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f; margin:0 0 2px;">Lecturer · Econometrics</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Business School, PUCV</p></div>
-        <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#1d4ed8; background:#eff6ff; padding:2px 9px; border-radius:4px; flex-shrink:0; display:none;">3.92/4</span>
+        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f; margin:0 0 2px;">{{ t.tLecturer }} · {{ t.tCourseEconometrics }}</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">{{ t.tPUCV }}</p></div>
       </div>
       <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:80px; flex-shrink:0;">2018–</span>
-        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f; margin:0 0 2px;">Lecturer · Innovation and Economic Development</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Business School, PUCV</p></div>
-        <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#1d4ed8; background:#eff6ff; padding:2px 9px; border-radius:4px; flex-shrink:0; display:none;">3.94/4</span>
+        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f; margin:0 0 2px;">{{ t.tLecturer }} · {{ t.tCourseInnovDev }}</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">{{ t.tPUCV }}</p></div>
       </div>
       <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:80px; flex-shrink:0;">2013–2016</span>
-        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f; margin:0 0 2px;">TA · Econometrics</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Diploma in Economics, University of Cambridge</p></div>
-        <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#1d4ed8; background:#eff6ff; padding:2px 9px; border-radius:4px; flex-shrink:0; display:none;">4.7/5.0</span>
+        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f; margin:0 0 2px;">{{ t.tTA }} · Econometrics (Diploma Paper 3)</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Faculty of Economics, University of Cambridge</p></div>
       </div>
       <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:80px; flex-shrink:0;">2014–2016</span>
-        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f; margin:0 0 2px;">TA · Microeconometrics</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">MPhil in Economics, University of Cambridge</p></div>
-        <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#1d4ed8; background:#eff6ff; padding:2px 9px; border-radius:4px; flex-shrink:0; display:none;">4.4/5.0</span>
+        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f; margin:0 0 2px;">{{ t.tTA }} · Microeconometrics (M320)</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">MPhil in Economics, University of Cambridge</p></div>
       </div>
       <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:80px; flex-shrink:0;">2015–2016</span>
-        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f; margin:0 0 2px;">TA · Statistical Methods II</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">PhD students, London Business School</p></div>
-        <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#cbd5e1; flex-shrink:0; display:none;">N/A</span>
+        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f; margin:0 0 2px;">{{ t.tTA }} · Statistical Methods II</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">PhD students, London Business School</p></div>
       </div>
       <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:80px; flex-shrink:0;">2011–2012</span>
-        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f; margin:0 0 2px;">Lecturer · Innovation policy</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">MPP, Universidad de Chile</p></div>
-        <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#1d4ed8; background:#eff6ff; padding:2px 9px; border-radius:4px; flex-shrink:0; display:none;">6.2/7.0</span>
+        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f; margin:0 0 2px;">{{ t.tLecturer }} · {{ t.tCourseInnPolicy }}</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">MPP, Universidad de Chile</p></div>
       </div>
       <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:80px; flex-shrink:0;">2011–2012</span>
-        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f; margin:0 0 2px;">Lecturer · Globalisation and Innovation</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Industrial engineering, PUCV</p></div>
-        <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#1d4ed8; background:#eff6ff; padding:2px 9px; border-radius:4px; flex-shrink:0; display:none;">4.7/5.0</span>
+        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#1e3a5f; margin:0 0 2px;">{{ t.tLecturer }} · {{ t.tCourseGlobalInnov }}</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">{{ t.tEngIndustrial }}</p></div>
       </div>
     </section>
 
     <!-- SEMINARS -->
     <section id="seminars" class="cv-section" style="margin-bottom:52px;">
-      <h2 style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:0 0 6px; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">Seminars &amp; Conferences</h2>
+      <h2 style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:0 0 6px; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">{{ t.sSeminars }}</h2>
 
       <div style="display:flex; gap:20px; align-items:baseline; padding:14px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2023</span>
@@ -374,75 +408,75 @@
 
     <!-- AWARDS -->
     <section id="awards" class="cv-section" style="margin-bottom:52px;">
-      <h2 style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:0 0 6px; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">Grants &amp; Awards</h2>
+      <h2 style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:0 0 6px; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">{{ t.sAwards }}</h2>
 
       <div style="display:flex; gap:20px; align-items:baseline; padding:14px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:50px; flex-shrink:0;">2019</span>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;">CYTED Network "Políticas de Ciencia, Tecnología e Innovación orientada a la solución de problemas nacionales" — coordinator for Chile.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;">{{ t.g2019cyted }}</p>
       </div>
       <div style="display:flex; gap:20px; align-items:baseline; padding:14px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:50px; flex-shrink:0;">2019</span>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;">Inter-American Development Bank Call for Papers on "Creative Economy, Innovation and Economic Development".</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;">{{ t.g2019idb }}</p>
       </div>
       <div style="display:flex; gap:20px; align-items:baseline; padding:14px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:50px; flex-shrink:0;">2017</span>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;">IDB-RedSur joint call "Obstacles to Innovation in Latin America and the Caribbean" — with Andrés Zahler and Matías Caamaño.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;">{{ t.g2017 }}</p>
       </div>
       <div style="display:flex; gap:20px; align-items:baseline; padding:14px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:50px; flex-shrink:0;">2016</span>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;">Wrenbury Fund Award, Faculty of Economics, Cambridge.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;">{{ t.g2016 }}</p>
       </div>
       <div style="display:flex; gap:20px; align-items:baseline; padding:14px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:50px; flex-shrink:0;">2015</span>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;">Raymond Burton Fund Award, Faculty of Economics, Cambridge.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;">{{ t.g2015 }}</p>
       </div>
       <div style="display:flex; gap:20px; align-items:baseline; padding:14px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:50px; flex-shrink:0;">2012</span>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;">CONICYT scholarship (Becas Chile) for PhD studies at Cambridge University.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;">{{ t.g2012 }}</p>
       </div>
       <div style="display:flex; gap:20px; align-items:baseline; padding:14px 0;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:50px; flex-shrink:0;">2009</span>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;">CONICYT scholarship (Becas Chile) for Master's studies at University College London.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;">{{ t.g2009 }}</p>
       </div>
 
-      <h3 style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:36px 0 6px; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">Teaching Awards</h3>
+      <h3 style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:36px 0 6px; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">{{ t.sTeachingAwards }}</h3>
 
       <div style="display:flex; gap:20px; align-items:baseline; padding:14px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:50px; flex-shrink:0;">2023</span>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;">Distinguished Teaching Award 2023, Pontificia Universidad Católica de Valparaíso.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1;">{{ t.ta2023 }}</p>
       </div>
       <div style="display:flex; gap:20px; align-items:baseline; padding:14px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:50px; flex-shrink:0;">2021</span>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;">Distinguished Teaching Award 2021, Pontificia Universidad Católica de Valparaíso.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1;">{{ t.ta2021 }}</p>
       </div>
       <div style="display:flex; gap:20px; align-items:baseline; padding:14px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:50px; flex-shrink:0;">2020</span>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;">Distinguished Teaching Award 2020, Pontificia Universidad Católica de Valparaíso.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1;">{{ t.ta2020 }}</p>
       </div>
       <div style="display:flex; gap:20px; align-items:baseline; padding:14px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:50px; flex-shrink:0;">2015</span>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;">Best Graduate Teaching Assistant 2014–2015, Faculty of Economics, Cambridge.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1;">{{ t.ta2015 }}</p>
       </div>
       <div style="display:flex; gap:20px; align-items:baseline; padding:14px 0;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:50px; flex-shrink:0;">2014</span>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1; text-wrap:pretty;">Cambridge University Students' Union's Teaching Excellence Award.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6; flex:1;">{{ t.ta2014 }}</p>
       </div>
     </section>
 
     <!-- SERVICE & LANGUAGES -->
     <section id="service" class="cv-section" style="margin-bottom:8px;">
-      <h2 style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:0 0 18px; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">Refereeing &amp; Languages</h2>
+      <h2 style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:0 0 18px; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">{{ t.sService }}</h2>
 
-      <div style="display:grid; grid-template-columns:1fr 220px; gap:36px;">
+      <div class="r-service-grid" style="display:grid; grid-template-columns:1fr 220px; gap:36px;">
         <div>
-          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#cbd5e1; margin:0 0 12px;">Refereeing activity</p>
+          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#cbd5e1; margin:0 0 12px;">{{ t.sRefereeLabel }}</p>
           <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.85; text-wrap:pretty;">Research Policy · Cambridge Journal of Economics · American Economic Journal: Microeconomics · Empirical Economics · Journal of Technology Management &amp; Innovation · Academia Revista Latinoamericana de Administración · Estudios Públicos · Revista INNOVAR.</p>
         </div>
         <div>
-          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#cbd5e1; margin:0 0 12px;">Languages</p>
-          <div style="display:flex; justify-content:space-between; padding:7px 0; border-bottom:1px solid #f1f5f9;"><span style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#1e3a5f;">Spanish</span><span style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8;">Native</span></div>
-          <div style="display:flex; justify-content:space-between; padding:7px 0; border-bottom:1px solid #f1f5f9;"><span style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#1e3a5f;">English</span><span style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8;">Advanced</span></div>
-          <div style="display:flex; justify-content:space-between; padding:7px 0;"><span style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#1e3a5f;">French</span><span style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8;">Advanced</span></div>
+          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#cbd5e1; margin:0 0 12px;">{{ t.sLangLabel }}</p>
+          <div style="display:flex; justify-content:space-between; padding:7px 0; border-bottom:1px solid #f1f5f9;"><span style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#1e3a5f;">{{ t.langSpanish }}</span><span style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8;">{{ t.langNative }}</span></div>
+          <div style="display:flex; justify-content:space-between; padding:7px 0; border-bottom:1px solid #f1f5f9;"><span style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#1e3a5f;">{{ t.langEnglish }}</span><span style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8;">{{ t.langAdvanced }}</span></div>
+          <div style="display:flex; justify-content:space-between; padding:7px 0;"><span style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#1e3a5f;">{{ t.langFrench }}</span><span style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8;">{{ t.langAdvanced }}</span></div>
         </div>
       </div>
     </section>
@@ -450,7 +484,7 @@
   </div>
 
   <!-- FOOTER -->
-  <footer style="border-top:1px solid #e2e8f0; padding:24px 40px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; background:#fafcff;">
+  <footer class="r-footer" style="border-top:1px solid #e2e8f0; padding:24px 40px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; background:#fafcff;">
     <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#94a3b8;">daniel.goya AT pucv.cl</span>
     <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#94a3b8;">Amunátegui 1838, Recreo · Viña del Mar, Chile</span>
   </footer>
@@ -459,7 +493,157 @@
 
 </x-dc>
 <script type="text/x-dc" data-dc-script>
-class Component extends DCLogic {}
+
+class Component extends DCLogic {
+  state = {
+    lang: (typeof navigator !== 'undefined' && !(navigator.language || 'es').toLowerCase().startsWith('es')) ? 'en' : 'es'
+  };
+
+  toggleLang() {
+    this.setState(s => ({ lang: s.lang === 'es' ? 'en' : 'es' }));
+  }
+
+  renderVals() {
+    const es = this.state.lang === 'es';
+    const W = es ? 'Con' : 'With';
+    const A = es ? 'y'   : 'and';
+
+    const t = {
+      langBtn: es ? 'EN' : 'ES',
+      navHome: es ? 'Inicio' : 'Home',
+
+      // Header
+      cvTitle:    es ? 'Currículum Vitae'   : 'Curriculum Vitae',
+      subtitle1:  es ? 'Doctor en Economía, Universidad de Cambridge'         : 'Ph.D. in Economics, University of Cambridge',
+      subtitle2:  es ? 'Profesor Asistente · Escuela de Negocios y Economía, PUCV' : 'Assistant Professor · School of Business and Economics, PUCV',
+      downloadPdf: es ? 'Descargar PDF' : 'Download PDF',
+
+      // Jump nav
+      jEducation:    es ? 'Educación'       : 'Education',
+      jAppointments: es ? 'Cargos'          : 'Appointments',
+      jPublications: es ? 'Publicaciones'   : 'Publications',
+      jWip:          es ? 'En progreso'     : 'Work in Progress',
+      jConsultancy:  es ? 'Consultoría'     : 'Consultancy',
+      jTeaching:     es ? 'Docencia'        : 'Teaching',
+      jSeminars:     es ? 'Seminarios'      : 'Seminars',
+      jAwards:       es ? 'Becas y premios' : 'Grants & Awards',
+      jService:      es ? 'Arbitraje y lenguas' : 'Service & Languages',
+
+      // Section headers
+      sEducation:      es ? 'Educación'                              : 'Education',
+      sAppointments:   es ? 'Cargos y nombramientos'                 : 'Appointments',
+      sPublications:   es ? 'Publicaciones y documentos de trabajo'  : 'Publications & Working Papers',
+      researchLink:    es ? 'Resúmenes y figuras en Research ↗'      : 'Abstracts & figures at Research ↗',
+      sWip:            es ? 'Trabajos en curso'                      : 'Work in Progress',
+      sConsultancy:    es ? 'Consultoría'                            : 'Consultancy',
+      sTeaching:       es ? 'Experiencia docente'                    : 'Teaching Experience',
+      sSeminars:       es ? 'Seminarios y conferencias'              : 'Seminars & Conferences',
+      sAwards:         es ? 'Becas y premios'                        : 'Grants & Awards',
+      sTeachingAwards: es ? 'Premios a la docencia'                  : 'Teaching Awards',
+      sService:        es ? 'Arbitraje y lenguas'                    : 'Refereeing & Languages',
+      sRefereeLabel:   es ? 'Actividad de arbitraje'                 : 'Refereeing activity',
+      sLangLabel:      es ? 'Lenguas'                                : 'Languages',
+
+      // Education
+      edPhd:      es ? 'Doctorado en Economía'                      : 'Ph.D. in Economics',
+      edMsc:      es ? 'Magíster en Economía'                        : 'MSc in Economics',
+      edEngineer: es ? 'Ingeniero Civil Industrial'                   : 'Industrial Engineer',
+      edExchange: es ? 'Estudiante de intercambio'                    : 'Exchange student',
+      edBsc:      es ? 'Bachiller en Ciencias de la Ingeniería'      : 'BSc Engineering',
+
+      // Appointments
+      apProf:       es ? 'Profesor Asistente' : 'Assistant Professor',
+      apProfInst:   es ? 'Escuela de Negocios y Economía, PUCV' : 'School of Business and Economics, PUCV',
+      apCoord:      es ? 'Asesor de Políticas y Coordinador de Políticas e Instituciones' : 'Policy Advisor & Coordinator of Policies and Institutions',
+      apCoordSub:   es ? 'Ministerio de Economía, Chile — Gabinete del Ministro (2022–23) · División de Desarrollo Productivo Sostenible (2023–26)' : 'Ministry of Economy, Chile — Cabinet of the Minister (2022–23) · Sustainable Productive Development Division (2023–26)',
+      apPolicyWork: es ? 'Trabajo y proyectos ↓' : 'Policy work & projects ↓',
+      apRcii:       es ? 'Coordinador'            : 'Coordinator',
+      apBoard:      es ? 'Miembro del Directorio' : 'Member of the Board',
+      apInvest:     es ? 'Miembro del Comité de Inversión' : 'Investment Committee member',
+      apChrysalis:  es ? 'Incubadora de negocios Chrysalis' : 'Chrysalis business incubator',
+      apSenior:     es ? 'Economista Senior' : 'Senior Economist',
+      apSeniorInst: es ? 'Observatorio Laboral de Valparaíso, CEAL, PUCV' : 'Valparaíso Labour Observatory, CEAL, PUCV',
+      apYoung:      es ? 'Investigador junior' : 'Young researcher',
+      apYoungInst:  es ? 'Centro Intelis de Economía de la Innovación, Universidad de Chile' : 'Intelis Centre on the Economics of Innovation, Universidad de Chile',
+
+      // Coauthor connectors
+      W, A,
+      verDocumentos: es ? 'Ver documentos del proyecto →' : 'See project documents →',
+
+      // Publication titles (EN stays; ES specific ones)
+      complexNetworks: es ? 'Redes complejas: un caso de estudio sobre colaboración científica' : 'Complex Networks: a case study of scientific collaboration',
+      innovNetworks:   es ? 'Redes de Innovación como Factor de Desarrollo Económico' : 'Innovation Networks as a factor in Economic Development',
+      inBook:          es ? 'En:' : 'In:',
+      wipoNote:        es ? 'Informe de antecedentes para el World Intellectual Property Report 2011 (WIPO).' : 'Background report for the World Intellectual Property Report 2011: The Changing Face of Innovation (WIPO).',
+
+      // WIP
+      wipMarin:  es ? 'con Anabel Marín' : 'with Anabel Marín',
+      wipCabello: es ? 'con Diego Cabello' : 'with Diego Cabello',
+
+      // Consultancy
+      con2021:        es ? 'análisis de costo-efectividad de préstamo para modernización del Estado chileno.' : 'cost-effectiveness analysis of government modernization project loan to the Chilean government.',
+      con2020phibrand: es ? 'diseño de encuesta de innovación para proveedores de la minería.' : 'design of innovation survey for mining suppliers.',
+      con20192020:    es ? 'consultoría de investigación sobre economía de las industrias creativas.' : 'research consultancy on the economics of creative industries.',
+      con20172019:    es ? 'diseño y ejecución de evaluación de impacto de política piloto para reducir la inseguridad delictual.' : 'design and execution of impact evaluation of a pilot policy to reduce crime-related insecurity.',
+      con20172018:    es ? 'consultoría de investigación sobre obstáculos a la innovación en Chile. Proyecto liderado por Andrés Zahler.' : 'research consultancy on obstacles to innovation in Chile. Project led by Andrés Zahler.',
+      conBudgetClient: es ? 'Dipres, Ministerio de Hacienda, Chile' : 'Budget Office, Ministry of Finance, Chile',
+      con2017budget:  es ? 'evaluación de resultados, políticas de apoyo a la innovación de Corfo.' : 'outcome evaluation, Corfo innovation support policies.',
+      con2014:        es ? 'asistente de investigación, proyecto de mejoramiento de calidad de políticas industriales.' : 'Research Assistant, Enhancing the Quality of Industrial Policies project.',
+      conIDRC:        es ? 'International Development Research Center' : 'International Development Research Center',
+      con20102012:    es ? 'proyecto de investigación sobre trayectorias tecnológicas sostenibles. Con José Miguel Benavente, dirigido por Anabel Marín.' : 'research project on sustainable technological trajectories. With José Miguel Benavente, project led by Anabel Marín.',
+
+      // Teaching
+      tLecturer:          es ? 'Docente'   : 'Lecturer',
+      tTA:                es ? 'Ayudante'  : 'TA',
+      tCourseEconINNOV:   es ? 'Economía de la Innovación'        : 'Economics of Innovation',
+      tCourseEconometrics: es ? 'Econometría'                      : 'Econometrics',
+      tCourseInnovDev:    es ? 'Innovación y Desarrollo Económico' : 'Innovation and Economic Development',
+      tCourseInnPolicy:   es ? 'Política de innovación'            : 'Innovation policy',
+      tCourseGlobalInnov: es ? 'Globalización e Innovación'        : 'Globalisation and Innovation',
+      tMasterPA:          es ? 'Magíster en Dirección Pública, PUCV' : 'Master in Public Administration, PUCV',
+      tConacyt:           es ? 'Curso corto CONACYT Paraguay · Banco Interamericano de Desarrollo' : 'Short course for CONACYT Paraguay and Inter-American Development Bank',
+      tPUCV:              es ? 'Escuela de Negocios, PUCV' : 'Business School, PUCV',
+      tEngIndustrial:     es ? 'Ingeniería Civil Industrial, PUCV' : 'Industrial engineering, PUCV',
+
+      // Language names & levels
+      langSpanish:  es ? 'Español'  : 'Spanish',
+      langEnglish:  es ? 'Inglés'   : 'English',
+      langFrench:   es ? 'Francés'  : 'French',
+      langNative:   es ? 'Nativo'   : 'Native',
+      langAdvanced: es ? 'Avanzado' : 'Advanced',
+
+      // Grants
+      g2019cyted: es
+        ? 'Red CYTED "Políticas de CTI orientada a la solución de problemas nacionales" — coordinador por Chile.'
+        : 'CYTED Network "Políticas de Ciencia, Tecnología e Innovación orientada a la solución de problemas nacionales" — coordinator for Chile.',
+      g2019idb: es
+        ? 'Convocatoria del BID para artículos sobre "Economía Creativa, Innovación y Desarrollo Económico".'
+        : 'Inter-American Development Bank Call for Papers on "Creative Economy, Innovation and Economic Development".',
+      g2017: es
+        ? 'Convocatoria IDB-RedSur "Obstáculos a la Innovación en América Latina y el Caribe" — con Andrés Zahler y Matías Caamaño.'
+        : 'IDB-RedSur joint call "Obstacles to Innovation in Latin America and the Caribbean" — with Andrés Zahler and Matías Caamaño.',
+      g2016: es ? 'Premio Wrenbury Fund, Facultad de Economía, Cambridge.'        : 'Wrenbury Fund Award, Faculty of Economics, Cambridge.',
+      g2015: es ? 'Premio Raymond Burton Fund, Facultad de Economía, Cambridge.'  : 'Raymond Burton Fund Award, Faculty of Economics, Cambridge.',
+      g2012: es ? 'Beca CONICYT (Becas Chile) para estudios de doctorado en la Universidad de Cambridge.' : 'CONICYT scholarship (Becas Chile) for PhD studies at Cambridge University.',
+      g2009: es ? "Beca CONICYT (Becas Chile) para estudios de magíster en University College London." : "CONICYT scholarship (Becas Chile) for Master's studies at University College London.",
+
+      // Teaching awards
+      ta2023: es ? 'Premio a la Excelencia Docente 2023, Pontificia Universidad Católica de Valparaíso.' : 'Distinguished Teaching Award 2023, Pontificia Universidad Católica de Valparaíso.',
+      ta2021: es ? 'Premio a la Excelencia Docente 2021, Pontificia Universidad Católica de Valparaíso.' : 'Distinguished Teaching Award 2021, Pontificia Universidad Católica de Valparaíso.',
+      ta2020: es ? 'Premio a la Excelencia Docente 2020, Pontificia Universidad Católica de Valparaíso.' : 'Distinguished Teaching Award 2020, Pontificia Universidad Católica de Valparaíso.',
+      ta2015: es ? 'Mejor Ayudante de Postgrado 2014–2015, Facultad de Economía, Cambridge.' : 'Best Graduate Teaching Assistant 2014–2015, Faculty of Economics, Cambridge.',
+      ta2014: es ? "Premio a la Excelencia Docente, Cambridge University Students' Union." : "Cambridge University Students' Union's Teaching Excellence Award.",
+    };
+
+    return {
+      t,
+      toggleLang: () => this.toggleLang(),
+      esDisplay: { display: es ? 'block' : 'none' },
+      enDisplay: { display: es ? 'none'  : 'block' },
+    };
+  }
+}
+
 </script>
 </body>
 </html>

@@ -23,15 +23,25 @@
     .card { border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px 18px; background: white; transition: box-shadow 0.15s, border-color 0.15s; }
     .card:hover { box-shadow: 0 4px 18px rgba(0,0,0,0.07); border-color: #cbd5e1; }
     .outlet-badge { display: inline-flex; align-items: center; gap: 5px; font-family: 'IBM Plex Sans',sans-serif; font-size: 11px; font-weight: 600; padding: 2px 9px 2px 6px; border-radius: 4px; }
+
+    @media (max-width: 640px) {
+      .r-nav { padding: 0 !important; flex-wrap: wrap !important; }
+      .r-nav-brand { padding: 0 0 0 16px !important; font-size: 18px !important; border-bottom: 1px solid #f1f5f9; width: 100% !important; flex: none !important; }
+      .r-nav-links { width: 100% !important; overflow-x: auto !important; scrollbar-width: none !important; }
+      .r-nav-links::-webkit-scrollbar { display: none; }
+      .r-nav-links a, .r-nav-links span { height: 42px !important; font-size: 12px !important; padding: 0 10px !important; }
+      .r-main { padding: 28px 16px 60px !important; }
+      .r-footer { padding: 20px 16px !important; }
+    }
   </style>
 </helmet>
 
 <div style="max-width: 820px; margin: 0 auto; background: white; min-height: 100vh; box-shadow: 0 0 60px rgba(0,0,0,0.07);">
 
   <!-- NAV -->
-  <nav style="display:flex; align-items:stretch; padding:0 40px; border-bottom:1px solid #e2e8f0; position:sticky; top:0; background:white; z-index:10;">
-    <a href="index.html" style="font-family:'IBM Plex Sans',sans-serif; font-size:20px; font-weight:700; color:#1d4ed8; text-decoration:none; display:flex; align-items:center; padding:0 24px 0 0; flex:1;">Daniel Goya</a>
-    <div style="display:flex;">
+  <nav class="r-nav" style="display:flex; align-items:stretch; padding:0 40px; border-bottom:1px solid #e2e8f0; position:sticky; top:0; background:white; z-index:10;">
+    <a href="index.html" class="r-nav-brand" style="font-family:'IBM Plex Sans',sans-serif; font-size:20px; font-weight:700; color:#1d4ed8; text-decoration:none; display:flex; align-items:center; padding:0 24px 0 0; flex:1;">Daniel Goya</a>
+    <div class="r-nav-links" style="display:flex;">
       <a href="index.html" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">Home</a>
       <a href="cv.html" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">CV</a>
       <a href="research.html" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">Research</a>
@@ -40,7 +50,7 @@
     </div>
   </nav>
 
-  <div style="padding:52px 40px 80px;">
+  <div class="r-main" style="padding:52px 40px 80px;">
 
     <!-- PAGE TITLE -->
     <div style="margin-bottom:36px; padding-bottom:28px; border-bottom:1px solid #e2e8f0;">

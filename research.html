@@ -19,15 +19,28 @@
     .chevron { display: inline-block; transition: transform 0.18s ease; margin-right: 4px; font-style: normal; }
     details[open] .chevron { transform: rotate(90deg); }
     .abstract-full { margin-top: 10px; padding: 14px 16px; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-family: 'IBM Plex Sans',sans-serif; font-size: 13.5px; color: #475569; line-height: 1.75; text-wrap: pretty; }
+
+    @media (max-width: 640px) {
+      .r-nav { padding: 0 !important; flex-wrap: wrap !important; }
+      .r-nav-brand { padding: 0 0 0 16px !important; font-size: 18px !important; border-bottom: 1px solid #f1f5f9; width: 100% !important; flex: none !important; }
+      .r-nav-links { width: 100% !important; overflow-x: auto !important; scrollbar-width: none !important; }
+      .r-nav-links::-webkit-scrollbar { display: none; }
+      .r-nav-links a, .r-nav-links span { height: 42px !important; font-size: 12px !important; padding: 0 10px !important; }
+      .r-main { padding: 28px 16px 60px !important; }
+      .r-article { flex-direction: column !important; gap: 16px !important; }
+      .r-article-fig { flex: 0 0 auto !important; width: 100% !important; }
+      .r-article-fig svg, .r-article-fig img { width: 100% !important; max-width: 300px; height: auto !important; }
+      .r-footer { padding: 16px 0 !important; }
+    }
   </style>
 </helmet>
 
 <div style="max-width: 820px; margin: 0 auto; background: white; min-height: 100vh; box-shadow: 0 0 60px rgba(0,0,0,0.07);">
 
   <!-- NAV -->
-  <nav style="display:flex; align-items:stretch; padding: 0 40px; border-bottom: 1px solid #e2e8f0; position:sticky; top:0; background:white; z-index:10;">
-    <a href="index.html" style="font-family:'IBM Plex Sans',sans-serif; font-size:20px; font-weight:700; color:#1d4ed8; text-decoration:none; display:flex; align-items:center; padding:0 24px 0 0; flex:1;">Daniel Goya</a>
-    <div style="display:flex;">
+  <nav class="r-nav" style="display:flex; align-items:stretch; padding: 0 40px; border-bottom: 1px solid #e2e8f0; position:sticky; top:0; background:white; z-index:10;">
+    <a href="index.html" class="r-nav-brand" style="font-family:'IBM Plex Sans',sans-serif; font-size:20px; font-weight:700; color:#1d4ed8; text-decoration:none; display:flex; align-items:center; padding:0 24px 0 0; flex:1;">Daniel Goya</a>
+    <div class="r-nav-links" style="display:flex;">
       <a href="index.html" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; text-decoration:none; height:56px;">Home</a>
       <a href="cv.html" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; text-decoration:none; height:56px;">CV</a>
       <span style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#1d4ed8; font-weight:600; border-bottom:2px solid #1d4ed8; height:56px;">Research</span>
@@ -36,7 +49,7 @@
     </div>
   </nav>
 
-  <div style="padding: 52px 40px 80px;">
+  <div class="r-main" style="padding: 52px 40px 80px;">
 
     <!-- PAGE TITLE -->
     <div style="margin-bottom: 44px; padding-bottom: 32px; border-bottom: 1px solid #e2e8f0;">
@@ -59,7 +72,7 @@
       <h2 style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:0 0 0; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">Journal Articles</h2>
 
       <!-- 2024 Creative Industries -->
-      <article style="display:flex; gap:32px; align-items:flex-start; padding:32px 0; border-bottom:1px solid #f1f5f9;">
+      <article class="r-article" style="display:flex; gap:32px; align-items:flex-start; padding:32px 0; border-bottom:1px solid #f1f5f9;">
         <div style="flex:1; min-width:0;">
           <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px; flex-wrap:wrap;">
             <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; color:#1d4ed8; background:#dbeafe; padding:2px 9px; border-radius:3px;">2024</span>
@@ -74,7 +87,7 @@
             <p class="abstract-full">This paper analyses Marshallian and Jacobian localisation externalities in creative industries using a panel of Chilean municipalities. We exploit variation in creative industry specialisation across municipalities to identify the causal effect on sales and firm entry in the same sector (Marshallian) and in other sectors (Jacobian). While specialisation in creative industries raises own-sector outcomes, we find no evidence of cross-sector spillovers — calling for caution in policy prescriptions that justify creative industry support on the basis of broader economic spillovers.</p>
           </details>
         </div>
-        <div style="flex:0 0 190px;">
+        <div class="r-article-fig" style="flex:0 0 190px;">
           <svg viewBox="0 0 190 132" style="width:190px;height:132px;display:block;border:1px solid #e2e8f0;border-radius:6px;background:#fafbfc;" aria-label="Bar chart: Marshallian vs Jacobian effects">
             <text x="95" y="14" text-anchor="middle" font-size="8.5" fill="#64748b" font-family="sans-serif">Effect on own sector vs. rest of economy</text>
             <line x1="30" y1="18" x2="30" y2="108" stroke="#e2e8f0" stroke-width="1"/>
@@ -96,7 +109,7 @@
       </article>
 
       <!-- 2023 Fear of Crime -->
-      <article style="display:flex; gap:32px; align-items:flex-start; padding:32px 0; border-bottom:1px solid #f1f5f9;">
+      <article class="r-article" style="display:flex; gap:32px; align-items:flex-start; padding:32px 0; border-bottom:1px solid #f1f5f9;">
         <div style="flex:1; min-width:0;">
           <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px; flex-wrap:wrap;">
             <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; color:#1d4ed8; background:#dbeafe; padding:2px 9px; border-radius:3px;">2023</span>
@@ -112,7 +125,7 @@
             <p class="abstract-full">We study a pilot programme in Santiago, Chile, in which police officers and government officials distributed security leaflets near a shopping mall. Using a difference-in-differences strategy comparing workers near the mall with those further away, we find that the programme reduced overall fear of crime and actual victimisation among workers in the treated area. Paradoxically, among individuals who were directly approached and handed a leaflet, measured fear of crime increased. These opposing effects highlight the complexity of crime-prevention communication and the importance of targeting in public safety policy.</p>
           </details>
         </div>
-        <div style="flex:0 0 190px;">
+        <div class="r-article-fig" style="flex:0 0 190px;">
           <svg viewBox="0 0 190 132" style="width:190px;height:132px;display:block;border:1px solid #e2e8f0;border-radius:6px;background:#fafbfc;" aria-label="DiD chart: fear of crime before and after policy">
             <text x="95" y="13" text-anchor="middle" font-size="8.5" fill="#64748b" font-family="sans-serif">Fear of crime: difference-in-differences</text>
             <line x1="28" y1="18" x2="28" y2="106" stroke="#e2e8f0" stroke-width="1"/>
@@ -141,7 +154,7 @@
       </article>
 
       <!-- 2022 Innovation Barriers -->
-      <article style="display:flex; gap:32px; align-items:flex-start; padding:32px 0; border-bottom:1px solid #f1f5f9;">
+      <article class="r-article" style="display:flex; gap:32px; align-items:flex-start; padding:32px 0; border-bottom:1px solid #f1f5f9;">
         <div style="flex:1; min-width:0;">
           <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px; flex-wrap:wrap;">
             <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; color:#1d4ed8; background:#dbeafe; padding:2px 9px; border-radius:3px;">2022</span>
@@ -157,7 +170,7 @@
             <p class="abstract-full">Using six waves of Chile's National Innovation Survey and an instrumental variables strategy, we estimate the causal effect of six types of innovation obstacles on three innovation outcomes. Demand-side and financial obstacles consistently emerge as the strongest inhibitors of innovation probability and intensity, while knowledge, market, cooperation, and regulation obstacles have smaller and more heterogeneous effects. Results are robust across firm size and sector, with larger firms more sensitive to demand obstacles and smaller firms more constrained by finance.</p>
           </details>
         </div>
-        <div style="flex:0 0 190px;">
+        <div class="r-article-fig" style="flex:0 0 190px;">
           <svg viewBox="0 0 190 132" style="width:190px;height:132px;display:block;border:1px solid #e2e8f0;border-radius:6px;background:#fafbfc;" aria-label="Horizontal bar chart: barriers to innovation by magnitude">
             <text x="95" y="13" text-anchor="middle" font-size="8.5" fill="#64748b" font-family="sans-serif">Barriers to innovation (IV estimate)</text>
             <line x1="70" y1="18" x2="70" y2="110" stroke="#e2e8f0" stroke-width="1"/>
@@ -182,7 +195,7 @@
       </article>
 
       <!-- 2021 EIST Mining -->
-      <article style="display:flex; gap:32px; align-items:flex-start; padding:32px 0; border-bottom:1px solid #f1f5f9;">
+      <article class="r-article" style="display:flex; gap:32px; align-items:flex-start; padding:32px 0; border-bottom:1px solid #f1f5f9;">
         <div style="flex:1; min-width:0;">
           <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px; flex-wrap:wrap;">
             <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; color:#1d4ed8; background:#dbeafe; padding:2px 9px; border-radius:3px;">2021</span>
@@ -198,7 +211,7 @@
             <p class="abstract-full">The global energy transition requires vast amounts of minerals, including copper, lithium, cobalt, and rare earths. This creates significant economic opportunities for resource-rich developing countries, yet it also intensifies social and environmental conflicts associated with mining expansion. We argue that transitions research has largely overlooked this "dark side," focusing on decarbonising energy systems while neglecting the social and environmental costs embedded in the supply chains that make those transitions possible. We develop a conceptual framework integrating development and transitions perspectives, and draw on evidence from Latin America to illustrate the tensions and trade-offs involved.</p>
           </details>
         </div>
-        <div style="flex:0 0 190px;">
+        <div class="r-article-fig" style="flex:0 0 190px;">
           <svg viewBox="0 0 190 132" style="width:190px;height:132px;display:block;border:1px solid #e2e8f0;border-radius:6px;background:#fafbfc;" aria-label="Dual rising trends: mineral demand and social conflicts under energy transition">
             <text x="95" y="13" text-anchor="middle" font-size="8.5" fill="#64748b" font-family="sans-serif">Projected trends under energy transition</text>
             <line x1="28" y1="18" x2="28" y2="102" stroke="#e2e8f0" stroke-width="1"/>
@@ -223,7 +236,7 @@
       </article>
 
       <!-- 2021 Economic Modelling — REAL FIGURE -->
-      <article style="display:flex; gap:32px; align-items:flex-start; padding:32px 0; border-bottom:1px solid #f1f5f9;">
+      <article class="r-article" style="display:flex; gap:32px; align-items:flex-start; padding:32px 0; border-bottom:1px solid #f1f5f9;">
         <div style="flex:1; min-width:0;">
           <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px; flex-wrap:wrap;">
             <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; color:#1d4ed8; background:#dbeafe; padding:2px 9px; border-radius:3px;">2021</span>
@@ -238,13 +251,13 @@
             <p class="abstract-full">We study how Chinese import competition affects the product scope of domestic multi-product plants, focusing on the supply chain channel. Using Chilean plant-product data matched to input-output tables, we show that a fall in demand for a final good reduces the variety of inputs that domestic plants produce to supply that sector. The effect is concentrated in small plants with low productivity and low markup products, consistent with firms dropping their least competitive product lines first. This network transmission of competition represents an additional margin of adjustment often overlooked in the trade and employment literature.</p>
           </details>
         </div>
-        <div style="flex:0 0 190px;">
+        <div class="r-article-fig" style="flex:0 0 190px;">
           <img src="uploads/extracted/econmod2021_3.jpg" alt="Supply chain network diagram from the paper" style="width:190px; height:132px; display:block; border:1px solid #e2e8f0; border-radius:6px; object-fit:cover; object-position:center center;"/>
         </div>
       </article>
 
       <!-- 2020 IREF Exchange Rate -->
-      <article style="display:flex; gap:32px; align-items:flex-start; padding:32px 0; border-bottom:1px solid #f1f5f9;">
+      <article class="r-article" style="display:flex; gap:32px; align-items:flex-start; padding:32px 0; border-bottom:1px solid #f1f5f9;">
         <div style="flex:1; min-width:0;">
           <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px; flex-wrap:wrap;">
             <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; color:#1d4ed8; background:#dbeafe; padding:2px 9px; border-radius:3px;">2020</span>
@@ -259,7 +272,7 @@
             <p class="abstract-full">We examine how the real exchange rate level and volatility affect export variety across a large panel of countries over three decades. Using heterogeneous long-panel estimators that allow for cross-sectional dependence and slope heterogeneity, we find that a more depreciated exchange rate is associated with greater export variety, while higher volatility reduces it. These effects are heterogeneous across product categories, being particularly pronounced for technologically intensive goods. The results suggest that exchange rate policy can shape the extensive margin of exports and, in turn, the long-run structure of comparative advantage.</p>
           </details>
         </div>
-        <div style="flex:0 0 190px;">
+        <div class="r-article-fig" style="flex:0 0 190px;">
           <svg viewBox="0 0 190 132" style="width:190px;height:132px;display:block;border:1px solid #e2e8f0;border-radius:6px;background:#fafbfc;" aria-label="Two panels: ER level positive effect, ER volatility negative effect on export variety">
             <text x="95" y="13" text-anchor="middle" font-size="8.5" fill="#64748b" font-family="sans-serif">Exchange rate and export variety</text>
             <line x1="96" y1="17" x2="96" y2="110" stroke="#e2e8f0" stroke-width="1"/>
@@ -289,7 +302,7 @@
       </article>
 
       <!-- 2019 World Economy — REAL FIGURE (survival curves) -->
-      <article style="display:flex; gap:32px; align-items:flex-start; padding:32px 0; border-bottom:1px solid #f1f5f9;">
+      <article class="r-article" style="display:flex; gap:32px; align-items:flex-start; padding:32px 0; border-bottom:1px solid #f1f5f9;">
         <div style="flex:1; min-width:0;">
           <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px; flex-wrap:wrap;">
             <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; color:#1d4ed8; background:#dbeafe; padding:2px 9px; border-radius:3px;">2019</span>
@@ -305,7 +318,7 @@
             <p class="abstract-full">We study the survival of new export products using a panel of Chilean multi-product exporters. Exploiting within-firm variation in the distance of new export products from a firm's existing competence basket, we show that exports closer to a firm's core competences survive significantly longer. The effect is concentrated in the first year of export and is robust to controlling for firm, product, and destination fixed effects. The results suggest that export diversification is constrained by organisational capabilities, with implications for trade and industrial policy.</p>
           </details>
         </div>
-        <div style="flex:0 0 190px;">
+        <div class="r-article-fig" style="flex:0 0 190px;">
           <svg viewBox="0 0 190 132" style="width:190px;height:132px;display:block;border:1px solid #e2e8f0;border-radius:6px;background:#fafbfc;" aria-label="Kaplan-Meier survival curves by distance from core competences">
             <text x="95" y="11" text-anchor="middle" font-size="7.5" fill="#64748b" font-family="sans-serif">Survival probability by distance from core competences</text>
             <!-- Axes -->
@@ -475,7 +488,7 @@
     </section>
 
     <!-- FOOTER -->
-    <footer style="border-top:1px solid #e2e8f0; padding-top:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+    <footer class="r-footer" style="border-top:1px solid #e2e8f0; padding-top:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
       <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#94a3b8;">daniel.goya AT pucv.cl</span>
       <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#94a3b8;">Amunátegui 1838, Recreo · Viña del Mar, Chile</span>
     </footer>
