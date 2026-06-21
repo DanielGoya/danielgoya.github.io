@@ -25,9 +25,9 @@
     @media (max-width: 640px) {
       .r-nav { padding: 0 !important; flex-wrap: wrap !important; }
       .r-nav-brand { padding: 0 0 0 16px !important; font-size: 18px !important; border-bottom: 1px solid #f1f5f9; width: 100% !important; flex: none !important; }
-      .r-nav-links { width: 100% !important; overflow-x: auto !important; scrollbar-width: none !important; }
+      .r-nav-links { width: 100% !important; overflow-x: auto !important; scrollbar-width: none !important; flex-wrap: nowrap !important; }
       .r-nav-links::-webkit-scrollbar { display: none; }
-      .r-nav-links a, .r-nav-links span { height: 42px !important; font-size: 12px !important; padding: 0 10px !important; }
+      .r-nav-links a, .r-nav-links span { height: 42px !important; font-size: 12px !important; padding: 0 10px !important; flex-shrink: 0 !important; white-space: nowrap !important; }
       .lang-btn { height: 42px !important; }
       .r-main { padding: 28px 16px 60px !important; }
       .r-hero { flex-direction: column !important; gap: 12px !important; }
@@ -172,7 +172,7 @@
 
       <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2019–2022</span>
-        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">{{ t.apRcii }}</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Red Chilena de Investigadores en Innovación</p></div>
+        <div style="flex:1;"><p style="font-family:'IBM Plex Sans',sans-serif; font-size:15.5px; color:#1e3a5f; margin:0 0 3px;">{{ t.apRcii }}</p><p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;"><a href="http://innovacionchile.net/" style="color:#94a3b8; text-decoration:underline; text-underline-offset:2px;" target="_blank">Red Chilena de Investigadores en Innovación</a></p></div>
       </div>
       <div style="display:flex; gap:20px; align-items:baseline; padding:16px 0; border-bottom:1px solid #f1f5f9;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:86px; flex-shrink:0;">2018–2021</span>

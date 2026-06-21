@@ -19,9 +19,9 @@
     @media (max-width: 640px) {
       .r-nav { padding: 0 !important; flex-wrap: wrap !important; }
       .r-nav-brand { padding: 0 0 0 16px !important; font-size: 18px !important; border-bottom: 1px solid #f1f5f9; width: 100% !important; flex: none !important; }
-      .r-nav-links { width: 100% !important; overflow-x: auto !important; scrollbar-width: none !important; }
+      .r-nav-links { width: 100% !important; overflow-x: auto !important; scrollbar-width: none !important; flex-wrap: nowrap !important; }
       .r-nav-links::-webkit-scrollbar { display: none; }
-      .r-nav-links a, .r-nav-links span { height: 42px !important; font-size: 12px !important; padding: 0 10px !important; }
+      .r-nav-links a, .r-nav-links span { height: 42px !important; font-size: 12px !important; padding: 0 10px !important; flex-shrink: 0 !important; white-space: nowrap !important; }
       .r-main { padding: 28px 16px 60px !important; }
       .r-courses-grid { grid-template-columns: 1fr !important; }
       .r-footer { padding: 20px 16px !important; }

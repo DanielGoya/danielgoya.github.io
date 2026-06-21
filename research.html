@@ -23,9 +23,9 @@
     @media (max-width: 640px) {
       .r-nav { padding: 0 !important; flex-wrap: wrap !important; }
       .r-nav-brand { padding: 0 0 0 16px !important; font-size: 18px !important; border-bottom: 1px solid #f1f5f9; width: 100% !important; flex: none !important; }
-      .r-nav-links { width: 100% !important; overflow-x: auto !important; scrollbar-width: none !important; }
+      .r-nav-links { width: 100% !important; overflow-x: auto !important; scrollbar-width: none !important; flex-wrap: nowrap !important; }
       .r-nav-links::-webkit-scrollbar { display: none; }
-      .r-nav-links a, .r-nav-links span { height: 42px !important; font-size: 12px !important; padding: 0 10px !important; }
+      .r-nav-links a, .r-nav-links span { height: 42px !important; font-size: 12px !important; padding: 0 10px !important; flex-shrink: 0 !important; white-space: nowrap !important; }
       .r-main { padding: 28px 16px 60px !important; }
       .r-article { flex-direction: column !important; gap: 16px !important; }
       .r-article-fig { flex: 0 0 auto !important; width: 100% !important; }
@@ -54,26 +54,26 @@
     <!-- PAGE TITLE -->
     <div style="margin-bottom: 44px; padding-bottom: 32px; border-bottom: 1px solid #e2e8f0;">
       <h1 style="font-family:'IBM Plex Sans',sans-serif; font-size:32px; font-weight:700; color:#0f172a; margin:0 0 8px; letter-spacing:-0.3px;">Research</h1>
-      <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#64748b; margin:0;">Pontificia Universidad Católica de Valparaíso · Ministry of Economy, Chile</p>
+      <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#64748b; margin:0;">Pontificia Universidad Católica de Valparaíso</p>
     </div>
 
     <!-- ── WORK IN PROGRESS ── -->
-    <section id="wip-research" style="margin-bottom:52px;">
+    <section id="wip-research" style="margin-bottom:52px; scroll-margin-top:72px;">
       <h2 style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:0 0 18px;">Work in Progress</h2>
       <div style="background:#f8fafc; border-left:3px solid #2563eb; border-radius:0 8px 8px 0; padding:20px 24px;">
         <p style="font-family:'IBM Plex Sans',sans-serif; font-size:16px; font-weight:600; color:#1e3a5f; margin:0 0 6px; line-height:1.4;">Sustainability transitions in mining: forces of lock in and change</p>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#94a3b8; margin:0 0 10px;">Funded by International Development Research Centre (IDRC)</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#94a3b8; margin:0 0 10px;">with Anabel Marín</p>
         <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; line-height:1.65; margin:0; text-wrap:pretty;">Develops a framework to characterise the socio-technical regime of mining, analysing forces of lock-in and transformation. Bridges transition studies with development perspectives relevant for resource-dependent economies facing the energy transition, digitalisation, and defence-driven mineral demand.</p>
       </div>
       <div style="background:#f8fafc; border-left:3px solid #2563eb; border-radius:0 8px 8px 0; padding:20px 24px; margin-top:12px;">
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:16px; font-weight:600; color:#1e3a5f; margin:0 0 6px; line-height:1.4;">Una aplicación crítica de Políticas Orientadas por Misión a nivel subnacional en América Latina: el caso de la Región de Valparaíso, Chile</p>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#94a3b8; margin:0 0 10px;">with Diego Cabello</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:16px; font-weight:600; color:#1e3a5f; margin:0 0 6px; line-height:1.4;">A critical application of Mission-Oriented Policies at the subnational level in Latin America: the case of the Valparaíso Region, Chile</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#94a3b8; margin:0 0 10px;">with Diego Cabello Moya</p>
         <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; line-height:1.65; margin:0; text-wrap:pretty;">Examines the applicability and limitations of Mission-Oriented Innovation Policy (MOIP) frameworks at the subnational level, drawing on the case of the Valparaíso Region in Chile.</p>
       </div>
     </section>
 
     <!-- ── JOURNAL ARTICLES ── -->
-    <section id="journal-articles" style="margin-bottom:52px;">
+    <section id="journal-articles" style="margin-bottom:52px; scroll-margin-top:72px;">
       <h2 style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:0 0 0; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">Journal Articles</h2>
 
       <!-- 2024 Creative Industries -->
@@ -417,12 +417,12 @@
 
       <div style="padding:14px 0; border-bottom:1px solid #f1f5f9; display:flex; gap:12px;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#cbd5e1; min-width:30px; padding-top:3px;">2016</span>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6;"><span style="color:#334155;">Collaboration in Clusters and Technology Consortia: The Case of Chile.</span> With A. Zahler, C. Bravo-Ortega, J.M. Benavente. In: <em>Two to Tango</em>. IDB.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6;"><a href="https://publications.iadb.org/en/two-tango-public-private-collaboration-productive-development-policies-0" style="color:#334155; text-decoration:none;" target="_blank">Collaboration in Clusters and Technology Consortia: The Case of Chile.</a> With A. Zahler, C. Bravo-Ortega, J.M. Benavente. In: <em>Two to Tango</em>. IDB.</p>
       </div>
 
       <div style="padding:14px 0; border-bottom:1px solid #f1f5f9; display:flex; gap:12px;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#cbd5e1; min-width:30px; padding-top:3px;">2014</span>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6;"><span style="color:#334155;">Redes complejas: un caso de estudio sobre la colaboración científica.</span> In: <em>Las Rutas de la Complejidad</em>. ISCV.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6;"><a href="http://www.academia.edu/8282399/Redes_complejas_un_caso_de_estudio_sobre_la_colaboraci%C3%B3n_cient%C3%ADfica" style="color:#334155; text-decoration:none;" target="_blank">Redes complejas: un caso de estudio sobre la colaboración científica.</a> In: <em>Las Rutas de la Complejidad</em>. ISCV.</p>
       </div>
 
       <div style="padding:14px 0; border-bottom:1px solid #f1f5f9; display:flex; gap:12px;">
@@ -446,9 +446,9 @@
           <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; color:#166534; background:#dcfce7; padding:2px 9px; border-radius:3px;">Natural Resources</span>
         </div>
         <h3 style="font-family:'IBM Plex Sans',sans-serif; font-size:16.5px; font-weight:600; color:#1e3a5f; margin:0 0 6px; line-height:1.4;">Opening up natural resource-based industries for innovation</h3>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#94a3b8; margin:0 0 16px;">with Anabel Marín · International Development Research Centre (IDRC)</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#94a3b8; margin:0 0 16px;">with Anabel Marín · Funded by International Development Research Centre (IDRC)</p>
         <details>
-          <summary style="display:inline-flex; align-items:center; font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#2563eb; cursor:pointer; list-style:none; user-select:none;"><em class="chevron">›</em> Project documents</summary>
+          <summary style="display:inline-flex; align-items:center; font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#2563eb; cursor:pointer; list-style:none; user-select:none;"><em class="chevron">›</em> Project outputs</summary>
           <div style="margin-top:14px; display:flex; flex-direction:column; gap:6px;">
 
             <a href="uploads/sectorial%20report%20copper%20-%202011.PDF" style="display:flex; align-items:center; gap:10px; padding:10px 14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#334155; text-decoration:none;" target="_blank">

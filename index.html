@@ -19,9 +19,9 @@
     @media (max-width: 640px) {
       .r-nav { padding: 0 !important; flex-wrap: wrap !important; }
       .r-nav-brand { padding: 0 0 0 16px !important; font-size: 18px !important; border-bottom: 1px solid #f1f5f9; width: 100% !important; flex: none !important; }
-      .r-nav-links { width: 100% !important; overflow-x: auto !important; scrollbar-width: none !important; }
+      .r-nav-links { width: 100% !important; overflow-x: auto !important; scrollbar-width: none !important; flex-wrap: nowrap !important; }
       .r-nav-links::-webkit-scrollbar { display: none; }
-      .r-nav-links a, .r-nav-links span, .r-nav-links button { height: 42px !important; font-size: 12px !important; padding: 0 10px !important; }
+      .r-nav-links a, .r-nav-links span, .r-nav-links button { height: 42px !important; font-size: 12px !important; padding: 0 10px !important; flex-shrink: 0 !important; white-space: nowrap !important; }
       .lang-btn { height: 42px !important; }
       .r-hero { grid-template-columns: 1fr !important; padding: 32px 16px 36px !important; gap: 20px !important; }
       .r-photo { width: 88px !important; height: 88px !important; }
@@ -154,7 +154,7 @@ class Component extends DCLogic {
 
       tagline: es ? 'Economista · PUCV · Valparaíso, Chile' : 'Economist · PUCV · Valparaíso, Chile',
       h1l1:   es ? 'Políticas públicas para'          : 'Policies for innovation',
-      h1l2:   es ? 'innovación y cambio estructural' : 'and structural change',
+      h1l2:   es ? 'la innovación y el cambio estructural' : 'and structural change',
       h1em:   es ? 'en economías en desarrollo.'  : 'in developing economies.',
 
       bioEsStyle: { display: es ? 'block' : 'none' },
