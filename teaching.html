@@ -39,21 +39,24 @@
       <a href="research.html" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">Research</a>
       <a href="opinion.html" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">Opinión</a>
       <a href="cv.html" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">CV</a>
-      <span style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#1d4ed8; font-weight:600; border-bottom:2px solid #1d4ed8; height:56px;">Teaching</span>
+      <span style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#1d4ed8; font-weight:600; border-bottom:2px solid #1d4ed8; height:56px;">{{ navLabel }}</span>
     </div>
   </nav>
 
   <div class="r-main" style="padding:52px 40px 80px;">
 
     <!-- PAGE TITLE -->
-    <div style="margin-bottom:44px; padding-bottom:32px; border-bottom:1px solid #e2e8f0;">
-      <h1 style="font-family:'IBM Plex Sans',sans-serif; font-size:32px; font-weight:700; color:#0f172a; margin:0 0 8px; letter-spacing:-0.3px;">Teaching</h1>
-      <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#64748b; margin:0;">Pontificia Universidad Católica de Valparaíso · School of Business and Economics</p>
+    <div style="margin-bottom:44px; padding-bottom:32px; border-bottom:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:flex-start;">
+      <div>
+        <h1 style="font-family:'IBM Plex Sans',sans-serif; font-size:32px; font-weight:700; color:#0f172a; margin:0 0 8px; letter-spacing:-0.3px;">{{ pageTitle }}</h1>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#64748b; margin:0;">{{ pageSubtitle }}</p>
+      </div>
+      {{ langToggle }}
     </div>
 
     <!-- CURRENT TEACHING -->
     <section style="margin-bottom:56px;">
-      <h2 style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:0 0 22px; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">Current teaching</h2>
+      <h2 style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:0 0 22px; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">{{ currentSection }}</h2>
 
       <div class="r-courses-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
 
@@ -76,7 +79,7 @@
 
     <!-- PREVIOUS TEACHING -->
     <section>
-      <h2 style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:0 0 6px; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">Previous teaching</h2>
+      <h2 style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:0 0 6px; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">{{ previousSection }}</h2>
 
       <div style="display:flex; flex-direction:column;">
 
@@ -100,7 +103,7 @@
           <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:74px; flex-shrink:0;">2014–2016</span>
           <div style="flex:1;">
             <p style="font-family:'IBM Plex Sans',sans-serif; font-size:15.5px; color:#1e3a5f; margin:0 0 4px; line-height:1.45;">Cross Section and Panel Data Econometrics <span style="color:#94a3b8; font-style:italic;">(M320)</span></p>
-            <p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Faculty of Economics, University of Cambridge</p>
+            <p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">{{ cambridgeInst }}</p>
           </div>
         </div>
 
@@ -108,14 +111,14 @@
           <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:74px; flex-shrink:0;">2013–2016</span>
           <div style="flex:1;">
             <p style="font-family:'IBM Plex Sans',sans-serif; font-size:15.5px; color:#1e3a5f; margin:0 0 4px; line-height:1.45;">Diploma Paper 3 <span style="color:#94a3b8; font-style:italic;">(Econometrics)</span></p>
-            <p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Faculty of Economics, University of Cambridge</p>
+            <p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">{{ cambridgeInst }}</p>
           </div>
         </div>
 
         <div style="display:flex; gap:20px; align-items:baseline; padding:20px 0; border-bottom:1px solid #f1f5f9;">
           <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:74px; flex-shrink:0;">2011–2012</span>
           <div style="flex:1;">
-            <p style="font-family:'IBM Plex Sans',sans-serif; font-size:15.5px; color:#1e3a5f; margin:0 0 4px; line-height:1.45;">Economic Development and Innovation Policy</p>
+            <p style="font-family:'IBM Plex Sans',sans-serif; font-size:15.5px; color:#1e3a5f; margin:0 0 4px; line-height:1.45;">{{ p2011title }}</p>
             <p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">PUCV · MPP, Universidad de Chile</p>
           </div>
         </div>
@@ -123,7 +126,7 @@
         <div style="display:flex; gap:20px; align-items:baseline; padding:20px 0;">
           <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#cbd5e1; min-width:74px; flex-shrink:0;">2003–2007</span>
           <div style="flex:1;">
-            <p style="font-family:'IBM Plex Sans',sans-serif; font-size:15.5px; color:#1e3a5f; margin:0 0 4px; line-height:1.45;">Industrial Engineering — various courses</p>
+            <p style="font-family:'IBM Plex Sans',sans-serif; font-size:15.5px; color:#1e3a5f; margin:0 0 4px; line-height:1.45;">{{ p2003title }}</p>
             <p style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#94a3b8; margin:0;">Pontificia Universidad Católica de Valparaíso</p>
           </div>
         </div>
@@ -134,7 +137,7 @@
   </div>
 
   <!-- FOOTER -->
-  <footer style="border-top:1px solid #e2e8f0; padding:24px 40px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; background:#fafcff;">
+  <footer class="r-footer" style="border-top:1px solid #e2e8f0; padding:24px 40px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; background:#fafcff;">
     <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#94a3b8;">daniel.goya AT pucv.cl</span>
     <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#94a3b8;">Av. Brasil 2830, piso 9 · Valparaíso, Chile</span>
   </footer>
@@ -143,7 +146,75 @@
 
 </x-dc>
 <script type="text/x-dc" data-dc-script>
-class Component extends DCLogic {}
+
+class Component extends DCLogic {
+  state = { lang: 'en' };
+
+  componentDidMount() {
+    const saved = localStorage.getItem('dg-lang');
+    if (saved === 'es' || saved === 'en') this.setState({ lang: saved });
+  }
+
+  setLang(l) {
+    localStorage.setItem('dg-lang', l);
+    this.setState({ lang: l });
+  }
+
+  renderVals() {
+    const lang = this.state.lang;
+
+    const translations = {
+      en: {
+        navLabel: 'Teaching',
+        pageTitle: 'Teaching',
+        pageSubtitle: 'Pontificia Universidad Católica de Valparaíso · School of Business and Economics',
+        currentSection: 'Current teaching',
+        previousSection: 'Previous teaching',
+        cambridgeInst: 'Faculty of Economics, University of Cambridge',
+        p2011title: 'Economic Development and Innovation Policy',
+        p2003title: 'Industrial Engineering — various courses',
+      },
+      es: {
+        navLabel: 'Docencia',
+        pageTitle: 'Docencia',
+        pageSubtitle: 'Pontificia Universidad Católica de Valparaíso · Escuela de Negocios y Economía',
+        currentSection: 'Docencia actual',
+        previousSection: 'Docencia anterior',
+        cambridgeInst: 'Facultad de Economía, Universidad de Cambridge',
+        p2011title: 'Desarrollo Económico y Política de Innovación',
+        p2003title: 'Ingeniería Industrial — varios cursos',
+      }
+    };
+
+    const t = translations[lang];
+    const self = this;
+
+    const btnStyle = (active) => ({
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 11,
+      fontWeight: 600,
+      letterSpacing: '0.05em',
+      padding: '4px 11px',
+      borderRadius: 5,
+      border: 'none',
+      cursor: 'pointer',
+      background: active ? 'white' : 'transparent',
+      color: active ? '#1d4ed8' : '#94a3b8',
+      boxShadow: active ? '0 1px 3px rgba(0,0,0,0.10)' : 'none',
+      transition: 'background 0.15s, color 0.15s, box-shadow 0.15s',
+    });
+
+    const langToggle = React.createElement(
+      'div',
+      { style: { display: 'flex', background: '#f1f5f9', borderRadius: 7, padding: 3, gap: 2, alignSelf: 'flex-start', marginTop: 6, flexShrink: 0 } },
+      React.createElement('button', { style: btnStyle(lang === 'en'), onClick: () => self.setLang('en') }, 'EN'),
+      React.createElement('button', { style: btnStyle(lang === 'es'), onClick: () => self.setLang('es') }, 'ES')
+    );
+
+    return { ...t, langToggle };
+  }
+}
+
 </script>
 </body>
 </html>

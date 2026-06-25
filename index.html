@@ -48,7 +48,7 @@
       <a href="opinion.html" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">{{ opinionLabel }}</a>
       <a href="cv.html" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">CV</a>
       <a href="teaching.html" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">Teaching</a>
-      <button onClick="{{ toggleLang }}" class="lang-btn">{{ langBtn }}</button>
+      {{ langToggle }}
     </div>
   </nav>
 
@@ -68,15 +68,15 @@
       <div style="display:flex; gap:10px; flex-wrap:wrap;">
         <a href="mailto:daniel.goya@pucv.cl" style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#475569; background:#f1f5f9; padding:7px 14px; border-radius:6px; border:1px solid #e2e8f0;">daniel.goya@pucv.cl</a>
         <a href="cv.html" style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#1d4ed8; background:#eff6ff; padding:7px 14px; border-radius:6px; border:1px solid #bfdbfe;">CV →</a>
-        <a href="https://www.researchgate.net/profile/Daniel_Goya" style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#475569; background:#f1f5f9; padding:7px 14px; border-radius:6px; border:1px solid #e2e8f0;">ResearchGate ↗</a>
-        <a href="https://www.linkedin.com/in/dgoya/" style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#475569; background:#f1f5f9; padding:7px 14px; border-radius:6px; border:1px solid #e2e8f0;">LinkedIn ↗</a>
-        <a href="https://scholar.google.com/citations?user=goyaecon" style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#475569; background:#f1f5f9; padding:7px 14px; border-radius:6px; border:1px solid #e2e8f0;">Google Scholar ↗</a>
+        <a href="https://www.researchgate.net/profile/Daniel_Goya" target="_blank" rel="noopener noreferrer" style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#475569; background:#f1f5f9; padding:7px 14px; border-radius:6px; border:1px solid #e2e8f0;">ResearchGate ↗</a>
+        <a href="https://www.linkedin.com/in/dgoya/" target="_blank" rel="noopener noreferrer" style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#475569; background:#f1f5f9; padding:7px 14px; border-radius:6px; border:1px solid #e2e8f0;">LinkedIn ↗</a>
+        <a href="https://scholar.google.com/citations?user=goyaecon" target="_blank" rel="noopener noreferrer" style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#475569; background:#f1f5f9; padding:7px 14px; border-radius:6px; border:1px solid #e2e8f0;">Google Scholar ↗</a>
       </div>
     </div>
 
     <!-- Photo -->
     <div class="r-photo" style="width:180px; height:180px; border-radius:50%; overflow:hidden; flex-shrink:0; margin-top:4px; border:3px solid white; box-shadow:0 0 0 1px #e2e8f0;">
-      <img src="uploads/foto%20ICA%20-%20cuadrada%20m%C3%A1s%20lejos.jpg" alt="Daniel Goya" style="width:100%; height:100%; object-fit:cover; object-position:center top;"/>
+      <img src="uploads/photo-cropped.png" alt="Daniel Goya" style="width:100%; height:100%; object-fit:cover; object-position:50% 10%;"/>
     </div>
   </div>
 
@@ -136,7 +136,7 @@
 
 class Component extends DCLogic {
   state = {
-    lang: (typeof navigator !== 'undefined' && !(navigator.language || 'es').toLowerCase().startsWith('es')) ? 'en' : 'es'
+    lang: (typeof navigator !== 'undefined' && !(navigator.language || 'es').toLowerCase().startsWith('es')) ? 'en' : 'es',
   };
 
   toggleLang() {
@@ -145,10 +145,30 @@ class Component extends DCLogic {
 
   renderVals() {
     const es = this.state.lang === 'es';
+    const self = this;
+
+    const btnStyle = (active) => ({
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: 11, fontWeight: 600, letterSpacing: '0.05em',
+      padding: '4px 11px', borderRadius: 5, border: 'none', cursor: 'pointer',
+      background: active ? 'white' : 'transparent',
+      color: active ? '#1d4ed8' : '#94a3b8',
+      boxShadow: active ? '0 1px 3px rgba(0,0,0,0.10)' : 'none',
+      transition: 'background 0.15s, color 0.15s, box-shadow 0.15s',
+    });
+
+    const langToggle = React.createElement(
+      'div',
+      { style: { display: 'flex', alignItems: 'center', padding: '0 8px' } },
+      React.createElement('div',
+        { style: { display: 'flex', background: '#f1f5f9', borderRadius: 7, padding: 3, gap: 2 } },
+        React.createElement('button', { style: btnStyle(!es), onClick: () => self.setState({ lang: 'en' }) }, 'EN'),
+        React.createElement('button', { style: btnStyle(es), onClick: () => self.setState({ lang: 'es' }) }, 'ES')
+      )
+    );
 
     return {
-      toggleLang: () => this.toggleLang(),
-      langBtn: es ? 'EN' : 'ES',
+      langToggle,
 
       opinionLabel: es ? 'Opinión' : 'Opinion',
 
