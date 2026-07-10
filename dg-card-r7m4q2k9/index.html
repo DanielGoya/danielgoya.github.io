@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#202124">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+
+  <title>Daniel Goya — Tarjeta QR</title>
+  <meta name="description" content="Tarjeta QR de Daniel Goya.">
+
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./assets/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
+
+  <style>
+    :root {
+      --bg:#efefec;
+      --paper:#fcfcfa;
+      --ink:#202124;
+      --muted:#596873;
+      --accent:#667987;
+      --line:#dadbd8;
+      --soft:#f3f3f0;
+      --shadow:0 22px 65px rgba(25,27,29,.16);
+      color-scheme:light;
+    }
+
+    * {
+      box-sizing:border-box;
+      -webkit-tap-highlight-color:transparent;
+    }
+
+    html, body {
+      margin:0;
+      width:100%;
+      min-height:100%;
+      overflow-x:hidden;
+      background:var(--bg);
+      color:var(--ink);
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system,
+                  BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      min-height:100dvh;
+      display:grid;
+      place-items:center;
+      padding:12px;
+      overscroll-behavior:none;
+    }
+
+    button, a {
+      font:inherit;
+    }
+
+    .app {
+      position:relative;
+      width:min(100%, 620px);
+      min-height:calc(100dvh - 24px);
+      max-height:980px;
+      background:
+        radial-gradient(circle at 100% 100%, rgba(102,121,135,.10), transparent 32%),
+        radial-gradient(circle at 0% 100%, rgba(102,121,135,.06), transparent 29%),
+        var(--paper);
+      border:1px solid var(--line);
+      border-radius:clamp(28px, 6vw, 52px);
+      box-shadow:var(--shadow);
+      padding:
+        max(18px, env(safe-area-inset-top))
+        clamp(16px, 4.5vw, 34px)
+        max(50px, env(safe-area-inset-bottom));
+      display:grid;
+      grid-template-rows:auto auto auto minmax(240px,1fr) auto;
+      gap:12px;
+      overflow:hidden;
+    }
+
+    .identity {
+      display:grid;
+      grid-template-columns:clamp(96px, 27vw, 150px) 1fr;
+      gap:clamp(16px, 4vw, 28px);
+      align-items:center;
+      min-width:0;
+    }
+
+    .photo {
+      aspect-ratio:1;
+      border-radius:50%;
+      overflow:hidden;
+      border:5px solid white;
+      box-shadow:0 0 0 2px rgba(102,121,135,.55),
+                 0 12px 28px rgba(25,27,29,.12);
+      background:#ddd;
+    }
+
+    .photo img {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:50% 40%;
+      display:block;
+    }
+
+    h1 {
+      margin:0;
+      font-size:clamp(2rem, 8vw, 3.7rem);
+      line-height:.98;
+      letter-spacing:-.055em;
+      font-weight:800;
+    }
+
+    .role {
+      margin:10px 0 0;
+      color:var(--muted);
+      font-size:clamp(.92rem, 3.3vw, 1.2rem);
+      line-height:1.25;
+      font-weight:700;
+    }
+
+    .institution {
+      margin:11px 0 0;
+      color:#343638;
+      font-size:clamp(.77rem, 2.7vw, .98rem);
+      line-height:1.4;
+      max-width:390px;
+    }
+
+    .accent-mark {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-top:10px;
+    }
+
+    .accent-mark::before {
+      content:"";
+      width:54px;
+      height:3px;
+      border-radius:999px;
+      background:var(--accent);
+    }
+
+    .accent-mark::after {
+      content:"";
+      width:6px;
+      height:6px;
+      border-radius:50%;
+      background:var(--accent);
+    }
+
+    .tags {
+      margin:0;
+      padding:9px 14px;
+      border:1px solid var(--line);
+      border-radius:17px;
+      background:rgba(243,243,240,.78);
+      color:#303234;
+      text-align:center;
+      font-size:clamp(.72rem, 2.7vw, .92rem);
+      line-height:1.35;
+    }
+
+    .site-link {
+      min-height:58px;
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:white;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      color:var(--ink);
+      text-decoration:none;
+      font-weight:800;
+      font-size:clamp(1.15rem, 5.6vw, 2rem);
+      letter-spacing:-.025em;
+      box-shadow:0 7px 18px rgba(32,33,36,.05);
+    }
+
+    .globe {
+      width:38px;
+      height:38px;
+      flex:0 0 auto;
+      border-radius:50%;
+      background:var(--accent);
+      color:white;
+      display:grid;
+      place-items:center;
+    }
+
+    .globe svg {
+      width:23px;
+      height:23px;
+      fill:none;
+      stroke:currentColor;
+      stroke-width:1.7;
+    }
+
+    .qr-panel {
+      min-height:0;
+      display:grid;
+      place-items:center;
+      align-content:center;
+      border:1px solid var(--line);
+      border-radius:28px;
+      background:white;
+      padding:clamp(12px, 2.4vh, 22px);
+      cursor:zoom-in;
+      box-shadow:0 10px 24px rgba(32,33,36,.06);
+    }
+
+    .qr-image {
+      width:min(100%, 39dvh, 350px);
+      max-height:100%;
+      aspect-ratio:1;
+      object-fit:contain;
+      image-rendering:pixelated;
+      display:block;
+    }
+
+    .install-area {
+      display:none;
+      justify-content:center;
+      padding-top:2px;
+    }
+
+    .install-area.visible {
+      display:flex;
+    }
+
+    .install-button {
+      min-height:44px;
+      padding:10px 18px;
+      border:1px solid var(--line);
+      border-radius:15px;
+      background:#2f3133;
+      color:white;
+      font-weight:750;
+      cursor:pointer;
+      box-shadow:0 7px 16px rgba(32,33,36,.12);
+    }
+
+    body.installed .install-area {
+      display:none !important;
+    }
+
+    body.installed .app {
+      grid-template-rows:auto auto auto minmax(280px,1fr);
+    }
+
+    .language-switch {
+      position:fixed;
+      left:max(8px, env(safe-area-inset-left));
+      bottom:max(8px, env(safe-area-inset-bottom));
+      z-index:70;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      align-items:center;
+      gap:2px;
+      min-width:76px;
+      padding:3px;
+      border:1px solid rgba(80,84,88,.24);
+      border-radius:999px;
+      background:rgba(252,252,250,.88);
+      box-shadow:0 3px 10px rgba(32,33,36,.08);
+      backdrop-filter:blur(7px);
+      cursor:pointer;
+    }
+
+    .language-option {
+      border-radius:999px;
+      color:#6a6e72;
+      font-size:.66rem;
+      font-weight:800;
+      line-height:1;
+      padding:7px 8px;
+      text-align:center;
+      pointer-events:none;
+    }
+
+    .language-option.active {
+      background:#303235;
+      color:white;
+    }
+
+    .zoom {
+      position:fixed;
+      inset:0;
+      z-index:40;
+      display:none;
+      place-items:center;
+      background:#efefec;
+      padding:0 0 max(42px, env(safe-area-inset-bottom));
+      cursor:zoom-out;
+    }
+
+    .zoom.open {
+      display:grid;
+    }
+
+    .zoom-card {
+      width:100vw;
+      height:calc(100dvh - max(42px, env(safe-area-inset-bottom)));
+      padding:
+        max(7px, env(safe-area-inset-top))
+        max(7px, env(safe-area-inset-right))
+        7px
+        max(7px, env(safe-area-inset-left));
+      border:0;
+      border-radius:0;
+      background:var(--paper);
+      display:grid;
+      grid-template-rows:auto auto minmax(0,1fr);
+      gap:6px;
+      overflow:hidden;
+      cursor:default;
+    }
+
+    .zoom-identity {
+      display:grid;
+      grid-template-columns:64px 1fr;
+      gap:11px;
+      align-items:center;
+    }
+
+    .zoom-photo {
+      width:64px;
+      height:64px;
+      border-radius:50%;
+      overflow:hidden;
+      border:3px solid white;
+      box-shadow:0 0 0 2px rgba(102,121,135,.50);
+    }
+
+    .zoom-photo img {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:50% 40%;
+      display:block;
+    }
+
+    .zoom-identity h2 {
+      margin:0;
+      font-size:clamp(1.55rem, 6.2vw, 2.5rem);
+      line-height:1;
+      letter-spacing:-.045em;
+    }
+
+    .zoom-identity p {
+      margin:5px 0 0;
+      color:var(--muted);
+      font-weight:750;
+      font-size:clamp(.82rem, 2.8vw, 1rem);
+    }
+
+    .zoom-site {
+      min-height:42px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:white;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      color:var(--ink);
+      text-decoration:none;
+      font-weight:800;
+      font-size:clamp(.98rem, 4.4vw, 1.45rem);
+      letter-spacing:-.02em;
+    }
+
+    .zoom-site .globe {
+      width:30px;
+      height:30px;
+    }
+
+    .zoom-site .globe svg {
+      width:18px;
+      height:18px;
+    }
+
+    .zoom-qr-wrap {
+      min-height:0;
+      display:grid;
+      place-items:center;
+      overflow:hidden;
+      background:white;
+    }
+
+    .zoom-qr {
+      width:min(98vw, calc(100dvh - 125px), 1000px);
+      max-width:100%;
+      max-height:100%;
+      aspect-ratio:1;
+      object-fit:contain;
+      image-rendering:pixelated;
+      display:block;
+    }
+
+    @media (max-width:420px) {
+      body {
+        padding:0;
+      }
+
+      .app {
+        min-height:100dvh;
+        max-height:none;
+        border:0;
+        border-radius:0;
+        box-shadow:none;
+      }
+
+      .identity {
+        grid-template-columns:104px 1fr;
+      }
+    }
+
+    @media (max-height:760px) {
+      .app {
+        gap:8px;
+        padding-top:12px;
+      }
+
+      .identity {
+        grid-template-columns:86px 1fr;
+        gap:14px;
+      }
+
+      .role,
+      .institution,
+      .accent-mark {
+        margin-top:5px;
+      }
+
+      .tags {
+        padding:6px 10px;
+      }
+
+      .site-link {
+        min-height:48px;
+      }
+
+      .qr-panel {
+        padding:8px;
+      }
+
+      .qr-image {
+        width:min(100%, 34dvh, 300px);
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      * {
+        scroll-behavior:auto !important;
+        transition:none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="app">
+    <header class="identity">
+      <div class="photo">
+        <img src="./assets/daniel-goya.jpg" alt="Daniel Goya" width="900" height="900">
+      </div>
+
+      <div>
+        <h1>Daniel Goya</h1>
+        <p class="role" data-es="Economista" data-en="Economist">Economista</p>
+        <div class="accent-mark" aria-hidden="true"></div>
+        <p class="institution"
+           data-es="Escuela de Negocios y Economía · Pontificia Universidad Católica de Valparaíso"
+           data-en="School of Business and Economics · Pontificia Universidad Católica de Valparaíso">
+          Escuela de Negocios y Economía · Pontificia Universidad Católica de Valparaíso
+        </p>
+      </div>
+    </header>
+
+    <p class="tags"
+       data-es="Innovación · Desarrollo productivo · Políticas públicas"
+       data-en="Innovation · Productive development · Public policy">
+      Innovación · Desarrollo productivo · Políticas públicas
+    </p>
+
+    <a class="site-link" href="https://danielgoya.github.io/"
+       target="_blank" rel="noopener">
+      <span class="globe" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M3 12h18"></path>
+          <path d="M12 3a15 15 0 0 1 0 18"></path>
+          <path d="M12 3a15 15 0 0 0 0 18"></path>
+        </svg>
+      </span>
+      <span>danielgoya.github.io</span>
+    </a>
+
+    <section class="qr-panel" id="qr-panel" aria-label="Ampliar código QR">
+      <img class="qr-image"
+           src="./assets/qr-contacto-v7.png"
+           alt="Código QR para abrir contacto.html">
+    </section>
+
+    <div class="install-area" id="install-area">
+      <button class="install-button" id="install-button" type="button">
+        <span data-es="Instalar tarjeta en este teléfono"
+              data-en="Install QR card on this phone">
+          Instalar tarjeta en este teléfono
+        </span>
+      </button>
+    </div>
+  </main>
+
+  <button class="language-switch" id="language-switch" type="button"
+          aria-label="Cambiar a inglés">
+    <span class="language-option" id="language-es">ES</span>
+    <span class="language-option" id="language-en">EN</span>
+  </button>
+
+  <div class="zoom" id="zoom" role="dialog" aria-modal="true"
+       aria-label="Código QR ampliado">
+    <div class="zoom-card">
+      <header class="zoom-identity">
+        <div class="zoom-photo">
+          <img src="./assets/daniel-goya.jpg" alt="Daniel Goya">
+        </div>
+
+        <div>
+          <h2>Daniel Goya</h2>
+          <p data-es="Economista" data-en="Economist">Economista</p>
+        </div>
+      </header>
+
+      <a class="zoom-site" href="https://danielgoya.github.io/"
+         target="_blank" rel="noopener">
+        <span class="globe" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M3 12h18"></path>
+            <path d="M12 3a15 15 0 0 1 0 18"></path>
+            <path d="M12 3a15 15 0 0 0 0 18"></path>
+          </svg>
+        </span>
+        <span>danielgoya.github.io</span>
+      </a>
+
+      <div class="zoom-qr-wrap">
+        <img class="zoom-qr"
+             src="./assets/qr-contacto-v7.png"
+             alt="Código QR ampliado">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      const standalone =
+        window.matchMedia("(display-mode: standalone)").matches ||
+        window.navigator.standalone === true;
+
+      document.body.classList.toggle("installed", standalone);
+
+      // Language is selected from the phone's time zone, not from the
+      // owner's browser-language preferences.
+      const spanishTimeZones = new Set([
+        "Europe/Madrid",
+        "Atlantic/Canary",
+        "America/Argentina/Buenos_Aires",
+        "America/Argentina/Catamarca",
+        "America/Argentina/Cordoba",
+        "America/Argentina/Jujuy",
+        "America/Argentina/La_Rioja",
+        "America/Argentina/Mendoza",
+        "America/Argentina/Rio_Gallegos",
+        "America/Argentina/Salta",
+        "America/Argentina/San_Juan",
+        "America/Argentina/San_Luis",
+        "America/Argentina/Tucuman",
+        "America/Argentina/Ushuaia",
+        "America/La_Paz",
+        "America/Santiago",
+        "Pacific/Easter",
+        "America/Bogota",
+        "America/Costa_Rica",
+        "America/Havana",
+        "America/Santo_Domingo",
+        "America/Guayaquil",
+        "Pacific/Galapagos",
+        "America/El_Salvador",
+        "America/Guatemala",
+        "America/Tegucigalpa",
+        "America/Mexico_City",
+        "America/Cancun",
+        "America/Chihuahua",
+        "America/Hermosillo",
+        "America/Mazatlan",
+        "America/Matamoros",
+        "America/Merida",
+        "America/Monterrey",
+        "America/Ojinaga",
+        "America/Tijuana",
+        "America/Managua",
+        "America/Panama",
+        "America/Asuncion",
+        "America/Lima",
+        "America/Puerto_Rico",
+        "America/Montevideo",
+        "America/Caracas",
+        "Africa/Malabo"
+]);
+
+      function detectLanguageFromTimeZone() {
+        try {
+          const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+          return spanishTimeZones.has(timeZone) ? "es" : "en";
+        } catch (_) {
+          return "en";
+        }
+      }
+
+      const languageSwitch = document.getElementById("language-switch");
+      const languageEs = document.getElementById("language-es");
+      const languageEn = document.getElementById("language-en");
+      let currentLanguage = detectLanguageFromTimeZone();
+
+      function setLanguage(lang) {
+        currentLanguage = lang;
+        document.documentElement.lang = lang;
+
+        document.querySelectorAll("[data-es][data-en]").forEach((node) => {
+          node.textContent = node.dataset[lang];
+        });
+
+        languageEs.classList.toggle("active", lang === "es");
+        languageEn.classList.toggle("active", lang === "en");
+
+        languageSwitch.setAttribute(
+          "aria-label",
+          lang === "es" ? "Cambiar a inglés" : "Switch to Spanish"
+        );
+      }
+
+      setLanguage(currentLanguage);
+
+      // Any click on the full ES/EN control changes the language.
+      languageSwitch.addEventListener("click", () => {
+        setLanguage(currentLanguage === "es" ? "en" : "es");
+      });
+
+      // Installation button: visible only when the browser exposes the prompt.
+      let installPrompt = null;
+      const installArea = document.getElementById("install-area");
+      const installButton = document.getElementById("install-button");
+
+      window.addEventListener("beforeinstallprompt", (event) => {
+        event.preventDefault();
+        installPrompt = event;
+        if (!standalone) installArea.classList.add("visible");
+      });
+
+      installButton.addEventListener("click", async () => {
+        if (!installPrompt) return;
+        installPrompt.prompt();
+        await installPrompt.userChoice;
+        installPrompt = null;
+        installArea.classList.remove("visible");
+      });
+
+      window.addEventListener("appinstalled", () => {
+        installArea.classList.remove("visible");
+        document.body.classList.add("installed");
+      });
+
+      // Enlarged QR view.
+      const zoom = document.getElementById("zoom");
+
+      document.getElementById("qr-panel").addEventListener("click", () => {
+        zoom.classList.add("open");
+        requestWakeLock();
+      });
+
+      zoom.addEventListener("click", (event) => {
+        if (event.target === zoom) zoom.classList.remove("open");
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") zoom.classList.remove("open");
+      });
+
+      // Keep the screen awake while the card is being shown.
+      let wakeLock = null;
+
+      async function requestWakeLock() {
+        try {
+          if ("wakeLock" in navigator && !wakeLock) {
+            wakeLock = await navigator.wakeLock.request("screen");
+            wakeLock.addEventListener("release", () => {
+              wakeLock = null;
+            });
+          }
+        } catch (_) {}
+      }
+
+      document.addEventListener("pointerdown", requestWakeLock, { once:true });
+
+      document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "visible") requestWakeLock();
+      });
+
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("./sw.js").catch(console.debug);
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

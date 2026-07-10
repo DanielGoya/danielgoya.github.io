@@ -10,7 +10,7 @@
   <meta name="description" content="Tarjeta de contacto de Daniel Goya, economista, profesor e investigador.">
 
   <meta property="og:type" content="profile">
-  <meta property="og:title" content="Daniel Goya León — Economista, profesor e investigador">
+  <meta property="og:title" content="Daniel Goya — Economista, profesor e investigador">
   <meta property="og:description" content="Innovación, desarrollo productivo y políticas públicas.">
   <meta property="og:url" content="https://danielgoya.github.io/contacto.html">
   <meta property="og:image" content="https://danielgoya.github.io/uploads/foto%20ICA%20-%20cuadrada%20m%C3%A1s%20lejos.jpg">
@@ -412,6 +412,13 @@
           </button>
 
         </div>
+
+        <p class="smallprint">
+          <span data-es="Página accesible mediante enlace directo o QR; no aparece en la navegación del sitio."
+                data-en="Available through a direct link or QR; not shown in the website navigation.">
+            Página accesible mediante enlace directo o QR; no aparece en la navegación del sitio.
+          </span>
+        </p>
       </section>
     </article>
   </main>
@@ -419,23 +426,48 @@
   <script>
     const esButton = document.getElementById("lang-es");
     const enButton = document.getElementById("lang-en");
+    const languageControl = document.querySelector(".language");
 
-    function setLanguage(lang) {
+    function preferredLanguage() {
+      const preferences = [
+        ...(navigator.languages || []),
+        navigator.language
+      ].filter(Boolean);
+
+      return preferences.some((locale) =>
+        String(locale).toLowerCase().split("-")[0] === "es"
+      ) ? "es" : "en";
+    }
+
+    function setLanguage(lang, remember = true) {
       document.documentElement.lang = lang;
+
       document.querySelectorAll("[data-es][data-en]").forEach((node) => {
         node.textContent = node.dataset[lang];
       });
 
       esButton.setAttribute("aria-pressed", String(lang === "es"));
       enButton.setAttribute("aria-pressed", String(lang === "en"));
-      localStorage.setItem("contact-card-language", lang);
+      languageControl.setAttribute(
+        "aria-label",
+        lang === "es" ? "Idioma" : "Language"
+      );
+
+      if (remember) {
+        localStorage.setItem("contact-card-language", lang);
+      }
     }
 
     esButton.addEventListener("click", () => setLanguage("es"));
     enButton.addEventListener("click", () => setLanguage("en"));
 
     const savedLanguage = localStorage.getItem("contact-card-language");
-    if (savedLanguage === "en") setLanguage("en");
+    const initialLanguage =
+      savedLanguage === "es" || savedLanguage === "en"
+        ? savedLanguage
+        : preferredLanguage();
+
+    setLanguage(initialLanguage, false);
 
     const shareButton = document.getElementById("share-button");
     if (navigator.share) {
