@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="theme-color" content="#f8fafc">
+
+  <title>Daniel Goya — Contacto</title>
+  <meta name="description" content="Tarjeta de contacto de Daniel Goya, economista, profesor e investigador.">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Daniel Goya León — Economista, profesor e investigador">
+  <meta property="og:description" content="Innovación, desarrollo productivo y políticas públicas.">
+  <meta property="og:url" content="https://danielgoya.github.io/contacto.html">
+  <meta property="og:image" content="https://danielgoya.github.io/uploads/foto%20ICA%20-%20cuadrada%20m%C3%A1s%20lejos.jpg">
+
+  <style>
+    :root{
+      --paper:#ffffff;
+      --ground:#f8fafc;
+      --ink:#0f172a;
+      --muted:#475569;
+      --soft:#64748b;
+      --line:#e2e8f0;
+      --accent:#2563eb;
+      --accent-dark:#1d4ed8;
+      --shadow:0 20px 60px rgba(15,23,42,.10);
+      --radius:24px;
+    }
+
+    *{box-sizing:border-box}
+
+    html,body{margin:0; min-height:100%}
+
+    body{
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+                  "Segoe UI", sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 15% 0%, rgba(37,99,235,.08), transparent 34rem),
+        var(--ground);
+      display:grid;
+      place-items:center;
+      padding:28px 16px;
+    }
+
+    a{color:inherit}
+
+    .shell{
+      width:min(100%, 560px);
+    }
+
+    .topline{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin:0 4px 12px;
+      gap:12px;
+      color:var(--soft);
+      font-size:.82rem;
+    }
+
+    .brand{
+      text-decoration:none;
+      font-weight:650;
+      letter-spacing:.01em;
+    }
+
+    .language{
+      display:flex;
+      gap:4px;
+      padding:4px;
+      background:rgba(255,255,255,.74);
+      border:1px solid var(--line);
+      border-radius:999px;
+    }
+
+    .language button{
+      border:0;
+      background:transparent;
+      color:var(--soft);
+      padding:6px 10px;
+      border-radius:999px;
+      font:inherit;
+      cursor:pointer;
+    }
+
+    .language button[aria-pressed="true"]{
+      background:var(--ink);
+      color:white;
+    }
+
+    .card{
+      background:rgba(255,255,255,.94);
+      border:1px solid rgba(226,232,240,.9);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .identity{
+      padding:34px 30px 24px;
+      text-align:center;
+    }
+
+    .photo{
+      width:148px;
+      height:148px;
+      border-radius:50%;
+      overflow:hidden;
+      margin:0 auto 20px;
+      border:4px solid white;
+      box-shadow:0 0 0 1px var(--line), 0 12px 30px rgba(15,23,42,.14);
+      background:#e2e8f0;
+    }
+
+    .photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:50% 10%;
+      transform:scale(1.12);
+      display:block;
+    }
+
+    h1{
+      margin:0;
+      font-size:clamp(2rem, 8vw, 2.55rem);
+      line-height:1.05;
+      letter-spacing:-.045em;
+    }
+
+    .role{
+      margin:10px 0 0;
+      font-size:1.04rem;
+      font-weight:680;
+      color:var(--muted);
+    }
+
+    .institution{
+      margin:7px auto 0;
+      max-width:410px;
+      color:var(--soft);
+      line-height:1.45;
+      font-size:.94rem;
+    }
+
+    .focus{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:7px;
+      margin:20px 0 0;
+      padding:0;
+      list-style:none;
+    }
+
+    .focus li{
+      border:1px solid var(--line);
+      background:#f8fafc;
+      color:var(--muted);
+      border-radius:999px;
+      padding:7px 10px;
+      font-size:.79rem;
+      font-weight:620;
+    }
+
+    .actions{
+      border-top:1px solid var(--line);
+      padding:22px 24px 26px;
+    }
+
+    .primary{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      width:100%;
+      min-height:52px;
+      border-radius:14px;
+      background:var(--accent);
+      color:white;
+      font-weight:750;
+      text-decoration:none;
+      box-shadow:0 8px 18px rgba(37,99,235,.22);
+      transition:transform .15s ease, background .15s ease;
+    }
+
+    .primary:hover{
+      background:var(--accent-dark);
+      transform:translateY(-1px);
+    }
+    .website-prominent{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      width:100%;
+      min-height:50px;
+      margin-top:11px;
+      border:1px solid var(--ink);
+      border-radius:14px;
+      background:var(--ink);
+      color:white;
+      font-weight:750;
+      text-decoration:none;
+      transition:transform .15s ease, background .15s ease;
+    }
+
+    .website-prominent:hover{
+      background:#1e293b;
+      transform:translateY(-1px);
+    }
+
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;
+      margin-top:11px;
+    }
+
+    .action{
+      min-height:46px;
+      border:1px solid var(--line);
+      border-radius:13px;
+      background:white;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      padding:10px 12px;
+      text-align:center;
+      text-decoration:none;
+      color:var(--muted);
+      font-size:.9rem;
+      font-weight:680;
+      transition:background .15s ease, border-color .15s ease, transform .15s ease;
+    }
+
+    .action:hover{
+      background:#f8fafc;
+      border-color:#cbd5e1;
+      transform:translateY(-1px);
+    }
+
+    .action[hidden]{display:none}
+
+    svg{
+      width:18px;
+      height:18px;
+      flex:0 0 auto;
+      stroke:currentColor;
+      stroke-width:1.9;
+      fill:none;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+    }
+
+    .smallprint{
+      margin:15px 0 0;
+      text-align:center;
+      color:#94a3b8;
+      font-size:.72rem;
+      line-height:1.4;
+    }
+
+    .smallprint a{
+      text-underline-offset:3px;
+    }
+
+    @media (max-width:420px){
+      body{padding:14px 10px}
+      .identity{padding:28px 20px 22px}
+      .actions{padding:19px 16px 22px}
+      .photo{width:132px;height:132px}
+      .grid{grid-template-columns:1fr}
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      *{scroll-behavior:auto!important; transition:none!important}
+    }
+  </style>
+</head>
+
+<body>
+  <main class="shell">
+    <div class="topline">
+      <a class="brand" href="https://danielgoya.github.io/" aria-label="Abrir sitio principal">
+        danielgoya.github.io
+      </a>
+
+      <div class="language" aria-label="Idioma">
+        <button type="button" id="lang-es" aria-pressed="true">ES</button>
+        <button type="button" id="lang-en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+
+    <article class="card">
+      <section class="identity">
+        <div class="photo">
+          <img
+            src="https://danielgoya.github.io/uploads/foto%20ICA%20-%20cuadrada%20m%C3%A1s%20lejos.jpg"
+            alt="Daniel Goya"
+            width="148"
+            height="148">
+        </div>
+
+        <h1>Daniel Goya</h1>
+
+        <p class="role"
+           data-es="Economista · Profesor e investigador"
+           data-en="Economist · Professor and researcher">
+          Economista · Profesor e investigador
+        </p>
+
+        <p class="institution"
+           data-es="Escuela de Negocios y Economía · Pontificia Universidad Católica de Valparaíso"
+           data-en="School of Business and Economics · Pontificia Universidad Católica de Valparaíso">
+          Escuela de Negocios y Economía · Pontificia Universidad Católica de Valparaíso
+        </p>
+
+        <ul class="focus" aria-label="Áreas de trabajo">
+          <li data-es="Innovación" data-en="Innovation">Innovación</li>
+          <li data-es="Desarrollo productivo" data-en="Productive development">Desarrollo productivo</li>
+          <li data-es="Políticas públicas" data-en="Public policy">Políticas públicas</li>
+        </ul>
+      </section>
+
+      <section class="actions">
+        <a class="primary" href="daniel-goya.vcf" download>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v12"></path>
+            <path d="m7 10 5 5 5-5"></path>
+            <path d="M5 21h14a2 2 0 0 0 2-2v-3"></path>
+            <path d="M3 16v3a2 2 0 0 0 2 2"></path>
+          </svg>
+          <span data-es="Guardar contacto" data-en="Save contact">Guardar contacto</span>
+        </a>
+
+        <a class="website-prominent" href="https://danielgoya.github.io/">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M3 12h18"></path>
+            <path d="M12 3a15 15 0 0 1 0 18"></path>
+            <path d="M12 3a15 15 0 0 0 0 18"></path>
+          </svg>
+          <span data-es="Visitar sitio web" data-en="Visit website">Visitar sitio web</span>
+        </a>
+
+        <div class="grid">
+          <a class="action" href="mailto:daniel.goya@pucv.cl">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+              <path d="m3 7 9 6 9-6"></path>
+            </svg>
+            <span data-es="Correo" data-en="Email">Correo</span>
+          </a>
+
+          <a class="action" href="https://wa.me/56988448384" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-4.6A8.5 8.5 0 1 1 20.5 11.5z"></path>
+              <path d="M8.7 7.8c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .5.4l.8 1.8c.1.3.1.5-.1.7l-.6.7c-.2.2-.2.4-.1.6.4.9 1.1 1.7 2 2.2.2.1.4.1.6-.1l.8-1c.2-.2.4-.3.7-.2l1.8.9c.3.1.4.3.4.5 0 .3-.1 1.1-.7 1.6-.6.6-1.5.9-2.5.6-1.4-.4-3.1-1.2-4.7-2.8-1.3-1.3-2.2-3-2.4-4.2-.2-.8 0-1.5.3-2z"></path>
+            </svg>
+            <span>WhatsApp</span>
+          </a>
+
+          <a class="action" href="https://danielgoya.github.io/cv.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <path d="M14 2v6h6"></path>
+              <path d="M8 13h8M8 17h8"></path>
+            </svg>
+            <span>CV</span>
+          </a>
+
+          <a class="action" href="https://scholar.google.com/citations?hl=es&amp;user=2D0bmyYAAAAJ">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m2 9 10-5 10 5-10 5z"></path>
+              <path d="M6 11.5V16c3 2 9 2 12 0v-4.5"></path>
+            </svg>
+            <span>Google Scholar</span>
+          </a>
+
+          <a class="action" href="https://orcid.org/0000-0003-0461-845X">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"></circle>
+              <path d="M8.5 8.5v7"></path>
+              <path d="M8.5 6.5h.01"></path>
+              <path d="M12 15.5V10h2a2.75 2.75 0 0 1 0 5.5z"></path>
+            </svg>
+            <span>ORCID</span>
+          </a>
+
+          <a class="action" id="linkedin-link" href="#" hidden>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+              <path d="M8 10v7M8 7h.01M12 17v-7M12 13a3 3 0 0 1 6 0v4"></path>
+            </svg>
+            <span>LinkedIn</span>
+          </a>
+
+          <button class="action" id="share-button" type="button" hidden>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="18" cy="5" r="3"></circle>
+              <circle cx="6" cy="12" r="3"></circle>
+              <circle cx="18" cy="19" r="3"></circle>
+              <path d="m8.6 10.7 6.8-4.4M8.6 13.3l6.8 4.4"></path>
+            </svg>
+            <span data-es="Compartir" data-en="Share">Compartir</span>
+          </button>
+
+        </div>
+
+        <p class="smallprint">
+          <span data-es="Página accesible mediante enlace directo o QR; no aparece en la navegación del sitio."
+                data-en="Available through a direct link or QR; not shown in the website navigation.">
+            Página accesible mediante enlace directo o QR; no aparece en la navegación del sitio.
+          </span>
+        </p>
+      </section>
+    </article>
+  </main>
+
+  <script>
+    const esButton = document.getElementById("lang-es");
+    const enButton = document.getElementById("lang-en");
+
+    function setLanguage(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll("[data-es][data-en]").forEach((node) => {
+        node.textContent = node.dataset[lang];
+      });
+
+      esButton.setAttribute("aria-pressed", String(lang === "es"));
+      enButton.setAttribute("aria-pressed", String(lang === "en"));
+      localStorage.setItem("contact-card-language", lang);
+    }
+
+    esButton.addEventListener("click", () => setLanguage("es"));
+    enButton.addEventListener("click", () => setLanguage("en"));
+
+    const savedLanguage = localStorage.getItem("contact-card-language");
+    if (savedLanguage === "en") setLanguage("en");
+
+    const shareButton = document.getElementById("share-button");
+    if (navigator.share) {
+      shareButton.hidden = false;
+      shareButton.addEventListener("click", async () => {
+        const english = document.documentElement.lang === "en";
+        try {
+          await navigator.share({
+            title: "Daniel Goya",
+            text: english
+              ? "Contact details for Daniel Goya"
+              : "Datos de contacto de Daniel Goya",
+            url: window.location.href
+          });
+        } catch (error) {
+          if (error.name !== "AbortError") console.error(error);
+        }
+      });
+    }
+
+    /*
+      The current homepage already contains the correct LinkedIn URL.
+      This same-origin lookup avoids duplicating it here and keeps this page
+      aligned if the profile URL changes later.
+    */
+    (async function loadLinkedIn() {
+      try {
+        const response = await fetch("/", {cache: "no-store"});
+        if (!response.ok) return;
+        const html = await response.text();
+        const documentCopy = new DOMParser().parseFromString(html, "text/html");
+        const link = [...documentCopy.querySelectorAll("a")].find((a) =>
+          a.textContent.trim().toLowerCase().includes("linkedin")
+        );
+
+        if (link && link.href) {
+          const target = new URL(link.getAttribute("href"), window.location.origin);
+          const linkedin = document.getElementById("linkedin-link");
+          linkedin.href = target.href;
+          linkedin.hidden = false;
+        }
+      } catch (error) {
+        console.debug("LinkedIn link could not be loaded.", error);
+      }
+    })();
+  </script>
+</body>
+</html>

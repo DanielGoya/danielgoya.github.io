@@ -1,0 +1,15 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Goya León;Daniel Ignacio;;Dr.;
+FN:Daniel Goya
+ORG:Pontificia Universidad Católica de Valparaíso;Escuela de Negocios y Economía
+TITLE:Economista; profesor e investigador
+EMAIL;TYPE=INTERNET,WORK:daniel.goya@pucv.cl
+TEL;TYPE=CELL,VOICE,PREF:+56988448384
+TEL;TYPE=WORK,VOICE:+56322273585
+URL:https://danielgoya.github.io/
+URL;TYPE=Google Scholar:https://scholar.google.com/citations?hl=es&user=2D0bmyYAAAAJ
+URL;TYPE=ORCID:https://orcid.org/0000-0003-0461-845X
+ADR;TYPE=WORK:;;Amunátegui 1838\, Recreo;Viña del Mar;;;Chile
+NOTE:Innovación\, desarrollo productivo y políticas públicas.
+END:VCARD
