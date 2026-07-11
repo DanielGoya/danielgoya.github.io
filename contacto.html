@@ -258,18 +258,6 @@
       stroke-linejoin:round;
     }
 
-    .smallprint{
-      margin:15px 0 0;
-      text-align:center;
-      color:#94a3b8;
-      font-size:.72rem;
-      line-height:1.4;
-    }
-
-    .smallprint a{
-      text-underline-offset:3px;
-    }
-
     @media (max-width:420px){
       body{padding:14px 10px}
       .identity{padding:28px 20px 22px}
@@ -307,7 +295,7 @@
             height="148">
         </div>
 
-        <h1>Daniel Goya</h1>
+        <h1 data-es="Daniel Goya León" data-en="Daniel Goya">Daniel Goya León</h1>
 
         <p class="role"
            data-es="Economista · Profesor e investigador"
@@ -412,8 +400,6 @@
           </button>
 
         </div>
-
-
       </section>
     </article>
   </main>
@@ -436,6 +422,10 @@
 
     function setLanguage(lang, remember = true) {
       document.documentElement.lang = lang;
+      document.title =
+        lang === "es"
+          ? "Daniel Goya León — Contacto"
+          : "Daniel Goya — Contact";
 
       document.querySelectorAll("[data-es][data-en]").forEach((node) => {
         node.textContent = node.dataset[lang];
