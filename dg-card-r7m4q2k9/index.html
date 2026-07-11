@@ -468,7 +468,7 @@
       </div>
 
       <div>
-        <h1>Daniel Goya</h1>
+        <h1 data-es="Daniel Goya León" data-en="Daniel Goya">Daniel Goya León</h1>
         <p class="role" data-es="Economista" data-en="Economist">Economista</p>
         <div class="accent-mark" aria-hidden="true"></div>
         <p class="institution"
@@ -529,7 +529,7 @@
         </div>
 
         <div>
-          <h2>Daniel Goya</h2>
+          <h2 data-es="Daniel Goya León" data-en="Daniel Goya">Daniel Goya León</h2>
           <p data-es="Economista" data-en="Economist">Economista</p>
         </div>
       </header>
@@ -629,6 +629,10 @@
       function setLanguage(lang) {
         currentLanguage = lang;
         document.documentElement.lang = lang;
+        document.title =
+          lang === "es"
+            ? "Daniel Goya León — Tarjeta QR"
+            : "Daniel Goya — QR Card";
 
         document.querySelectorAll("[data-es][data-en]").forEach((node) => {
           node.textContent = node.dataset[lang];
