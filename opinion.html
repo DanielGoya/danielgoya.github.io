@@ -1,74 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang="es" data-lang="es">
 <head>
 <meta charset="utf-8">
-  <title>Opinión y Divulgación / Opinion — Daniel Goya</title>
+<title>Opinión y Divulgación / Opinion — Daniel Goya León</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- SEO -->
-  <meta name="description" content="Columnas y divulgación de Daniel Goya. / Opinion columns and outreach by Daniel Goya on innovation economics and industrial policy.">
-  <meta name="keywords" content="Daniel Goya columnas, opinion, divulgación, outreach, innovación Chile, innovation policy">
-  <meta name="author" content="Daniel Goya">
-  <link rel="canonical" href="https://danielgoya.github.io/opinion.html">
-  <link rel="me" href="https://scholar.google.com/citations?user=2D0bmyYAAAAJ&hl=es">
+<!-- SEO -->
+<meta name="description" content="Columnas y divulgación de Daniel Goya. / Opinion columns and outreach by Daniel Goya on innovation economics and industrial policy.">
+<meta name="keywords" content="Daniel Goya columnas, opinion, divulgación, outreach, innovación Chile, innovation policy">
+<meta name="author" content="Daniel Goya">
+<link rel="canonical" href="https://danielgoya.github.io/opinion.html">
+<link rel="me" href="https://scholar.google.com/citations?user=2D0bmyYAAAAJ&hl=es">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://danielgoya.github.io/opinion.html">
+<meta property="og:title" content="Opinión y Divulgación / Opinion — Daniel Goya León">
+<meta property="og:description" content="Columnas y divulgación de Daniel Goya. / Opinion columns and outreach by Daniel Goya on innovation economics and industrial policy.">
+<meta property="og:image" content="https://danielgoya.github.io/uploads/photo-cropped.png">
+<meta property="og:locale" content="es_CL">
+<meta property="og:locale:alternate" content="en_US">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Opinión y Divulgación / Opinion — Daniel Goya León">
+<meta name="twitter:description" content="Columnas y divulgación de Daniel Goya.">
+<meta name="twitter:image" content="https://danielgoya.github.io/uploads/photo-cropped.png">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #eef2f7; }
+  * { box-sizing: border-box; }
+  a { transition: opacity 0.12s; text-decoration: none; }
+  a:hover { opacity: 0.72; }
+  .pill-tab { cursor: pointer; font-family: 'IBM Plex Sans',sans-serif; font-size: 12.5px; font-weight: 500; padding: 6px 16px; border-radius: 20px; border: none; background: transparent; color: #64748b; transition: background 0.15s, color 0.15s; white-space: nowrap; }
+  .pill-tab:hover { background: #f1f5f9; color: #1e3a5f; }
+  .pill-tab.active { background: #1d4ed8; color: white; }
+  .section-panel { display: none; }
+  .section-panel.visible { display: block; }
+  .card { border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px 18px; background: white; transition: box-shadow 0.15s, border-color 0.15s; }
+  .card:hover { box-shadow: 0 4px 18px rgba(0,0,0,0.07); border-color: #cbd5e1; }
+  .outlet-badge { display: inline-flex; align-items: center; gap: 5px; font-family: 'IBM Plex Sans',sans-serif; font-size: 11px; font-weight: 600; padding: 2px 9px 2px 6px; border-radius: 4px; }
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://danielgoya.github.io/opinion.html">
-  <meta property="og:title" content="Opinión y Divulgación / Opinion — Daniel Goya">
-  <meta property="og:description" content="Columnas y divulgación de Daniel Goya. / Opinion columns and outreach by Daniel Goya on innovation economics and industrial policy.">
-  <meta property="og:image" content="https://danielgoya.github.io/uploads/photo-cropped.png">
-  <meta property="og:locale" content="es_CL">
-  <meta property="og:locale:alternate" content="en_US">
+  .lang-pill { display: flex; align-items: center; padding: 0 8px; }
+  .lang-pill > div { display: flex; background: #f1f5f9; border-radius: 7px; padding: 3px; gap: 2px; }
+  .lang-btn { font-family: 'IBM Plex Sans',sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.05em; padding: 4px 11px; border-radius: 5px; border: none; cursor: pointer; background: transparent; color: #94a3b8; box-shadow: none; transition: background 0.15s, color 0.15s, box-shadow 0.15s; }
+  .lang-btn[aria-pressed="true"] { background: #fff; color: #1d4ed8; box-shadow: 0 1px 3px rgba(0,0,0,0.10); }
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Opinión y Divulgación / Opinion — Daniel Goya">
-  <meta name="twitter:description" content="Columnas y divulgación de Daniel Goya. / Opinion columns and outreach by Daniel Goya on innovation economics and industrial policy.">
-  <meta name="twitter:image" content="https://danielgoya.github.io/uploads/photo-cropped.png">
-<script src="https://danielgoya.github.io/support.js"></script>
+  @media (max-width: 640px) {
+    .r-nav { padding: 0 !important; }
+    .r-nav-brand { padding: 0 0 0 14px !important; font-size: 15px !important; flex: 0 0 auto !important; white-space: nowrap !important; }
+    .r-nav-links { flex: 1 1 auto !important; min-width: 0 !important; overflow-x: auto !important; scrollbar-width: none !important; }
+    .r-nav-links::-webkit-scrollbar { display: none; }
+    .r-nav-links a, .r-nav-links span, .r-nav-links .lang-pill { flex-shrink: 0 !important; white-space: nowrap !important; }
+    .r-nav-links a, .r-nav-links > span { height: 42px !important; font-size: 12px !important; padding: 0 8px !important; }
+    .r-main { padding: 28px 16px 60px !important; }
+    .r-cards-grid { grid-template-columns: 1fr !important; }
+    .r-footer { padding: 20px 16px !important; }
+  }
+</style>
 </head>
 <body>
-<x-dc>
-
-<helmet>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <style>
-    body { margin: 0; background: #eef2f7; }
-    * { box-sizing: border-box; }
-    a { transition: opacity 0.12s; text-decoration: none; }
-    a:hover { opacity: 0.72; }
-    .pill-tab { cursor: pointer; font-family: 'IBM Plex Sans',sans-serif; font-size: 12.5px; font-weight: 500; padding: 6px 16px; border-radius: 20px; border: none; background: transparent; color: #64748b; transition: background 0.15s, color 0.15s; white-space: nowrap; }
-    .pill-tab:hover { background: #f1f5f9; color: #1e3a5f; }
-    .pill-tab.active { background: #1d4ed8; color: white; }
-    .section-panel { display: none; }
-    .section-panel.visible { display: block; }
-    .card { border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px 18px; background: white; transition: box-shadow 0.15s, border-color 0.15s; }
-    .card:hover { box-shadow: 0 4px 18px rgba(0,0,0,0.07); border-color: #cbd5e1; }
-    .outlet-badge { display: inline-flex; align-items: center; gap: 5px; font-family: 'IBM Plex Sans',sans-serif; font-size: 11px; font-weight: 600; padding: 2px 9px 2px 6px; border-radius: 4px; }
-
-    @media (max-width: 640px) {
-      .r-nav { padding: 0 !important; flex-wrap: wrap !important; }
-      .r-nav-brand { padding: 0 0 0 16px !important; font-size: 18px !important; border-bottom: 1px solid #f1f5f9; width: 100% !important; flex: none !important; }
-      .r-nav-links { width: 100% !important; overflow-x: auto !important; scrollbar-width: none !important; flex-wrap: nowrap !important; }
-      .r-nav-links::-webkit-scrollbar { display: none; }
-      .r-nav-links a, .r-nav-links span { height: 42px !important; font-size: 12px !important; padding: 0 10px !important; flex-shrink: 0 !important; white-space: nowrap !important; }
-      .r-main { padding: 28px 16px 60px !important; }
-      .r-footer { padding: 20px 16px !important; }
-    }
-  </style>
-</helmet>
 
 <div style="max-width: 820px; margin: 0 auto; background: white; min-height: 100vh; box-shadow: 0 0 60px rgba(0,0,0,0.07);">
 
   <!-- NAV -->
   <nav class="r-nav" style="display:flex; align-items:stretch; padding:0 40px; border-bottom:1px solid #e2e8f0; position:sticky; top:0; background:white; z-index:10;">
-    <a href="https://danielgoya.github.io/index.html" class="r-nav-brand" style="font-family:'IBM Plex Sans',sans-serif; font-size:20px; font-weight:700; color:#1d4ed8; text-decoration:none; display:flex; align-items:center; padding:0 24px 0 0; flex:1;">Daniel Goya</a>
-    <div class="r-nav-links" style="display:flex;">
-      <a href="https://danielgoya.github.io/index.html" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">Home</a>
-      <a href="https://danielgoya.github.io/research.html" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">Research</a>
-      <span style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#1d4ed8; font-weight:600; border-bottom:2px solid #1d4ed8; height:56px;">Opinión</span>
-      <a href="https://danielgoya.github.io/cv.html" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">CV</a>
-      <a href="https://danielgoya.github.io/teaching.html" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">Teaching</a>
+    <a href="index.html" class="r-nav-brand" data-i18n="brand" style="font-family:'IBM Plex Sans',sans-serif; font-size:20px; font-weight:700; color:#1d4ed8; text-decoration:none; display:flex; align-items:center; padding:0 24px 0 0; flex:1;">Daniel Goya León</a>
+    <div class="r-nav-links" style="display:flex; align-items:stretch;">
+      <a href="index.html" data-i18n="navHome" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">Inicio</a>
+      <a href="research.html" data-i18n="navResearch" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">Investigación</a>
+      <span data-i18n="navOpinion" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#1d4ed8; font-weight:600; border-bottom:2px solid #1d4ed8; height:56px;">Opinión</span>
+      <a href="cv.html" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">CV</a>
+      <a href="teaching.html" data-i18n="navTeaching" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">Docencia</a>
+      <div class="lang-pill">
+        <div>
+          <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+          <button class="lang-btn" data-lang="es" aria-pressed="true">ES</button>
+        </div>
+      </div>
     </div>
   </nav>
 
@@ -76,48 +83,34 @@
 
     <!-- PAGE TITLE -->
     <div style="margin-bottom:36px; padding-bottom:28px; border-bottom:1px solid #e2e8f0;">
-      <h1 style="font-family:'IBM Plex Sans',sans-serif; font-size:32px; font-weight:700; color:#0f172a; margin:0 0 8px; letter-spacing:-0.3px;">Opinión y divulgación</h1>
-      <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#64748b; margin:0;">Columnas, artículos cortos, ensayos y apariciones en medios</p>
+      <h1 data-i18n="pageTitle" style="font-family:'IBM Plex Sans',sans-serif; font-size:32px; font-weight:700; color:#0f172a; margin:0 0 8px; letter-spacing:-0.3px;">Opinión y divulgación</h1>
+      <p data-i18n="pageSubtitle" style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#64748b; margin:0;">Columnas, artículos cortos, ensayos y apariciones en medios</p>
     </div>
 
     <!-- SECTION TABS -->
     <div style="display:flex; gap:6px; margin-bottom:32px; flex-wrap:wrap;">
-      <button class="pill-tab active" onClick="{{ switchTab }}" onMouseEnter="{{ hoverTab }}" data-tab="columnas">
-        <span style="margin-right:5px;">✍</span>Columnas
-      </button>
-      <button class="pill-tab" onClick="{{ switchTab }}" onMouseEnter="{{ hoverTab }}" data-tab="articulos">
-        <span style="margin-right:5px;">📄</span>Artículos cortos
-      </button>
-      <button class="pill-tab" onClick="{{ switchTab }}" onMouseEnter="{{ hoverTab }}" data-tab="ensayos">
-        <span style="margin-right:5px;">📖</span>Ensayos
-      </button>
-      <button class="pill-tab" onClick="{{ switchTab }}" onMouseEnter="{{ hoverTab }}" data-tab="medios">
-        <span style="margin-right:5px;">🎙</span>Medios
-      </button>
+      <button class="pill-tab active" data-tab="columnas"><span style="margin-right:5px;">✍</span><span data-i18n="tabColumnas">Columnas</span></button>
+      <button class="pill-tab" data-tab="articulos"><span style="margin-right:5px;">📄</span><span data-i18n="tabArticulos">Artículos cortos</span></button>
+      <button class="pill-tab" data-tab="ensayos"><span style="margin-right:5px;">📖</span><span data-i18n="tabEnsayos">Ensayos</span></button>
+      <button class="pill-tab" data-tab="medios"><span style="margin-right:5px;">🎙</span><span data-i18n="tabMedios">Medios</span></button>
     </div>
 
     <!-- ── COLUMNAS ── -->
     <div class="section-panel visible" id="panel-columnas">
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+      <div class="r-cards-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
 
         <a href="https://www.ciperchile.cl/2022/02/03/como-hacer-de-la-transicion-energetica-un-desarrollo-justo/" class="card" style="color:inherit;">
           <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:8px; margin-bottom:10px;">
-            <span class="outlet-badge" style="background:#cffafe; color:#0e7490;">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" stroke="#0e7490" stroke-width="1.2"/><path d="M5 3v2.5l1.5 1" stroke="#0e7490" stroke-width="1.1" stroke-linecap="round"/></svg>
-              CIPER
-            </span>
+            <span class="outlet-badge" style="background:#cffafe; color:#0e7490;">CIPER</span>
             <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#94a3b8;">feb 2022</span>
           </div>
           <p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; font-weight:600; color:#1e3a5f; margin:0 0 7px; line-height:1.4;">Cómo hacer de la transición energética un desarrollo justo</p>
-          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#94a3b8; margin:0;">con Anabel Marín</p>
+          <p data-i18n="coAnabel" style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#94a3b8; margin:0;">con Anabel Marín</p>
         </a>
 
         <a href="https://www.dropbox.com/s/v0kjb5k2hj7ik05/di%C3%A1logos%20para%20pol%C3%ADticas%20p%C3%BAblicas.png?dl=0" class="card" style="color:inherit;">
           <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:8px; margin-bottom:10px;">
-            <span class="outlet-badge" style="background:#f1f5f9; color:#475569;">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><rect x="1" y="2" width="8" height="6" rx="1" stroke="#475569" stroke-width="1.2"/><path d="M3 5h4M3 6.5h2.5" stroke="#475569" stroke-width="1" stroke-linecap="round"/></svg>
-              El Mercurio Valpo
-            </span>
+            <span class="outlet-badge" style="background:#f1f5f9; color:#475569;">El Mercurio Valpo</span>
             <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#94a3b8;">abr 2022</span>
           </div>
           <p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; font-weight:600; color:#1e3a5f; margin:0; line-height:1.4;">Procesos de diálogo para el diseño de políticas públicas</p>
@@ -125,22 +118,16 @@
 
         <a href="https://danielgoya.github.io/uploads/Columna BND Mercurio Inversiones.pdf" class="card" style="color:inherit;" target="_blank">
           <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:8px; margin-bottom:10px;">
-            <span class="outlet-badge" style="background:#f1f5f9; color:#475569;">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><rect x="1" y="2" width="8" height="6" rx="1" stroke="#475569" stroke-width="1.2"/><path d="M3 5h4M3 6.5h2.5" stroke="#475569" stroke-width="1" stroke-linecap="round"/></svg>
-              El Mercurio Inversiones
-            </span>
+            <span class="outlet-badge" style="background:#f1f5f9; color:#475569;">El Mercurio Inversiones</span>
             <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#94a3b8;">dic 2021</span>
           </div>
           <p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; font-weight:600; color:#1e3a5f; margin:0 0 7px; line-height:1.4;">Una Banca de Desarrollo para Chile</p>
-          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#94a3b8; margin:0;">con Stephany Griffith-Jones</p>
+          <p data-i18n="coGriffith" style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#94a3b8; margin:0;">con Stephany Griffith-Jones</p>
         </a>
 
         <a href="https://www.dropbox.com/s/we05s4abs5dtcg6/Columna%20inmigraci%C3%B3n%20octubre%202021.pdf?dl=0" class="card" style="color:inherit;">
           <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:8px; margin-bottom:10px;">
-            <span class="outlet-badge" style="background:#f1f5f9; color:#475569;">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><rect x="1" y="2" width="8" height="6" rx="1" stroke="#475569" stroke-width="1.2"/><path d="M3 5h4M3 6.5h2.5" stroke="#475569" stroke-width="1" stroke-linecap="round"/></svg>
-              El Mercurio Valpo
-            </span>
+            <span class="outlet-badge" style="background:#f1f5f9; color:#475569;">El Mercurio Valpo</span>
             <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#94a3b8;">oct 2021</span>
           </div>
           <p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; font-weight:600; color:#1e3a5f; margin:0; line-height:1.4;">Los efectos positivos de la inmigración</p>
@@ -148,10 +135,7 @@
 
         <a href="https://www.dropbox.com/s/q5v785yf23ki6wz/02D9A8EC.JPG?dl=0" class="card" style="color:inherit;">
           <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:8px; margin-bottom:10px;">
-            <span class="outlet-badge" style="background:#f1f5f9; color:#475569;">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><rect x="1" y="2" width="8" height="6" rx="1" stroke="#475569" stroke-width="1.2"/><path d="M3 5h4M3 6.5h2.5" stroke="#475569" stroke-width="1" stroke-linecap="round"/></svg>
-              El Mercurio Valpo
-            </span>
+            <span class="outlet-badge" style="background:#f1f5f9; color:#475569;">El Mercurio Valpo</span>
             <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#94a3b8;">mar 2020</span>
           </div>
           <p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; font-weight:600; color:#1e3a5f; margin:0; line-height:1.4;">La debilidad de la agenda antiabusos</p>
@@ -159,10 +143,7 @@
 
         <a href="http://www.mercuriovalpo.cl/impresa/2019/08/10/full/cuerpo-principal/20/" class="card" style="color:inherit;">
           <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:8px; margin-bottom:10px;">
-            <span class="outlet-badge" style="background:#f1f5f9; color:#475569;">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><rect x="1" y="2" width="8" height="6" rx="1" stroke="#475569" stroke-width="1.2"/><path d="M3 5h4M3 6.5h2.5" stroke="#475569" stroke-width="1" stroke-linecap="round"/></svg>
-              El Mercurio Valpo
-            </span>
+            <span class="outlet-badge" style="background:#f1f5f9; color:#475569;">El Mercurio Valpo</span>
             <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#94a3b8;">ago 2019</span>
           </div>
           <p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; font-weight:600; color:#1e3a5f; margin:0; line-height:1.4;">Abandono de la Corfo</p>
@@ -170,10 +151,7 @@
 
         <a href="http://www.mercuriovalpo.cl/impresa/2019/02/09/full/cuerpo-principal/20/" class="card" style="color:inherit;">
           <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:8px; margin-bottom:10px;">
-            <span class="outlet-badge" style="background:#f1f5f9; color:#475569;">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><rect x="1" y="2" width="8" height="6" rx="1" stroke="#475569" stroke-width="1.2"/><path d="M3 5h4M3 6.5h2.5" stroke="#475569" stroke-width="1" stroke-linecap="round"/></svg>
-              El Mercurio Valpo
-            </span>
+            <span class="outlet-badge" style="background:#f1f5f9; color:#475569;">El Mercurio Valpo</span>
             <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#94a3b8;">feb 2019</span>
           </div>
           <p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; font-weight:600; color:#1e3a5f; margin:0; line-height:1.4;">Investigación o crecimiento, ¿qué viene primero?</p>
@@ -181,10 +159,7 @@
 
         <a href="https://www.dropbox.com/s/j6hle4qj3nfpovj/p%C3%A1gina%20diario.pdf?dl=0" class="card" style="color:inherit;">
           <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:8px; margin-bottom:10px;">
-            <span class="outlet-badge" style="background:#f1f5f9; color:#475569;">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><rect x="1" y="2" width="8" height="6" rx="1" stroke="#475569" stroke-width="1.2"/><path d="M3 5h4M3 6.5h2.5" stroke="#475569" stroke-width="1" stroke-linecap="round"/></svg>
-              El Mercurio Valpo
-            </span>
+            <span class="outlet-badge" style="background:#f1f5f9; color:#475569;">El Mercurio Valpo</span>
             <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#94a3b8;">jul 2018</span>
           </div>
           <p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; font-weight:600; color:#1e3a5f; margin:0; line-height:1.4;">¿Ayudará el Ministerio de Ciencia a alcanzar el desarrollo?</p>
@@ -192,10 +167,7 @@
 
         <a href="https://www.dropbox.com/s/lywkzhadle09o9a/mercurio%20pdf.pdf?dl=0" class="card" style="color:inherit;">
           <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:8px; margin-bottom:10px;">
-            <span class="outlet-badge" style="background:#f1f5f9; color:#475569;">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><rect x="1" y="2" width="8" height="6" rx="1" stroke="#475569" stroke-width="1.2"/><path d="M3 5h4M3 6.5h2.5" stroke="#475569" stroke-width="1" stroke-linecap="round"/></svg>
-              El Mercurio Valpo
-            </span>
+            <span class="outlet-badge" style="background:#f1f5f9; color:#475569;">El Mercurio Valpo</span>
             <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#94a3b8;">oct 2017</span>
           </div>
           <p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; font-weight:600; color:#1e3a5f; margin:0; line-height:1.4;">Reclamos por recursos para la ciencia</p>
@@ -203,10 +175,7 @@
 
         <a href="https://ciperchile.cl/2015/04/29/asamblea-constituyente-y-sus-posibles-efectos-economicos-hay-realmente-de-que-preocuparse/" class="card" style="color:inherit;">
           <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:8px; margin-bottom:10px;">
-            <span class="outlet-badge" style="background:#cffafe; color:#0e7490;">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" stroke="#0e7490" stroke-width="1.2"/><path d="M5 3v2.5l1.5 1" stroke="#0e7490" stroke-width="1.1" stroke-linecap="round"/></svg>
-              CIPER
-            </span>
+            <span class="outlet-badge" style="background:#cffafe; color:#0e7490;">CIPER</span>
             <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#94a3b8;">abr 2015</span>
           </div>
           <p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; font-weight:600; color:#1e3a5f; margin:0; line-height:1.4;">Asamblea Constituyente y sus posibles efectos económicos: ¿hay realmente de qué preocuparse?</p>
@@ -217,11 +186,11 @@
 
     <!-- ── ARTÍCULOS CORTOS ── -->
     <div class="section-panel" id="panel-articulos">
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+      <div class="r-cards-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
 
         <a href="https://negociosyeconomia.pucv.cl/noticias/daniel-goya-premio-nobel-economia/" class="card" style="color:inherit;">
           <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:8px; margin-bottom:10px;">
-            <span class="outlet-badge" style="background:#eff6ff; color:#1d4ed8;"><svg width="9" height="9" viewBox="0 0 10 10" fill="none"><rect x="2" y="1" width="6" height="8" rx="1" stroke="#1d4ed8" stroke-width="1.2"/><path d="M4 4h2M4 5.5h1.5" stroke="#1d4ed8" stroke-width="1" stroke-linecap="round"/></svg> ENE · PUCV</span>
+            <span class="outlet-badge" style="background:#eff6ff; color:#1d4ed8;">ENE · PUCV</span>
             <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#94a3b8;">nov 2025</span>
           </div>
           <p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; font-weight:600; color:#1e3a5f; margin:0; line-height:1.4;">Análisis al Premio Nobel de Economía 2025</p>
@@ -229,7 +198,7 @@
 
         <a href="https://www.dropbox.com/s/m2ks6lh5xjjk5iq/publicado%20CPI.png?dl=0" class="card" style="color:inherit;">
           <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:8px; margin-bottom:10px;">
-            <span class="outlet-badge" style="background:#f1f5f9; color:#475569;"><svg width="9" height="9" viewBox="0 0 10 10" fill="none"><rect x="1" y="2" width="8" height="6" rx="1" stroke="#475569" stroke-width="1.2"/><path d="M3 5h4M3 6.5h2.5" stroke="#475569" stroke-width="1" stroke-linecap="round"/></svg> El Mercurio Valpo</span>
+            <span class="outlet-badge" style="background:#f1f5f9; color:#475569;">El Mercurio Valpo</span>
             <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#94a3b8;">jun 2022</span>
           </div>
           <p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; font-weight:600; color:#1e3a5f; margin:0; line-height:1.4;">Compras Públicas de Innovación</p>
@@ -237,7 +206,7 @@
 
         <a href="https://www.culturaltraslahuella.com/portfolio/la-huella-socioambiental-de-la-transicion-energetica/" class="card" style="color:inherit;">
           <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:8px; margin-bottom:10px;">
-            <span class="outlet-badge" style="background:#f0fdf4; color:#166534;"><svg width="9" height="9" viewBox="0 0 10 10" fill="none"><path d="M5 2c0 3-3 4-3 4h6S5 5 5 2z" stroke="#166534" stroke-width="1.1" stroke-linejoin="round"/></svg> R. Cultural Tras la Huella</span>
+            <span class="outlet-badge" style="background:#f0fdf4; color:#166534;">R. Cultural Tras la Huella</span>
             <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#94a3b8;">nov 2021</span>
           </div>
           <p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; font-weight:600; color:#1e3a5f; margin:0; line-height:1.4;">La huella socioambiental de la transición energética</p>
@@ -245,7 +214,7 @@
 
         <a href="https://www.dropbox.com/s/3sr7hns06zmtx3d/art%C3%ADculo_subsidiariedad_propiedad.pdf?dl=0" class="card" style="color:inherit;">
           <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:8px; margin-bottom:10px;">
-            <span class="outlet-badge" style="background:#f1f5f9; color:#475569;"><svg width="9" height="9" viewBox="0 0 10 10" fill="none"><rect x="1" y="2" width="8" height="6" rx="1" stroke="#475569" stroke-width="1.2"/><path d="M3 5h4M3 6.5h2.5" stroke="#475569" stroke-width="1" stroke-linecap="round"/></svg> El Mercurio Valpo</span>
+            <span class="outlet-badge" style="background:#f1f5f9; color:#475569;">El Mercurio Valpo</span>
             <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#94a3b8;">oct 2021</span>
           </div>
           <p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; font-weight:600; color:#1e3a5f; margin:0; line-height:1.4;">Rol subsidiario del Estado y derecho de propiedad</p>
@@ -253,7 +222,7 @@
 
         <a href="https://www.dropbox.com/s/lo4ksu9lrojutc0/IAE-PUCV%20Julio%202021.pdf?dl=0" class="card" style="color:inherit;">
           <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:8px; margin-bottom:10px;">
-            <span class="outlet-badge" style="background:#eff6ff; color:#1d4ed8;"><svg width="9" height="9" viewBox="0 0 10 10" fill="none"><rect x="2" y="1" width="6" height="8" rx="1" stroke="#1d4ed8" stroke-width="1.2"/><path d="M4 4h2M4 5.5h1.5" stroke="#1d4ed8" stroke-width="1" stroke-linecap="round"/></svg> IAE PUCV</span>
+            <span class="outlet-badge" style="background:#eff6ff; color:#1d4ed8;">IAE PUCV</span>
             <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#94a3b8;">jul 2021</span>
           </div>
           <p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; font-weight:600; color:#1e3a5f; margin:0; line-height:1.4;">Constitución y economía: ¿Cuáles son los temas que discutirá la Convención?</p>
@@ -261,7 +230,7 @@
 
         <a href="https://www.dropbox.com/s/ix6y0dw6nn1uswr/recorte.jpg?dl=0" class="card" style="color:inherit;">
           <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:8px; margin-bottom:10px;">
-            <span class="outlet-badge" style="background:#f1f5f9; color:#475569;"><svg width="9" height="9" viewBox="0 0 10 10" fill="none"><rect x="1" y="2" width="8" height="6" rx="1" stroke="#475569" stroke-width="1.2"/><path d="M3 5h4M3 6.5h2.5" stroke="#475569" stroke-width="1" stroke-linecap="round"/></svg> El Mercurio Valpo</span>
+            <span class="outlet-badge" style="background:#f1f5f9; color:#475569;">El Mercurio Valpo</span>
             <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#94a3b8;">jun 2020</span>
           </div>
           <p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; font-weight:600; color:#1e3a5f; margin:0; line-height:1.4;">Salud, economía y gasto público</p>
@@ -269,16 +238,16 @@
 
         <a href="https://www.gestionytendencias.cl/index.php/GT/article/view/76" class="card" style="color:inherit;">
           <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:8px; margin-bottom:10px;">
-            <span class="outlet-badge" style="background:#eff6ff; color:#1d4ed8;"><svg width="9" height="9" viewBox="0 0 10 10" fill="none"><rect x="2" y="1" width="6" height="8" rx="1" stroke="#1d4ed8" stroke-width="1.2"/><path d="M4 4h2M4 5.5h1.5" stroke="#1d4ed8" stroke-width="1" stroke-linecap="round"/></svg> Gestión y Tendencias</span>
+            <span class="outlet-badge" style="background:#eff6ff; color:#1d4ed8;">Gestión y Tendencias</span>
             <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#94a3b8;">dic 2019</span>
           </div>
           <p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; font-weight:600; color:#1e3a5f; margin:0 0 7px; line-height:1.4;">Red Chilena de Investigadores en Innovación</p>
-          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#94a3b8; margin:0;">con Ernesto Labra</p>
+          <p data-i18n="coLabra" style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#94a3b8; margin:0;">con Ernesto Labra</p>
         </a>
 
         <a href="http://www.mercuriovalpo.cl/impresa/2019/11/19/full/cuerpo-principal/17/" class="card" style="color:inherit;">
           <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:8px; margin-bottom:10px;">
-            <span class="outlet-badge" style="background:#f1f5f9; color:#475569;"><svg width="9" height="9" viewBox="0 0 10 10" fill="none"><rect x="1" y="2" width="8" height="6" rx="1" stroke="#475569" stroke-width="1.2"/><path d="M3 5h4M3 6.5h2.5" stroke="#475569" stroke-width="1" stroke-linecap="round"/></svg> El Mercurio Valpo</span>
+            <span class="outlet-badge" style="background:#f1f5f9; color:#475569;">El Mercurio Valpo</span>
             <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#94a3b8;">nov 2019</span>
           </div>
           <p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; font-weight:600; color:#1e3a5f; margin:0; line-height:1.4;">Impuestos y redistribución</p>
@@ -286,7 +255,7 @@
 
         <a href="https://www.dropbox.com/s/nxvpackohvg9cdl/iae_pucv_julio_2019.pdf?dl=0" class="card" style="color:inherit;">
           <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:8px; margin-bottom:10px;">
-            <span class="outlet-badge" style="background:#eff6ff; color:#1d4ed8;"><svg width="9" height="9" viewBox="0 0 10 10" fill="none"><rect x="2" y="1" width="6" height="8" rx="1" stroke="#1d4ed8" stroke-width="1.2"/><path d="M4 4h2M4 5.5h1.5" stroke="#1d4ed8" stroke-width="1" stroke-linecap="round"/></svg> IAE PUCV</span>
+            <span class="outlet-badge" style="background:#eff6ff; color:#1d4ed8;">IAE PUCV</span>
             <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#94a3b8;">jul 2019</span>
           </div>
           <p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; font-weight:600; color:#1e3a5f; margin:0; line-height:1.4;">Industrias Creativas: qué son y por qué podrían ser clave para nuestro desarrollo</p>
@@ -312,7 +281,7 @@
 
         <a href="https://www.dropbox.com/s/b565ih3pljpsf64/febrero032018.pdf?dl=0" class="card" style="color:inherit;">
           <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:8px; margin-bottom:10px;">
-            <span class="outlet-badge" style="background:#f1f5f9; color:#475569;"><svg width="9" height="9" viewBox="0 0 10 10" fill="none"><rect x="1" y="2" width="8" height="6" rx="1" stroke="#475569" stroke-width="1.2"/><path d="M3 5h4M3 6.5h2.5" stroke="#475569" stroke-width="1" stroke-linecap="round"/></svg> El Mercurio Valpo</span>
+            <span class="outlet-badge" style="background:#f1f5f9; color:#475569;">El Mercurio Valpo</span>
             <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#94a3b8;">feb 2018</span>
           </div>
           <p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; font-weight:600; color:#1e3a5f; margin:0; line-height:1.4;">Evaluaciones de impacto: ¿cómo miden los economistas los efectos de las políticas públicas?</p>
@@ -332,7 +301,7 @@
 
     <!-- ── ENSAYOS ── -->
     <div class="section-panel" id="panel-ensayos">
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+      <div class="r-cards-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
 
         <a href="https://www.dropbox.com/scl/fi/92yy53kb25w1etqnm5zxf/Goya-pol-tica-industrial-RED-2014.pdf?rlkey=863vocxuw8row42s0b4r47h6f&amp;dl=0" class="card" style="color:inherit;">
           <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; color:#1d4ed8; background:#dbeafe; padding:2px 9px; border-radius:4px;">2014</span>
@@ -342,13 +311,13 @@
         <a href="https://www.researchgate.net/publication/320426638_Real_exchange_rate_and_structural_diversification_An_important_conceptual_issue_in_development_economics" class="card" style="color:inherit;">
           <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; color:#1d4ed8; background:#dbeafe; padding:2px 9px; border-radius:4px;">2012</span>
           <p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; font-weight:600; color:#1e3a5f; margin:14px 0 7px; line-height:1.4;">Real exchange rate and structural diversification</p>
-          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#94a3b8; margin:0;">con Jorge Katz</p>
+          <p data-i18n="coKatz" style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#94a3b8; margin:0;">con Jorge Katz</p>
         </a>
 
         <a href="https://www.forovalparaiso.cl/2012/06/01/cuaderno-xi-innovacion-algunas-dimensiones/" class="card" style="color:inherit;">
           <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; color:#1d4ed8; background:#dbeafe; padding:2px 9px; border-radius:4px;">2012</span>
           <p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; font-weight:600; color:#1e3a5f; margin:14px 0 7px; line-height:1.4;">La innovación en Chile, más allá de la ciencia y tecnología</p>
-          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#94a3b8; margin:0;">con Fabiola Cabrera · Cuadernos del Foro XI</p>
+          <p data-i18n="coCabrera" style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#94a3b8; margin:0;">con Fabiola Cabrera · Cuadernos del Foro XI</p>
         </a>
 
       </div>
@@ -356,11 +325,11 @@
 
     <!-- ── MEDIOS ── -->
     <div class="section-panel" id="panel-medios">
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+      <div class="r-cards-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
 
         <a href="http://www.mercuriovalpo.cl/impresa/2019/12/11/full/cuerpo-principal/10/" class="card" style="color:inherit;">
           <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:8px; margin-bottom:10px;">
-            <span class="outlet-badge" style="background:#f1f5f9; color:#475569;"><svg width="9" height="9" viewBox="0 0 10 10" fill="none"><rect x="1" y="2" width="8" height="6" rx="1" stroke="#475569" stroke-width="1.2"/><path d="M3 5h4M3 6.5h2.5" stroke="#475569" stroke-width="1" stroke-linecap="round"/></svg> El Mercurio Valpo</span>
+            <span class="outlet-badge" style="background:#f1f5f9; color:#475569;">El Mercurio Valpo</span>
             <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#94a3b8;">dic 2019</span>
           </div>
           <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14.5px; font-weight:600; color:#1e3a5f; margin:0; line-height:1.4;">Opinión sobre la “agenda antiabusos” del gobierno</p>
@@ -368,7 +337,7 @@
 
         <a href="https://www.facebook.com/RitoqueFM/videos/2848343475186565/" class="card" style="color:inherit;">
           <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:8px; margin-bottom:10px;">
-            <span class="outlet-badge" style="background:#fdf4ff; color:#7e22ce;"><svg width="9" height="9" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="3" stroke="#7e22ce" stroke-width="1.2"/><path d="M5 3.5v3M3.5 5h3" stroke="#7e22ce" stroke-width="1" stroke-linecap="round"/></svg> Radio Ritoque</span>
+            <span class="outlet-badge" style="background:#fdf4ff; color:#7e22ce;">Radio Ritoque</span>
             <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#94a3b8;">dic 2019</span>
           </div>
           <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14.5px; font-weight:600; color:#1e3a5f; margin:0; line-height:1.4;">Entrevista en La Quinta Emprende sobre innovación y la crisis social</p>
@@ -376,7 +345,7 @@
 
         <a href="https://drive.google.com/open?id=1mH-3n9kS1Ib2Al2TfLFG8xYu3QJi3TRo" class="card" style="color:inherit;">
           <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:8px; margin-bottom:10px;">
-            <span class="outlet-badge" style="background:#f1f5f9; color:#475569;"><svg width="9" height="9" viewBox="0 0 10 10" fill="none"><rect x="1" y="2" width="8" height="6" rx="1" stroke="#475569" stroke-width="1.2"/><path d="M3 5h4M3 6.5h2.5" stroke="#475569" stroke-width="1" stroke-linecap="round"/></svg> El Mercurio</span>
+            <span class="outlet-badge" style="background:#f1f5f9; color:#475569;">El Mercurio</span>
             <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#94a3b8;">nov 2019</span>
           </div>
           <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14.5px; font-weight:600; color:#1e3a5f; margin:0; line-height:1.4;">Asamblea Constituyente y crecimiento económico</p>
@@ -384,7 +353,7 @@
 
         <a href="http://www.pucv.cl/uuaa/vriea/noticias/los-paises-ricos-tienen-politicas-publicas-de-largo-plazo-en/2019-09-23/102140.html" class="card" style="color:inherit;">
           <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:8px; margin-bottom:10px;">
-            <span class="outlet-badge" style="background:#fdf4ff; color:#7e22ce;"><svg width="9" height="9" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="3" stroke="#7e22ce" stroke-width="1.2"/><path d="M5 3.5v3M3.5 5h3" stroke="#7e22ce" stroke-width="1" stroke-linecap="round"/></svg> Radio UCV</span>
+            <span class="outlet-badge" style="background:#fdf4ff; color:#7e22ce;">Radio UCV</span>
             <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#94a3b8;">sep 2019</span>
           </div>
           <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14.5px; font-weight:600; color:#1e3a5f; margin:0; line-height:1.4;">Entrevista en Radio UCV</p>
@@ -392,7 +361,7 @@
 
         <a href="https://danielgoya.github.io/uploads/%C2%BFQu%C3%A9%20es%20la%20Red%20de...Reporte%20InnovaRock%20con%20Carlos%20Osorio.mp3" target="_blank" class="card" style="color:inherit;">
           <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:8px; margin-bottom:10px;">
-            <span class="outlet-badge" style="background:#fff7ed; color:#c2410c;"><svg width="9" height="9" viewBox="0 0 10 10" fill="none"><path d="M2 7c1-2 2-3 3-5 1 2 2 3 3 5" stroke="#c2410c" stroke-width="1.1" stroke-linejoin="round"/></svg> SoundCloud</span>
+            <span class="outlet-badge" style="background:#fff7ed; color:#c2410c;">SoundCloud</span>
             <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#94a3b8;">ago 2019</span>
           </div>
           <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14.5px; font-weight:600; color:#1e3a5f; margin:0; line-height:1.4;">Reporte InnovaRock sobre Red Chilena de Investigadores en Innovación</p>
@@ -400,7 +369,7 @@
 
         <a href="https://www.youtube.com/watch?v=hH7TUVyAjiM" class="card" style="color:inherit;">
           <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:8px; margin-bottom:10px;">
-            <span class="outlet-badge" style="background:#fef2f2; color:#b91c1c;"><svg width="9" height="9" viewBox="0 0 10 10" fill="none"><rect x="1" y="2" width="8" height="6" rx="1" stroke="#b91c1c" stroke-width="1.1"/><path d="M4 4.5l2 .5-2 .5V4.5z" fill="#b91c1c"/></svg> YouTube</span>
+            <span class="outlet-badge" style="background:#fef2f2; color:#b91c1c;">YouTube</span>
             <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#94a3b8;">ago 2019</span>
           </div>
           <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14.5px; font-weight:600; color:#1e3a5f; margin:0; line-height:1.4;">Nota sobre Primer Encuentro de la Red Chilena de Investigadores en Innovación</p>
@@ -408,7 +377,7 @@
 
         <a href="https://www.dropbox.com/s/xnzo0plqt7rzaso/P%C3%A1gina%208%20_%20El%20Mercurio%20de%20Valpara%C3%ADso.pdf?dl=0" class="card" style="color:inherit;">
           <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:8px; margin-bottom:10px;">
-            <span class="outlet-badge" style="background:#f1f5f9; color:#475569;"><svg width="9" height="9" viewBox="0 0 10 10" fill="none"><rect x="1" y="2" width="8" height="6" rx="1" stroke="#475569" stroke-width="1.2"/><path d="M3 5h4M3 6.5h2.5" stroke="#475569" stroke-width="1" stroke-linecap="round"/></svg> El Mercurio Valpo</span>
+            <span class="outlet-badge" style="background:#f1f5f9; color:#475569;">El Mercurio Valpo</span>
             <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#94a3b8;">sep 2018</span>
           </div>
           <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14.5px; font-weight:600; color:#1e3a5f; margin:0; line-height:1.4;">Desempleo en provincias de Valparaíso</p>
@@ -416,7 +385,7 @@
 
         <a href="https://www.pucv.cl/uuaa/vriea/noticias/nuestros-investigadores/dr-daniel-goya-chile-necesita-una-estrategia-de-innovacion-que-se/2018-08-28/125402.html" class="card" style="color:inherit;">
           <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:8px; margin-bottom:10px;">
-            <span class="outlet-badge" style="background:#eff6ff; color:#1d4ed8;"><svg width="9" height="9" viewBox="0 0 10 10" fill="none"><rect x="2" y="1" width="6" height="8" rx="1" stroke="#1d4ed8" stroke-width="1.2"/><path d="M4 4h2M4 5.5h1.5" stroke="#1d4ed8" stroke-width="1" stroke-linecap="round"/></svg> PUCV</span>
+            <span class="outlet-badge" style="background:#eff6ff; color:#1d4ed8;">PUCV</span>
             <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#94a3b8;">ago 2018</span>
           </div>
           <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14.5px; font-weight:600; color:#1e3a5f; margin:0; line-height:1.4;">Entrevista Vicerrectoría de Investigación y Estudios Avanzados PUCV</p>
@@ -426,7 +395,7 @@
     </div>
 
     <!-- FOOTER -->
-    <footer style="border-top:1px solid #e2e8f0; padding-top:24px; margin-top:52px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+    <footer class="r-footer" style="border-top:1px solid #e2e8f0; padding-top:24px; margin-top:52px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
       <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#94a3b8;">daniel.goya AT pucv.cl</span>
       <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#94a3b8;">Amunátegui 1838, Recreo · Viña del Mar, Chile</span>
     </footer>
@@ -434,36 +403,66 @@
   </div>
 </div>
 
-</x-dc>
-<script type="text/x-dc" data-dc-script>
-
-class Component extends DCLogic {
-  state = { activeTab: 'columnas' };
-
-  componentDidMount() {
-    const hash = window.location.hash.slice(1);
-    if (['columnas', 'articulos', 'ensayos', 'medios'].includes(hash)) {
-      this.switchTo(hash);
+<script>
+(function () {
+  var dict = {
+    es: {
+      brand:'Daniel Goya León', navHome:'Inicio', navResearch:'Investigación', navOpinion:'Opinión', navTeaching:'Docencia',
+      pageTitle:'Opinión y divulgación', pageSubtitle:'Columnas, artículos cortos, ensayos y apariciones en medios',
+      tabColumnas:'Columnas', tabArticulos:'Artículos cortos', tabEnsayos:'Ensayos', tabMedios:'Medios',
+      coAnabel:'con Anabel Marín', coGriffith:'con Stephany Griffith-Jones', coLabra:'con Ernesto Labra', coKatz:'con Jorge Katz', coCabrera:'con Fabiola Cabrera · Cuadernos del Foro XI'
+    },
+    en: {
+      brand:'Daniel Goya', navHome:'Home', navResearch:'Research', navOpinion:'Opinion', navTeaching:'Teaching',
+      pageTitle:'Opinion & outreach', pageSubtitle:'Columns, short articles, essays and media appearances (in Spanish)',
+      tabColumnas:'Columns', tabArticulos:'Short articles', tabEnsayos:'Essays', tabMedios:'Media',
+      coAnabel:'with Anabel Marín', coGriffith:'with Stephany Griffith-Jones', coLabra:'with Ernesto Labra', coKatz:'with Jorge Katz', coCabrera:'with Fabiola Cabrera · Cuadernos del Foro XI'
     }
+  };
+  function applyLang(lang) {
+    if (!dict[lang]) lang = 'es';
+    var d = dict[lang];
+    document.documentElement.setAttribute('data-lang', lang);
+    document.documentElement.setAttribute('lang', lang);
+    var nodes = document.querySelectorAll('[data-i18n]');
+    for (var i = 0; i < nodes.length; i++) {
+      var k = nodes[i].getAttribute('data-i18n');
+      if (d[k] != null) nodes[i].textContent = d[k];
+    }
+    var btns = document.querySelectorAll('.lang-btn');
+    for (var j = 0; j < btns.length; j++) {
+      btns[j].setAttribute('aria-pressed', btns[j].getAttribute('data-lang') === lang ? 'true' : 'false');
+    }
+    try { localStorage.setItem('dg-lang', lang); } catch (e) {}
   }
-
-  switchTo(tab) {
-    document.querySelectorAll('.pill-tab').forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.tab === tab);
-    });
-    document.querySelectorAll('.section-panel').forEach(panel => {
-      panel.classList.toggle('visible', panel.id === 'panel-' + tab);
-    });
+  // tabs
+  function switchTo(tab) {
+    var pills = document.querySelectorAll('.pill-tab');
+    for (var i = 0; i < pills.length; i++) pills[i].classList.toggle('active', pills[i].getAttribute('data-tab') === tab);
+    var panels = document.querySelectorAll('.section-panel');
+    for (var j = 0; j < panels.length; j++) panels[j].classList.toggle('visible', panels[j].id === 'panel-' + tab);
   }
-
-  renderVals() {
-    return {
-      switchTab: (e) => this.switchTo(e.currentTarget.dataset.tab),
-      hoverTab:  (e) => this.switchTo(e.currentTarget.dataset.tab),
-    };
+  var pills = document.querySelectorAll('.pill-tab');
+  for (var i = 0; i < pills.length; i++) {
+    (function (p) {
+      var tab = p.getAttribute('data-tab');
+      p.addEventListener('click', function () { switchTo(tab); });
+      p.addEventListener('mouseenter', function () { switchTo(tab); });
+    })(pills[i]);
   }
-}
-
+  var hash = window.location.hash.slice(1);
+  if (['columnas','articulos','ensayos','medios'].indexOf(hash) !== -1) switchTo(hash);
+  // lang
+  var langBtns = document.querySelectorAll('.lang-btn');
+  for (var k = 0; k < langBtns.length; k++) {
+    langBtns[k].addEventListener('click', (function (b) { return function () { applyLang(b.getAttribute('data-lang')); }; })(langBtns[k]));
+  }
+  var saved = null;
+  try { saved = localStorage.getItem('dg-lang'); } catch (e) {}
+  var initial = saved || ((navigator.language || 'es').toLowerCase().indexOf('es') === 0 ? 'es' : 'en');
+  applyLang(initial);
+})();
 </script>
+
 </body>
 </html>

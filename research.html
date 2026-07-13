@@ -1,73 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="es" data-lang="es">
 <head>
 <meta charset="utf-8">
-  <title>Investigación / Research — Daniel Goya</title>
+<title>Investigación / Research — Daniel Goya León</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- SEO -->
-  <meta name="description" content="Publicaciones e investigación de Daniel Goya en economía de la innovación y política industrial. / Research and publications on innovation economics and industrial policy.">
-  <meta name="keywords" content="Daniel Goya investigación, research, economía innovación, innovation economics, política industrial, industrial policy, econometría, econometrics">
-  <meta name="author" content="Daniel Goya">
-  <link rel="canonical" href="https://danielgoya.github.io/research.html">
-  <link rel="me" href="https://scholar.google.com/citations?user=2D0bmyYAAAAJ&hl=es">
+<!-- SEO -->
+<meta name="description" content="Publicaciones e investigación de Daniel Goya en economía de la innovación y política industrial. / Research and publications on innovation economics and industrial policy.">
+<meta name="keywords" content="Daniel Goya investigación, research, economía innovación, innovation economics, política industrial, industrial policy, econometría, econometrics">
+<meta name="author" content="Daniel Goya">
+<link rel="canonical" href="https://danielgoya.github.io/research.html">
+<link rel="me" href="https://scholar.google.com/citations?user=2D0bmyYAAAAJ&hl=es">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://danielgoya.github.io/research.html">
+<meta property="og:title" content="Investigación / Research — Daniel Goya León">
+<meta property="og:description" content="Publicaciones e investigación de Daniel Goya en economía de la innovación y política industrial. / Research and publications on innovation economics and industrial policy.">
+<meta property="og:image" content="https://danielgoya.github.io/uploads/photo-cropped.png">
+<meta property="og:locale" content="es_CL">
+<meta property="og:locale:alternate" content="en_US">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Investigación / Research — Daniel Goya León">
+<meta name="twitter:description" content="Publicaciones e investigación de Daniel Goya en economía de la innovación y política industrial. / Research and publications on innovation economics and industrial policy.">
+<meta name="twitter:image" content="https://danielgoya.github.io/uploads/photo-cropped.png">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #eef2f7; }
+  * { box-sizing: border-box; }
+  a:hover { text-decoration: underline !important; }
+  details summary { list-style: none; cursor: pointer; user-select: none; }
+  details summary::-webkit-details-marker { display: none; }
+  .chevron { display: inline-block; transition: transform 0.18s ease; margin-right: 4px; font-style: normal; }
+  details[open] .chevron { transform: rotate(90deg); }
+  .abstract-full { margin-top: 10px; padding: 14px 16px; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-family: 'IBM Plex Sans',sans-serif; font-size: 13.5px; color: #475569; line-height: 1.75; text-wrap: pretty; }
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://danielgoya.github.io/research.html">
-  <meta property="og:title" content="Investigación / Research — Daniel Goya">
-  <meta property="og:description" content="Publicaciones e investigación de Daniel Goya en economía de la innovación y política industrial. / Research and publications on innovation economics and industrial policy.">
-  <meta property="og:image" content="https://danielgoya.github.io/uploads/photo-cropped.png">
-  <meta property="og:locale" content="es_CL">
-  <meta property="og:locale:alternate" content="en_US">
+  .lang-pill { display: flex; align-items: center; padding: 0 8px; }
+  .lang-pill > div { display: flex; background: #f1f5f9; border-radius: 7px; padding: 3px; gap: 2px; }
+  .lang-btn { font-family: 'IBM Plex Sans',sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.05em; padding: 4px 11px; border-radius: 5px; border: none; cursor: pointer; background: transparent; color: #94a3b8; box-shadow: none; transition: background 0.15s, color 0.15s, box-shadow 0.15s; }
+  .lang-btn[aria-pressed="true"] { background: #fff; color: #1d4ed8; box-shadow: 0 1px 3px rgba(0,0,0,0.10); }
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Investigación / Research — Daniel Goya">
-  <meta name="twitter:description" content="Publicaciones e investigación de Daniel Goya en economía de la innovación y política industrial. / Research and publications on innovation economics and industrial policy.">
-  <meta name="twitter:image" content="https://danielgoya.github.io/uploads/photo-cropped.png">
-<script src="https://danielgoya.github.io/support.js"></script>
+  @media (max-width: 640px) {
+    .r-nav { padding: 0 !important; }
+    .r-nav-brand { padding: 0 0 0 14px !important; font-size: 15px !important; flex: 0 0 auto !important; white-space: nowrap !important; }
+    .r-nav-links { flex: 1 1 auto !important; min-width: 0 !important; overflow-x: auto !important; scrollbar-width: none !important; }
+    .r-nav-links::-webkit-scrollbar { display: none; }
+    .r-nav-links a, .r-nav-links span, .r-nav-links .lang-pill { flex-shrink: 0 !important; white-space: nowrap !important; }
+    .r-nav-links a, .r-nav-links > span { height: 42px !important; font-size: 12px !important; padding: 0 8px !important; }
+    .r-main { padding: 28px 16px 60px !important; }
+    .r-article { flex-direction: column !important; gap: 16px !important; }
+    .r-article-fig { flex: 0 0 auto !important; width: 100% !important; }
+    .r-article-fig svg, .r-article-fig img { width: 100% !important; max-width: 300px; height: auto !important; }
+    .r-footer { padding: 16px 0 !important; }
+  }
+</style>
 </head>
 <body>
-<x-dc>
-
-<helmet>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <style>
-    body { margin: 0; background: #eef2f7; }
-    * { box-sizing: border-box; }
-    a:hover { text-decoration: underline !important; }
-    details summary { list-style: none; cursor: pointer; user-select: none; }
-    details summary::-webkit-details-marker { display: none; }
-    .chevron { display: inline-block; transition: transform 0.18s ease; margin-right: 4px; font-style: normal; }
-    details[open] .chevron { transform: rotate(90deg); }
-    .abstract-full { margin-top: 10px; padding: 14px 16px; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; font-family: 'IBM Plex Sans',sans-serif; font-size: 13.5px; color: #475569; line-height: 1.75; text-wrap: pretty; }
-
-    @media (max-width: 640px) {
-      .r-nav { padding: 0 !important; flex-wrap: wrap !important; }
-      .r-nav-brand { padding: 0 0 0 16px !important; font-size: 18px !important; border-bottom: 1px solid #f1f5f9; width: 100% !important; flex: none !important; }
-      .r-nav-links { width: 100% !important; overflow-x: auto !important; scrollbar-width: none !important; flex-wrap: nowrap !important; }
-      .r-nav-links::-webkit-scrollbar { display: none; }
-      .r-nav-links a, .r-nav-links span { height: 42px !important; font-size: 12px !important; padding: 0 10px !important; flex-shrink: 0 !important; white-space: nowrap !important; }
-      .r-main { padding: 28px 16px 60px !important; }
-      .r-article { flex-direction: column !important; gap: 16px !important; }
-      .r-article-fig { flex: 0 0 auto !important; width: 100% !important; }
-      .r-article-fig svg, .r-article-fig img { width: 100% !important; max-width: 300px; height: auto !important; }
-      .r-footer { padding: 16px 0 !important; }
-    }
-  </style>
-</helmet>
 
 <div style="max-width: 820px; margin: 0 auto; background: white; min-height: 100vh; box-shadow: 0 0 60px rgba(0,0,0,0.07);">
 
   <!-- NAV -->
   <nav class="r-nav" style="display:flex; align-items:stretch; padding: 0 40px; border-bottom: 1px solid #e2e8f0; position:sticky; top:0; background:white; z-index:10;">
-    <a href="https://danielgoya.github.io/index.html" class="r-nav-brand" style="font-family:'IBM Plex Sans',sans-serif; font-size:20px; font-weight:700; color:#1d4ed8; text-decoration:none; display:flex; align-items:center; padding:0 24px 0 0; flex:1;">Daniel Goya</a>
-    <div class="r-nav-links" style="display:flex;">
-      <a href="https://danielgoya.github.io/index.html" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; text-decoration:none; height:56px;">Home</a>
-      <span style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#1d4ed8; font-weight:600; border-bottom:2px solid #1d4ed8; height:56px;">Research</span>
-      <a href="https://danielgoya.github.io/opinion.html" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; text-decoration:none; height:56px;">Opinión</a>
-      <a href="https://danielgoya.github.io/cv.html" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; text-decoration:none; height:56px;">CV</a>
-      <a href="https://danielgoya.github.io/teaching.html" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; text-decoration:none; height:56px;">Teaching</a>
+    <a href="index.html" class="r-nav-brand" data-i18n="brand" style="font-family:'IBM Plex Sans',sans-serif; font-size:20px; font-weight:700; color:#1d4ed8; text-decoration:none; display:flex; align-items:center; padding:0 24px 0 0; flex:1;">Daniel Goya León</a>
+    <div class="r-nav-links" style="display:flex; align-items:stretch;">
+      <a href="index.html" data-i18n="navHome" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; text-decoration:none; height:56px;">Inicio</a>
+      <span data-i18n="navResearch" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#1d4ed8; font-weight:600; border-bottom:2px solid #1d4ed8; height:56px;">Investigación</span>
+      <a href="opinion.html" data-i18n="navOpinion" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; text-decoration:none; height:56px;">Opinión</a>
+      <a href="cv.html" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; text-decoration:none; height:56px;">CV</a>
+      <a href="teaching.html" data-i18n="navTeaching" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; text-decoration:none; height:56px;">Docencia</a>
+      <div class="lang-pill">
+        <div>
+          <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+          <button class="lang-btn" data-lang="es" aria-pressed="true">ES</button>
+        </div>
+      </div>
     </div>
   </nav>
 
@@ -75,32 +81,32 @@
 
     <!-- PAGE TITLE -->
     <div style="margin-bottom: 44px; padding-bottom: 32px; border-bottom: 1px solid #e2e8f0;">
-      <h1 style="font-family:'IBM Plex Sans',sans-serif; font-size:32px; font-weight:700; color:#0f172a; margin:0 0 8px; letter-spacing:-0.3px;">Research</h1>
+      <h1 data-i18n="pageTitle" style="font-family:'IBM Plex Sans',sans-serif; font-size:32px; font-weight:700; color:#0f172a; margin:0 0 8px; letter-spacing:-0.3px;">Investigación</h1>
       <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#64748b; margin:0;">Pontificia Universidad Católica de Valparaíso</p>
     </div>
 
     <!-- ── WORK IN PROGRESS ── -->
     <section id="wip-research" style="margin-bottom:52px; scroll-margin-top:72px;">
-      <h2 style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:0 0 18px;">Work in Progress</h2>
+      <h2 data-i18n="hWip" style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:0 0 18px;">Trabajos en curso</h2>
       <div style="background:#f8fafc; border-left:3px solid #2563eb; border-radius:0 8px 8px 0; padding:20px 24px;">
         <p style="font-family:'IBM Plex Sans',sans-serif; font-size:16px; font-weight:600; color:#1e3a5f; margin:0 0 6px; line-height:1.4;">Sustainability transitions in mining: forces of lock in and change</p>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#94a3b8; margin:0 0 10px;">with Anabel Marín</p>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; line-height:1.65; margin:0; text-wrap:pretty;">The papers develops a framework to characterise the socio-technical regime of mining, analysing forces of lock-in and transformation. It bridges transition studies with development perspectives relevant for resource-dependent economies facing the energy transition, digitalisation, and defence-driven mineral demand.</p>
+        <p data-i18n="coAnabel" style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#94a3b8; margin:0 0 10px;">con Anabel Marín</p>
+        <p data-i18n="wip1" style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; line-height:1.65; margin:0; text-wrap:pretty;">El artículo desarrolla un marco para caracterizar el régimen socio-técnico de la minería, analizando las fuerzas de bloqueo (lock-in) y de transformación. Conecta los estudios de transiciones con perspectivas del desarrollo relevantes para economías dependientes de recursos naturales que enfrentan la transición energética, la digitalización y una demanda de minerales impulsada por la defensa.</p>
       </div>
       <div style="background:#f8fafc; border-left:3px solid #2563eb; border-radius:0 8px 8px 0; padding:20px 24px; margin-top:12px;">
         <p style="font-family:'IBM Plex Sans',sans-serif; font-size:16px; font-weight:600; color:#1e3a5f; margin:0 0 6px; line-height:1.4;">A critical application of Mission-Oriented Policies at the subnational level in Latin America: the case of the Valparaíso Region, Chile</p>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#94a3b8; margin:0 0 10px;">with Diego Cabello Moya</p>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; line-height:1.65; margin:0; text-wrap:pretty;">This paper examines the applicability and limitations of Mission-Oriented Innovation Policy (MOIP) frameworks at the subnational level, drawing on the case of the Valparaíso Region in Chile.</p>
+        <p data-i18n="coCabello" style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#94a3b8; margin:0 0 10px;">con Diego Cabello Moya</p>
+        <p data-i18n="wip2" style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; line-height:1.65; margin:0; text-wrap:pretty;">Este artículo examina la aplicabilidad y las limitaciones de los marcos de Política de Innovación Orientada por Misiones (MOIP) a nivel subnacional, a partir del caso de la Región de Valparaíso, Chile.</p>
       </div>
       <div style="background:#f8fafc; border-left:3px solid #2563eb; border-radius:0 8px 8px 0; padding:20px 24px; margin-top:12px;">
         <p style="font-family:'IBM Plex Sans',sans-serif; font-size:16px; font-weight:600; color:#1e3a5f; margin:0 0 6px; line-height:1.4;">Measuring Industrial Policy Mixes</p>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; line-height:1.65; margin:0; text-wrap:pretty;">Recent advances in cross-country data on industrial policy create new opportunities for comparative research. This paper assesses the coverage and comparability of leading databases and proposes a measurable and robust industrial policy mix vector.</p>
+        <p data-i18n="wip3" style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; line-height:1.65; margin:0; text-wrap:pretty;">Los avances recientes en datos comparados sobre política industrial abren nuevas oportunidades para la investigación comparativa. Este artículo evalúa la cobertura y comparabilidad de las principales bases de datos y propone un vector de combinación de políticas industriales (policy mix) medible y robusto.</p>
       </div>
     </section>
 
     <!-- ── JOURNAL ARTICLES ── -->
     <section id="journal-articles" style="margin-bottom:52px; scroll-margin-top:72px;">
-      <h2 style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:0 0 0; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">Journal Articles</h2>
+      <h2 data-i18n="hJournal" style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:0 0 0; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">Artículos en revistas</h2>
 
       <!-- 2024 Creative Industries -->
       <article class="r-article" style="display:flex; gap:32px; align-items:flex-start; padding:32px 0; border-bottom:1px solid #f1f5f9;">
@@ -112,10 +118,10 @@
           <h3 style="font-family:'IBM Plex Sans',sans-serif; font-size:16.5px; font-weight:600; color:#1e3a5f; margin:0 0 10px; line-height:1.4;">
             <a href="https://doi.org/10.1016/j.pirs.2024.100028" style="color:inherit; text-decoration:none;">Marshallian and Jacobian externalities in creative industries: Evidence from Chile</a>
           </h3>
-          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; line-height:1.7; margin:0 0 10px; text-wrap:pretty;">Specialisation in creative sectors is associated with higher sales and more firms within the same sector (“Marshallian” effects), but no spillovers to other sectors (“Jacobian” effects) are found—evidence from Chile that suggests caution in policy prescriptions for creative industries.</p>
+          <p data-i18n="a24s" style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; line-height:1.7; margin:0 0 10px; text-wrap:pretty;">La especialización en sectores creativos se asocia a mayores ventas y más empresas dentro del mismo sector (efectos “marshallianos”), pero no se encuentran externalidades hacia otros sectores (efectos “jacobianos”) — evidencia para Chile que sugiere cautela en las prescripciones de política para las industrias creativas.</p>
           <details>
-            <summary style="display:inline-flex; align-items:center; font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#2563eb; text-decoration:none;"><em class="chevron">›</em> Full abstract</summary>
-            <p class="abstract-full">This paper analyses Marshallian and Jacobian localisation externalities in creative industries using a panel of Chilean municipalities. We exploit variation in creative industry specialisation across municipalities to identify the causal effect on sales and firm entry in the same sector (Marshallian) and in other sectors (Jacobian). While specialisation in creative industries raises own-sector outcomes, we find no evidence of cross-sector spillovers — calling for caution in policy prescriptions that justify creative industry support on the basis of broader economic spillovers.</p>
+            <summary style="display:inline-flex; align-items:center; font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#2563eb; text-decoration:none;"><em class="chevron">›</em> <span data-i18n="fullAbstract">Resumen completo</span></summary>
+            <p class="abstract-full" data-i18n="a24f">Este artículo analiza externalidades de localización marshallianas y jacobianas en las industrias creativas usando un panel de comunas chilenas. Aprovechamos la variación en la especialización en industrias creativas entre comunas para identificar el efecto causal sobre las ventas y la entrada de empresas en el mismo sector (marshalliano) y en otros sectores (jacobiano). Si bien la especialización en industrias creativas aumenta los resultados del propio sector, no encontramos evidencia de externalidades hacia otros sectores, lo que llama a la cautela frente a políticas que justifican el apoyo a las industrias creativas sobre la base de amplios efectos de derrame en la economía.</p>
           </details>
         </div>
         <div class="r-article-fig" style="flex:0 0 190px;">
@@ -124,13 +130,10 @@
             <line x1="30" y1="18" x2="30" y2="108" stroke="#e2e8f0" stroke-width="1"/>
             <line x1="30" y1="108" x2="178" y2="108" stroke="#e2e8f0" stroke-width="1"/>
             <line x1="30" y1="108" x2="178" y2="108" stroke="#94a3b8" stroke-width="0.5"/>
-            <!-- Marshallian: large positive bar -->
             <rect x="46" y="34" width="50" height="74" fill="#2563eb" rx="2" opacity="0.88"/>
             <text x="71" y="29" text-anchor="middle" font-size="9" fill="#2563eb" font-family="sans-serif" font-weight="600">+sig.</text>
-            <!-- Jacobian: near zero -->
             <rect x="132" y="104" width="50" height="4" fill="#cbd5e1" rx="2"/>
             <text x="157" y="100" text-anchor="middle" font-size="8" fill="#94a3b8" font-family="sans-serif">≈ 0</text>
-            <!-- X labels -->
             <text x="71" y="120" text-anchor="middle" font-size="8.5" fill="#334155" font-family="sans-serif">Marshallian</text>
             <text x="157" y="120" text-anchor="middle" font-size="8.5" fill="#94a3b8" font-family="sans-serif">Jacobian</text>
             <text x="71" y="130" text-anchor="middle" font-size="7" fill="#94a3b8" font-family="sans-serif">(own sector)</text>
@@ -149,11 +152,11 @@
           <h3 style="font-family:'IBM Plex Sans',sans-serif; font-size:16.5px; font-weight:600; color:#1e3a5f; margin:0 0 6px; line-height:1.4;">
             <a href="https://doi.org/10.1371/journal.pone.0282461" style="color:inherit; text-decoration:none;">The fear-increasing and fear-decreasing effects of a pilot policy to reduce fear of crime</a>
           </h3>
-          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#94a3b8; margin:0 0 8px;">with J.M. Benavente</p>
-          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; line-height:1.7; margin:0 0 10px; text-wrap:pretty;">A security information campaign near a shopping mall in Santiago reduced workers’ overall fear of crime and actual victimisation, but increased fear among those directly approached by officials—highlighting the importance of how crime-prevention messages are targeted and delivered.</p>
+          <p data-i18n="coBenavente" style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#94a3b8; margin:0 0 8px;">con J.M. Benavente</p>
+          <p data-i18n="a23s" style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; line-height:1.7; margin:0 0 10px; text-wrap:pretty;">Una campaña de información de seguridad cerca de un centro comercial en Santiago redujo el temor general al delito y la victimización efectiva de los trabajadores, pero aumentó el temor entre quienes fueron abordados directamente por las autoridades — lo que resalta la importancia de cómo se focalizan y entregan los mensajes de prevención del delito.</p>
           <details>
-            <summary style="display:inline-flex; align-items:center; font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#2563eb;"><em class="chevron">›</em> Full abstract</summary>
-            <p class="abstract-full">We study a pilot programme in Santiago, Chile, in which police officers and government officials distributed security leaflets near a shopping mall. Using a difference-in-differences strategy comparing workers near the mall with those further away, we find that the programme reduced overall fear of crime and actual victimisation among workers in the treated area. Paradoxically, among individuals who were directly approached and handed a leaflet, measured fear of crime increased. These opposing effects highlight the complexity of crime-prevention communication and the importance of targeting in public safety policy.</p>
+            <summary style="display:inline-flex; align-items:center; font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#2563eb;"><em class="chevron">›</em> <span data-i18n="fullAbstract">Resumen completo</span></summary>
+            <p class="abstract-full" data-i18n="a23f">Estudiamos un programa piloto en Santiago de Chile, en el que carabineros y funcionarios de gobierno repartieron folletos de seguridad cerca de un centro comercial. Usando una estrategia de diferencias en diferencias que compara a trabajadores cercanos al centro comercial con otros más alejados, encontramos que el programa redujo el temor general al delito y la victimización efectiva entre los trabajadores de la zona tratada. Paradójicamente, entre las personas que fueron abordadas directamente y recibieron un folleto, el temor al delito medido aumentó. Estos efectos opuestos resaltan la complejidad de la comunicación en prevención del delito y la importancia de la focalización en las políticas de seguridad pública.</p>
           </details>
         </div>
         <div class="r-article-fig" style="flex:0 0 190px;">
@@ -161,24 +164,18 @@
             <text x="95" y="13" text-anchor="middle" font-size="8.5" fill="#64748b" font-family="sans-serif">Fear of crime: difference-in-differences</text>
             <line x1="28" y1="18" x2="28" y2="106" stroke="#e2e8f0" stroke-width="1"/>
             <line x1="28" y1="106" x2="178" y2="106" stroke="#e2e8f0" stroke-width="1"/>
-            <!-- Intervention line -->
             <line x1="103" y1="18" x2="103" y2="106" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,2"/>
             <text x="103" y="16" text-anchor="middle" font-size="7" fill="#94a3b8" font-family="sans-serif">Policy</text>
-            <!-- Workers overall: fear decreases -->
             <polyline points="28,64 103,64 178,40" fill="none" stroke="#2563eb" stroke-width="2.5"/>
             <circle cx="28" cy="64" r="3" fill="#2563eb"/>
             <circle cx="178" cy="40" r="3" fill="#2563eb"/>
-            <!-- Directly contacted: fear increases -->
             <polyline points="28,72 103,72 178,96" fill="none" stroke="#f97316" stroke-width="2" stroke-dasharray="5,3"/>
             <circle cx="28" cy="72" r="2.5" fill="#f97316"/>
             <circle cx="178" cy="96" r="2.5" fill="#f97316"/>
-            <!-- Endpoint labels -->
             <text x="180" y="39" font-size="7.5" fill="#2563eb" font-family="sans-serif">↓ Workers</text>
             <text x="180" y="98" font-size="7.5" fill="#f97316" font-family="sans-serif">↑ Contacted</text>
-            <!-- X labels -->
             <text x="65" y="118" text-anchor="middle" font-size="7.5" fill="#94a3b8" font-family="sans-serif">Before</text>
             <text x="143" y="118" text-anchor="middle" font-size="7.5" fill="#94a3b8" font-family="sans-serif">After</text>
-            <!-- Y label -->
             <text x="16" y="64" font-size="7" fill="#94a3b8" font-family="sans-serif" transform="rotate(-90 16 64)">Fear level</text>
           </svg>
         </div>
@@ -194,32 +191,25 @@
           <h3 style="font-family:'IBM Plex Sans',sans-serif; font-size:16.5px; font-weight:600; color:#1e3a5f; margin:0 0 6px; line-height:1.4;">
             <a href="https://doi.org/10.1016/j.techfore.2021.121199" style="color:inherit; text-decoration:none;">The primacy of demand and financial obstacles in hindering innovation</a>
           </h3>
-          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#94a3b8; margin:0 0 8px;">with Andrés Zahler and Matías Caamaño</p>
-          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; line-height:1.7; margin:0 0 10px; text-wrap:pretty;">Demand and financial barriers are the main obstacles to innovation among Chilean firms and tend to outweigh other constraints when present. Other barriers vary by sector, with knowledge constraints affecting manufacturing and market structure and regulation affecting services—highlighting the need for sector-specific innovation policies.</p>
+          <p data-i18n="coZahlerCaamano" style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#94a3b8; margin:0 0 8px;">con Andrés Zahler y Matías Caamaño</p>
+          <p data-i18n="a22s" style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; line-height:1.7; margin:0 0 10px; text-wrap:pretty;">Las barreras de demanda y financieras son los principales obstáculos a la innovación entre las empresas chilenas y tienden a pesar más que otras restricciones cuando están presentes. Otras barreras varían según el sector: las restricciones de conocimiento afectan a la manufactura, y la estructura de mercado y la regulación afectan a los servicios — lo que resalta la necesidad de políticas de innovación específicas por sector.</p>
           <details>
-            <summary style="display:inline-flex; align-items:center; font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#2563eb;"><em class="chevron">›</em> Full abstract</summary>
-            <p class="abstract-full">We study the effects of different types of obstacles to innovation on the probability of obtaining different firm-level innovation outcomes. We consider financial, knowledge, cooperation, regulatory and demand-related obstacles, which we separate into two categories: market structure and lack or uncertainty about demand. <br>
-Using a pooled sample of four Chilean innovation surveys and an instrumental variables approach novel to this literature to address endogeneity, we find that only demand and financial barriers seem to have a negative effect on the probability of generating innovations. When financial or demand barriers are present, they seem to be binding and take prevalence over all other obstacles, and when they are absent, other barriers become significant. <br>
-We provide evidence of heterogeneous effects on different sectors, considering not only manufacturing and services but also primaries, a comparison that has not been previously conducted and holds relevance for developing economies. We show that knowledge obstacles are relevant to manufacturing and market structure and regulatory obstacles are relevant in the services sector, while demand and financial obstacles appear to matter across the board. The pervasiveness of financial and demand obstacles, their relationship with the remaining barriers, and the observed sectoral differences have important policy implications.</p>
+            <summary style="display:inline-flex; align-items:center; font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#2563eb;"><em class="chevron">›</em> <span data-i18n="fullAbstract">Resumen completo</span></summary>
+            <p class="abstract-full" data-i18n="a22f">Estudiamos los efectos de distintos tipos de obstáculos a la innovación sobre la probabilidad de obtener distintos resultados de innovación a nivel de empresa. Consideramos obstáculos financieros, de conocimiento, de cooperación, regulatorios y de demanda, que separamos en dos categorías: estructura de mercado, y falta o incertidumbre sobre la demanda. Usando una muestra combinada de cuatro encuestas de innovación chilenas y un enfoque de variables instrumentales novedoso para esta literatura para abordar la endogeneidad, encontramos que solo las barreras de demanda y financieras parecen tener un efecto negativo sobre la probabilidad de generar innovaciones. Cuando las barreras financieras o de demanda están presentes, parecen ser vinculantes y prevalecen sobre todos los demás obstáculos; cuando están ausentes, otras barreras se vuelven significativas. Aportamos evidencia de efectos heterogéneos entre sectores, considerando no solo manufactura y servicios sino también actividades primarias, una comparación no realizada previamente y relevante para las economías en desarrollo. Mostramos que los obstáculos de conocimiento son relevantes para la manufactura y que los obstáculos de estructura de mercado y regulatorios lo son en el sector servicios, mientras que los de demanda y financieros parecen importar en todos los sectores. La omnipresencia de los obstáculos financieros y de demanda, su relación con las demás barreras y las diferencias sectoriales observadas tienen implicancias importantes de política.</p>
           </details>
         </div>
         <div class="r-article-fig" style="flex:0 0 190px;">
           <svg viewBox="0 0 190 132" style="width:190px;height:132px;display:block;border:1px solid #e2e8f0;border-radius:6px;background:#fafbfc;" aria-label="Horizontal bar chart: barriers to innovation by magnitude">
             <text x="95" y="13" text-anchor="middle" font-size="8.5" fill="#64748b" font-family="sans-serif">Barriers to innovation (IV estimate)</text>
             <line x1="70" y1="18" x2="70" y2="110" stroke="#e2e8f0" stroke-width="1"/>
-            <!-- Demand (largest) -->
             <rect x="71" y="23" width="93" height="13" fill="#1d4ed8" rx="2"/>
             <text x="67" y="33" text-anchor="end" font-size="8.5" fill="#1d4ed8" font-family="sans-serif">Demand</text>
-            <!-- Financial -->
             <rect x="71" y="41" width="77" height="13" fill="#2563eb" rx="2"/>
             <text x="67" y="51" text-anchor="end" font-size="8.5" fill="#2563eb" font-family="sans-serif">Financial</text>
-            <!-- Knowledge -->
             <rect x="71" y="59" width="46" height="13" fill="#3b82f6" rx="2"/>
             <text x="67" y="69" text-anchor="end" font-size="8.5" fill="#3b82f6" font-family="sans-serif">Knowledge</text>
-            <!-- Market -->
             <rect x="71" y="77" width="30" height="13" fill="#60a5fa" rx="2"/>
             <text x="67" y="87" text-anchor="end" font-size="8.5" fill="#60a5fa" font-family="sans-serif">Market</text>
-            <!-- Cooperation -->
             <rect x="71" y="95" width="14" height="13" fill="#93c5fd" rx="2"/>
             <text x="67" y="105" text-anchor="end" font-size="8.5" fill="#93c5fd" font-family="sans-serif">Cooperation</text>
             <text x="120" y="124" text-anchor="middle" font-size="7.5" fill="#94a3b8" font-family="sans-serif">→ negative effect on innovation prob.</text>
@@ -237,11 +227,11 @@ We provide evidence of heterogeneous effects on different sectors, considering n
           <h3 style="font-family:'IBM Plex Sans',sans-serif; font-size:16.5px; font-weight:600; color:#1e3a5f; margin:0 0 6px; line-height:1.4;">
             <a href="https://doi.org/10.1016/j.eist.2021.09.011" style="color:inherit; text-decoration:none;">Mining—The dark side of the energy transition</a>
           </h3>
-          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#94a3b8; margin:0 0 8px;">with Anabel Marín</p>
-          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; line-height:1.7; margin:0 0 10px; text-wrap:pretty;">The energy transition dramatically increases mineral demand, creating economic opportunities for resource-rich countries while simultaneously amplifying social and environmental conflicts — a blind spot in sustainability transitions research.</p>
+          <p data-i18n="coAnabel" style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#94a3b8; margin:0 0 8px;">con Anabel Marín</p>
+          <p data-i18n="a21es" style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; line-height:1.7; margin:0 0 10px; text-wrap:pretty;">La transición energética aumenta drásticamente la demanda de minerales, generando oportunidades económicas para los países ricos en recursos y, al mismo tiempo, amplificando los conflictos sociales y ambientales — un punto ciego en la investigación sobre transiciones de sostenibilidad.</p>
           <details>
-            <summary style="display:inline-flex; align-items:center; font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#2563eb;"><em class="chevron">›</em> Full abstract</summary>
-            <p class="abstract-full">The global energy transition requires vast amounts of minerals, including copper, lithium, cobalt, and rare earths. This creates significant economic opportunities for resource-rich developing countries, yet it also intensifies social and environmental conflicts associated with mining expansion. We argue that transitions research has largely overlooked this "dark side," focusing on decarbonising energy systems while neglecting the social and environmental costs embedded in the supply chains that make those transitions possible. We develop a conceptual framework integrating development and transitions perspectives, and draw on evidence from Latin America to illustrate the tensions and trade-offs involved.</p>
+            <summary style="display:inline-flex; align-items:center; font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#2563eb;"><em class="chevron">›</em> <span data-i18n="fullAbstract">Resumen completo</span></summary>
+            <p class="abstract-full" data-i18n="a21ef">La transición energética global requiere enormes cantidades de minerales, incluidos cobre, litio, cobalto y tierras raras. Esto genera oportunidades económicas significativas para los países en desarrollo ricos en recursos, pero también intensifica los conflictos sociales y ambientales asociados a la expansión minera. Sostenemos que la investigación sobre transiciones ha pasado por alto en gran medida este “lado oscuro”, centrándose en descarbonizar los sistemas de energía y descuidando los costos sociales y ambientales incorporados en las cadenas de suministro que hacen posibles esas transiciones. Desarrollamos un marco conceptual que integra las perspectivas del desarrollo y de las transiciones, y recurrimos a evidencia de América Latina para ilustrar las tensiones y disyuntivas involucradas.</p>
           </details>
         </div>
         <div class="r-article-fig" style="flex:0 0 190px;">
@@ -249,18 +239,14 @@ We provide evidence of heterogeneous effects on different sectors, considering n
             <text x="95" y="13" text-anchor="middle" font-size="8.5" fill="#64748b" font-family="sans-serif">Projected trends under energy transition</text>
             <line x1="28" y1="18" x2="28" y2="102" stroke="#e2e8f0" stroke-width="1"/>
             <line x1="28" y1="102" x2="174" y2="102" stroke="#e2e8f0" stroke-width="1"/>
-            <!-- Mineral demand area -->
             <polygon points="28,98 58,90 90,74 124,52 168,24 168,102 28,102" fill="#dbeafe" opacity="0.65"/>
             <polyline points="28,98 58,90 90,74 124,52 168,24" fill="none" stroke="#2563eb" stroke-width="2.5"/>
-            <!-- Social conflicts area -->
             <polygon points="28,100 58,96 90,90 124,80 168,62 168,102 28,102" fill="#ffedd5" opacity="0.65"/>
             <polyline points="28,100 58,96 90,90 124,80 168,62" fill="none" stroke="#f97316" stroke-width="2" stroke-dasharray="5,3"/>
-            <!-- Legend -->
             <rect x="32" y="24" width="11" height="3" fill="#2563eb" rx="1"/>
             <text x="47" y="28" font-size="7.5" fill="#2563eb" font-family="sans-serif">Mineral demand</text>
             <rect x="32" y="33" width="11" height="3" fill="#f97316" rx="1"/>
             <text x="47" y="37" font-size="7.5" fill="#f97316" font-family="sans-serif">Social conflicts</text>
-            <!-- X -->
             <text x="28" y="112" text-anchor="middle" font-size="7" fill="#94a3b8" font-family="sans-serif">2020</text>
             <text x="168" y="112" text-anchor="middle" font-size="7" fill="#94a3b8" font-family="sans-serif">2050</text>
             <text x="98" y="124" text-anchor="middle" font-size="7.5" fill="#94a3b8" font-family="sans-serif">Energy transition timeline (schematic)</text>
@@ -278,14 +264,14 @@ We provide evidence of heterogeneous effects on different sectors, considering n
           <h3 style="font-family:'IBM Plex Sans',sans-serif; font-size:16.5px; font-weight:600; color:#1e3a5f; margin:0 0 10px; line-height:1.4;">
             <a href="https://doi.org/10.1016/j.econmod.2021.105544" style="color:inherit; text-decoration:none;">The network effect of Chinese competition on what domestic suppliers produce</a>
           </h3>
-          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; line-height:1.7; margin:0 0 10px; text-wrap:pretty;">Import competition transmits through supply chains: as demand for a product falls, domestic multi-product plants drop the varieties they supply as inputs — especially small, low-productivity plants with low-markup lines.</p>
+          <p data-i18n="a21ms" style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; line-height:1.7; margin:0 0 10px; text-wrap:pretty;">La competencia de las importaciones se transmite a través de las cadenas de suministro: cuando cae la demanda de un producto, las plantas nacionales multiproducto abandonan las variedades que proveen como insumos — especialmente las plantas pequeñas y de baja productividad con líneas de bajo margen.</p>
           <details>
-            <summary style="display:inline-flex; align-items:center; font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#2563eb;"><em class="chevron">›</em> Full abstract</summary>
-            <p class="abstract-full">We study how Chinese import competition affects the product scope of domestic multi-product plants, focusing on the supply chain channel. Using Chilean plant-product data matched to input-output tables, we show that a fall in demand for a final good reduces the variety of inputs that domestic plants produce to supply that sector. The effect is concentrated in small plants with low productivity and low markup products, consistent with firms dropping their least competitive product lines first. This network transmission of competition represents an additional margin of adjustment often overlooked in the trade and employment literature.</p>
+            <summary style="display:inline-flex; align-items:center; font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#2563eb;"><em class="chevron">›</em> <span data-i18n="fullAbstract">Resumen completo</span></summary>
+            <p class="abstract-full" data-i18n="a21mf">Estudiamos cómo la competencia de las importaciones chinas afecta el rango de productos (product scope) de las plantas nacionales multiproducto, con foco en el canal de la cadena de suministro. Usando datos chilenos de planta-producto vinculados a matrices insumo-producto, mostramos que una caída en la demanda de un bien final reduce la variedad de insumos que las plantas nacionales producen para abastecer a ese sector. El efecto se concentra en plantas pequeñas, de baja productividad y con productos de bajo margen, consistente con que las empresas abandonan primero sus líneas de producto menos competitivas. Esta transmisión en red de la competencia representa un margen de ajuste adicional a menudo ignorado en la literatura de comercio y empleo.</p>
           </details>
         </div>
         <div class="r-article-fig" style="flex:0 0 190px;">
-          <img src="https://danielgoya.github.io/uploads/extracted/econmod2021_3.jpg" alt="Supply chain network diagram from the paper" style="width:190px; height:132px; display:block; border:1px solid #e2e8f0; border-radius:6px; object-fit:cover; object-position:center center;"/>
+          <img src="uploads/extracted/econmod2021_3.jpg" alt="Supply chain network diagram from the paper" style="width:190px; height:132px; display:block; border:1px solid #e2e8f0; border-radius:6px; object-fit:cover; object-position:center center;"/>
         </div>
       </article>
 
@@ -299,17 +285,16 @@ We provide evidence of heterogeneous effects on different sectors, considering n
           <h3 style="font-family:'IBM Plex Sans',sans-serif; font-size:16.5px; font-weight:600; color:#1e3a5f; margin:0 0 10px; line-height:1.4;">
             <a href="https://doi.org/10.1016/j.iref.2020.07.001" style="color:inherit; text-decoration:none;">The Exchange Rate and Export Variety: A cross-country analysis with long panel estimators</a>
           </h3>
-          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; line-height:1.7; margin:0 0 10px; text-wrap:pretty;">A more depreciated exchange rate is associated with a wider range of exports, while greater exchange-rate volatility reduces export variety, particularly for technology-intensive goods—suggesting that exchange-rate conditions can shape countries’ long-term export structure and comparative advantage.</p>
+          <p data-i18n="a20s" style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; line-height:1.7; margin:0 0 10px; text-wrap:pretty;">Un tipo de cambio más depreciado se asocia a una mayor variedad de exportaciones, mientras que una mayor volatilidad cambiaria reduce la variedad exportada, en particular para bienes intensivos en tecnología — lo que sugiere que las condiciones cambiarias pueden moldear la estructura exportadora y la ventaja comparativa de los países en el largo plazo.</p>
           <details>
-            <summary style="display:inline-flex; align-items:center; font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#2563eb;"><em class="chevron">›</em> Full abstract</summary>
-            <p class="abstract-full">We examine how the real exchange rate level and volatility affect export variety across a large panel of countries over three decades. Using heterogeneous long-panel estimators that allow for cross-sectional dependence and slope heterogeneity, we find that a more depreciated exchange rate is associated with greater export variety, while higher volatility reduces it. These effects are heterogeneous across product categories, being particularly pronounced for technologically intensive goods. The results suggest that exchange rate policy can shape the extensive margin of exports and, in turn, the long-run structure of comparative advantage.</p>
+            <summary style="display:inline-flex; align-items:center; font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#2563eb;"><em class="chevron">›</em> <span data-i18n="fullAbstract">Resumen completo</span></summary>
+            <p class="abstract-full" data-i18n="a20f">Examinamos cómo el nivel y la volatilidad del tipo de cambio real afectan la variedad exportada en un amplio panel de países durante tres décadas. Usando estimadores heterogéneos de panel largo que permiten dependencia de corte transversal y heterogeneidad de pendientes, encontramos que un tipo de cambio más depreciado se asocia a una mayor variedad exportada, mientras que una mayor volatilidad la reduce. Estos efectos son heterogéneos entre categorías de productos, siendo particularmente pronunciados para los bienes intensivos en tecnología. Los resultados sugieren que la política cambiaria puede moldear el margen extensivo de las exportaciones y, a su vez, la estructura de la ventaja comparativa en el largo plazo.</p>
           </details>
         </div>
         <div class="r-article-fig" style="flex:0 0 190px;">
           <svg viewBox="0 0 190 132" style="width:190px;height:132px;display:block;border:1px solid #e2e8f0;border-radius:6px;background:#fafbfc;" aria-label="Two panels: ER level positive effect, ER volatility negative effect on export variety">
             <text x="95" y="13" text-anchor="middle" font-size="8.5" fill="#64748b" font-family="sans-serif">Exchange rate and export variety</text>
             <line x1="96" y1="17" x2="96" y2="110" stroke="#e2e8f0" stroke-width="1"/>
-            <!-- LEFT: Level (positive slope) -->
             <text x="47" y="25" text-anchor="middle" font-size="8" fill="#334155" font-family="sans-serif">ER Level</text>
             <line x1="14" y1="100" x2="88" y2="100" stroke="#e2e8f0" stroke-width="1"/>
             <line x1="14" y1="28" x2="14" y2="100" stroke="#e2e8f0" stroke-width="1"/>
@@ -320,7 +305,6 @@ We provide evidence of heterogeneous effects on different sectors, considering n
             <circle cx="70" cy="52" r="2.2" fill="#2563eb" opacity="0.65"/>
             <text x="47" y="112" text-anchor="middle" font-size="7" fill="#94a3b8" font-family="sans-serif">Depreciation →</text>
             <text x="7" y="65" font-size="7" fill="#94a3b8" font-family="sans-serif" transform="rotate(-90 7 65)">Variety</text>
-            <!-- RIGHT: Volatility (negative slope) -->
             <text x="143" y="25" text-anchor="middle" font-size="8" fill="#334155" font-family="sans-serif">ER Volatility</text>
             <line x1="104" y1="100" x2="180" y2="100" stroke="#e2e8f0" stroke-width="1"/>
             <line x1="104" y1="28" x2="104" y2="100" stroke="#e2e8f0" stroke-width="1"/>
@@ -334,7 +318,7 @@ We provide evidence of heterogeneous effects on different sectors, considering n
         </div>
       </article>
 
-      <!-- 2019 World Economy — REAL FIGURE (survival curves) -->
+      <!-- 2019 World Economy -->
       <article class="r-article" style="display:flex; gap:32px; align-items:flex-start; padding:32px 0; border-bottom:1px solid #f1f5f9;">
         <div style="flex:1; min-width:0;">
           <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px; flex-wrap:wrap;">
@@ -344,41 +328,32 @@ We provide evidence of heterogeneous effects on different sectors, considering n
           <h3 style="font-family:'IBM Plex Sans',sans-serif; font-size:16.5px; font-weight:600; color:#1e3a5f; margin:0 0 6px; line-height:1.4;">
             <a href="https://doi.org/10.1111/twec.12835" style="color:inherit; text-decoration:none;">Distance from core competences and new export survival: Evidence from multi-product exporters</a>
           </h3>
-          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#94a3b8; margin:0 0 8px;">with Andrés Zahler</p>
-          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; line-height:1.7; margin:0 0 10px; text-wrap:pretty;">New export products are more likely to survive when they are closely related to a firm’s existing capabilities, especially during the first year—suggesting that firms’ accumulated knowledge and experience constrain export diversification and should be considered in trade and industrial policy.</p>
+          <p data-i18n="coZahler" style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#94a3b8; margin:0 0 8px;">con Andrés Zahler</p>
+          <p data-i18n="a19s" style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; line-height:1.7; margin:0 0 10px; text-wrap:pretty;">Los nuevos productos de exportación tienen más probabilidades de sobrevivir cuando están estrechamente relacionados con las capacidades existentes de la empresa, especialmente durante el primer año — lo que sugiere que el conocimiento y la experiencia acumulados condicionan la diversificación exportadora y deberían considerarse en la política comercial e industrial.</p>
           <details>
-            <summary style="display:inline-flex; align-items:center; font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#2563eb;"><em class="chevron">›</em> Full abstract</summary>
-            <p class="abstract-full">We study the survival of new export products using a panel of Chilean multi-product exporters. Exploiting within-firm variation in the distance of new export products from a firm's existing competence basket, we show that exports closer to a firm's core competences survive significantly longer. The effect is concentrated in the first year of export and is robust to controlling for firm, product, and destination fixed effects. The results suggest that export diversification is constrained by organisational capabilities, with implications for trade and industrial policy.</p>
+            <summary style="display:inline-flex; align-items:center; font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#2563eb;"><em class="chevron">›</em> <span data-i18n="fullAbstract">Resumen completo</span></summary>
+            <p class="abstract-full" data-i18n="a19f">Estudiamos la supervivencia de nuevos productos de exportación usando un panel de exportadores chilenos multiproducto. Aprovechando la variación intra-empresa en la distancia de los nuevos productos de exportación respecto de la canasta de competencias existente de la empresa, mostramos que las exportaciones más cercanas a las competencias centrales de la empresa sobreviven significativamente más tiempo. El efecto se concentra en el primer año de exportación y es robusto al controlar por efectos fijos de empresa, producto y destino. Los resultados sugieren que la diversificación exportadora está condicionada por las capacidades organizacionales, con implicancias para la política comercial e industrial.</p>
           </details>
         </div>
         <div class="r-article-fig" style="flex:0 0 190px;">
           <svg viewBox="0 0 190 132" style="width:190px;height:132px;display:block;border:1px solid #e2e8f0;border-radius:6px;background:#fafbfc;" aria-label="Kaplan-Meier survival curves by distance from core competences">
             <text x="95" y="11" text-anchor="middle" font-size="7.5" fill="#64748b" font-family="sans-serif">Survival probability by distance from core competences</text>
-            <!-- Axes -->
             <line x1="30" y1="14" x2="30" y2="108" stroke="#e2e8f0" stroke-width="1"/>
             <line x1="30" y1="108" x2="184" y2="108" stroke="#e2e8f0" stroke-width="1"/>
-            <!-- Gridlines -->
             <line x1="30" y1="14" x2="184" y2="14" stroke="#f1f5f9" stroke-width="0.5"/>
             <line x1="30" y1="61" x2="184" y2="61" stroke="#f1f5f9" stroke-width="0.5"/>
-            <!-- Y labels -->
             <text x="27" y="17" text-anchor="end" font-size="7" fill="#94a3b8" font-family="sans-serif">1.0</text>
             <text x="27" y="64" text-anchor="end" font-size="7" fill="#94a3b8" font-family="sans-serif">0.5</text>
             <text x="27" y="111" text-anchor="end" font-size="7" fill="#94a3b8" font-family="sans-serif">0</text>
-            <!-- X labels -->
             <text x="30" y="118" text-anchor="middle" font-size="7" fill="#94a3b8" font-family="sans-serif">0</text>
             <text x="74" y="118" text-anchor="middle" font-size="7" fill="#94a3b8" font-family="sans-serif">2</text>
             <text x="118" y="118" text-anchor="middle" font-size="7" fill="#94a3b8" font-family="sans-serif">4</text>
             <text x="162" y="118" text-anchor="middle" font-size="7" fill="#94a3b8" font-family="sans-serif">6</text>
             <text x="107" y="128" text-anchor="middle" font-size="7" fill="#94a3b8" font-family="sans-serif">years since new export began</text>
-            <!-- Year 1 dashed marker (key divergence) -->
             <line x1="52" y1="14" x2="52" y2="108" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2"/>
-            <!-- Shaded area between curves -->
             <polygon points="30,14 52,14 52,57 74,57 74,69 96,69 96,78 118,78 118,85 140,85 140,91 162,91 162,94 184,94 184,103 162,103 162,100 140,100 140,96 118,96 118,90 96,90 96,83 74,83 74,74 52,74 52,14 30,14" fill="#dbeafe" opacity="0.4"/>
-            <!-- Close to core: solid blue -->
             <polyline points="30,14 52,14 52,57 74,57 74,69 96,69 96,78 118,78 118,85 140,85 140,91 162,91 162,94 184,94" fill="none" stroke="#2563eb" stroke-width="2.2"/>
-            <!-- Far from core: dashed gray -->
             <polyline points="30,14 52,14 52,74 74,74 74,83 96,83 96,90 118,90 118,96 140,96 140,100 162,100 162,103 184,103" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4,2"/>
-            <!-- Legend -->
             <line x1="33" y1="24" x2="44" y2="24" stroke="#2563eb" stroke-width="2.2"/>
             <text x="47" y="27" font-size="7.5" fill="#2563eb" font-family="sans-serif">Close to core</text>
             <line x1="33" y1="35" x2="44" y2="35" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4,2"/>
@@ -391,7 +366,7 @@ We provide evidence of heterogeneous effects on different sectors, considering n
 
     <!-- ── WORKING PAPERS ── -->
     <section style="margin-bottom:52px;">
-      <h2 style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:0 0 0; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">Working Papers</h2>
+      <h2 data-i18n="hWorking" style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:0 0 0; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">Documentos de trabajo</h2>
 
       <div style="padding:14px 0; border-bottom:1px solid #f1f5f9; display:flex; gap:12px;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#cbd5e1; min-width:30px; padding-top:3px;">2022</span>
@@ -436,7 +411,7 @@ We provide evidence of heterogeneous effects on different sectors, considering n
 
     <!-- ── BOOKS & CHAPTERS ── -->
     <section style="margin-bottom:52px;">
-      <h2 style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:0 0 0; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">Books and Book Chapters</h2>
+      <h2 data-i18n="hBooks" style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:0 0 0; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">Libros y capítulos de libros</h2>
 
       <div style="padding:14px 0; border-bottom:1px solid #f1f5f9; display:flex; gap:12px;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#cbd5e1; min-width:30px; padding-top:3px;">2023</span>
@@ -466,50 +441,50 @@ We provide evidence of heterogeneous effects on different sectors, considering n
 
     <!-- ── IDRC PROJECT ── -->
     <section id="other-research" style="margin-bottom:52px;">
-      <h2 style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:0 0 0; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">Other Research</h2>
+      <h2 data-i18n="hOther" style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#94a3b8; margin:0 0 0; padding-bottom:14px; border-bottom:2px solid #e2e8f0;">Otras investigaciones</h2>
 
       <article style="padding:28px 0;">
         <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px; flex-wrap:wrap;">
           <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; color:#1d4ed8; background:#dbeafe; padding:2px 9px; border-radius:3px;">IDRC</span>
-          <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; color:#166534; background:#dcfce7; padding:2px 9px; border-radius:3px;">Natural Resources</span>
+          <span data-i18n="natResBadge" style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; font-weight:600; color:#166534; background:#dcfce7; padding:2px 9px; border-radius:3px;">Recursos naturales</span>
         </div>
         <h3 style="font-family:'IBM Plex Sans',sans-serif; font-size:16.5px; font-weight:600; color:#1e3a5f; margin:0 0 6px; line-height:1.4;">Opening up natural resource-based industries for innovation</h3>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#94a3b8; margin:0 0 16px;">with Anabel Marín · Funded by International Development Research Centre (IDRC)</p>
+        <p data-i18n="idrcFunding" style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#94a3b8; margin:0 0 16px;">con Anabel Marín · Financiado por el International Development Research Centre (IDRC)</p>
         <details>
-          <summary style="display:inline-flex; align-items:center; font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#2563eb; cursor:pointer; list-style:none; user-select:none;"><em class="chevron">›</em> Project outputs</summary>
+          <summary style="display:inline-flex; align-items:center; font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#2563eb; cursor:pointer; list-style:none; user-select:none;"><em class="chevron">›</em> <span data-i18n="projectOutputs">Documentos del proyecto</span></summary>
           <div style="margin-top:14px; display:flex; flex-direction:column; gap:6px;">
 
-            <a href="https://danielgoya.github.io/uploads/sectorial%20report%20copper%20-%202011.PDF" style="display:flex; align-items:center; gap:10px; padding:10px 14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#334155; text-decoration:none;" target="_blank">
+            <a href="uploads/sectorial%20report%20copper%20-%202011.PDF" style="display:flex; align-items:center; gap:10px; padding:10px 14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#334155; text-decoration:none;" target="_blank">
               <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="1" width="9" height="12" rx="1" stroke="#2563eb" stroke-width="1.2"/><path d="M4 5h5M4 7h4M4 9h3" stroke="#2563eb" stroke-width="1" stroke-linecap="round"/></svg>
               Sectorial Report: Copper
               <span style="margin-left:auto; font-size:11px; color:#94a3b8;">2011 · PDF ↓</span>
             </a>
 
-            <a href="https://danielgoya.github.io/uploads/NR%20Project_Case%20Study_Aguamarina.pdf" style="display:flex; align-items:center; gap:10px; padding:10px 14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#334155; text-decoration:none;" target="_blank">
+            <a href="uploads/NR%20Project_Case%20Study_Aguamarina.pdf" style="display:flex; align-items:center; gap:10px; padding:10px 14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#334155; text-decoration:none;" target="_blank">
               <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="1" width="9" height="12" rx="1" stroke="#2563eb" stroke-width="1.2"/><path d="M4 5h5M4 7h4M4 9h3" stroke="#2563eb" stroke-width="1" stroke-linecap="round"/></svg>
               Case Study: Aguamarina
               <span style="margin-left:auto; font-size:11px; color:#94a3b8;">2012 · PDF ↓</span>
             </a>
 
-            <a href="https://danielgoya.github.io/uploads/NR%20Project_Case%20Study_CMM.pdf" style="display:flex; align-items:center; gap:10px; padding:10px 14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#334155; text-decoration:none;" target="_blank">
+            <a href="uploads/NR%20Project_Case%20Study_CMM.pdf" style="display:flex; align-items:center; gap:10px; padding:10px 14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#334155; text-decoration:none;" target="_blank">
               <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="1" width="9" height="12" rx="1" stroke="#2563eb" stroke-width="1.2"/><path d="M4 5h5M4 7h4M4 9h3" stroke="#2563eb" stroke-width="1" stroke-linecap="round"/></svg>
               Case Study: CMM
               <span style="margin-left:auto; font-size:11px; color:#94a3b8;">2012 · PDF ↓</span>
             </a>
 
-            <a href="https://danielgoya.github.io/uploads/NR%20Project_Case%20Study_Seawater.pdf" style="display:flex; align-items:center; gap:10px; padding:10px 14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#334155; text-decoration:none;" target="_blank">
+            <a href="uploads/NR%20Project_Case%20Study_Seawater.pdf" style="display:flex; align-items:center; gap:10px; padding:10px 14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#334155; text-decoration:none;" target="_blank">
               <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="1" width="9" height="12" rx="1" stroke="#2563eb" stroke-width="1.2"/><path d="M4 5h5M4 7h4M4 9h3" stroke="#2563eb" stroke-width="1" stroke-linecap="round"/></svg>
               Case Study: Seawater Desalination
               <span style="margin-left:auto; font-size:11px; color:#94a3b8;">2012 · PDF ↓</span>
             </a>
 
-            <a href="https://danielgoya.github.io/uploads/NR%20Project_Case%20Study_Thickened%20Tailings.pdf" style="display:flex; align-items:center; gap:10px; padding:10px 14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#334155; text-decoration:none;" target="_blank">
+            <a href="uploads/NR%20Project_Case%20Study_Thickened%20Tailings.pdf" style="display:flex; align-items:center; gap:10px; padding:10px 14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#334155; text-decoration:none;" target="_blank">
               <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="1" width="9" height="12" rx="1" stroke="#2563eb" stroke-width="1.2"/><path d="M4 5h5M4 7h4M4 9h3" stroke="#2563eb" stroke-width="1" stroke-linecap="round"/></svg>
               Case Study: Thickened Tailings
               <span style="margin-left:auto; font-size:11px; color:#94a3b8;">2012 · PDF ↓</span>
             </a>
 
-            <a href="https://danielgoya.github.io/uploads/quantitative_report_final_version.pdf" style="display:flex; align-items:center; gap:10px; padding:10px 14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#334155; text-decoration:none;" target="_blank">
+            <a href="uploads/quantitative_report_final_version.pdf" style="display:flex; align-items:center; gap:10px; padding:10px 14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#334155; text-decoration:none;" target="_blank">
               <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="1" width="9" height="12" rx="1" stroke="#2563eb" stroke-width="1.2"/><path d="M4 5h5M4 7h4M4 9h3" stroke="#2563eb" stroke-width="1" stroke-linecap="round"/></svg>
               Quantitative Report
               <span style="margin-left:auto; font-size:11px; color:#94a3b8;">2012 · PDF ↓</span>
@@ -529,9 +504,86 @@ We provide evidence of heterogeneous effects on different sectors, considering n
   </div>
 </div>
 
-</x-dc>
-<script type="text/x-dc" data-dc-script>
-class Component extends DCLogic {}
+<script>
+(function () {
+  var dict = {
+    es: {
+      brand:'Daniel Goya León', navHome:'Inicio', navResearch:'Investigación', navOpinion:'Opinión', navTeaching:'Docencia',
+      pageTitle:'Investigación',
+      hWip:'Trabajos en curso', hJournal:'Artículos en revistas', hWorking:'Documentos de trabajo', hBooks:'Libros y capítulos de libros', hOther:'Otras investigaciones',
+      fullAbstract:'Resumen completo', projectOutputs:'Documentos del proyecto', natResBadge:'Recursos naturales',
+      coAnabel:'con Anabel Marín', coCabello:'con Diego Cabello Moya', coBenavente:'con J.M. Benavente', coZahlerCaamano:'con Andrés Zahler y Matías Caamaño', coZahler:'con Andrés Zahler',
+      idrcFunding:'con Anabel Marín · Financiado por el International Development Research Centre (IDRC)',
+      wip1:'El artículo desarrolla un marco para caracterizar el régimen socio-técnico de la minería, analizando las fuerzas de bloqueo (lock-in) y de transformación. Conecta los estudios de transiciones con perspectivas del desarrollo relevantes para economías dependientes de recursos naturales que enfrentan la transición energética, la digitalización y una demanda de minerales impulsada por la defensa.',
+      wip2:'Este artículo examina la aplicabilidad y las limitaciones de los marcos de Política de Innovación Orientada por Misiones (MOIP) a nivel subnacional, a partir del caso de la Región de Valparaíso, Chile.',
+      wip3:'Los avances recientes en datos comparados sobre política industrial abren nuevas oportunidades para la investigación comparativa. Este artículo evalúa la cobertura y comparabilidad de las principales bases de datos y propone un vector de combinación de políticas industriales (policy mix) medible y robusto.',
+      a24s:'La especialización en sectores creativos se asocia a mayores ventas y más empresas dentro del mismo sector (efectos “marshallianos”), pero no se encuentran externalidades hacia otros sectores (efectos “jacobianos”) — evidencia para Chile que sugiere cautela en las prescripciones de política para las industrias creativas.',
+      a24f:'Este artículo analiza externalidades de localización marshallianas y jacobianas en las industrias creativas usando un panel de comunas chilenas. Aprovechamos la variación en la especialización en industrias creativas entre comunas para identificar el efecto causal sobre las ventas y la entrada de empresas en el mismo sector (marshalliano) y en otros sectores (jacobiano). Si bien la especialización en industrias creativas aumenta los resultados del propio sector, no encontramos evidencia de externalidades hacia otros sectores, lo que llama a la cautela frente a políticas que justifican el apoyo a las industrias creativas sobre la base de amplios efectos de derrame en la economía.',
+      a23s:'Una campaña de información de seguridad cerca de un centro comercial en Santiago redujo el temor general al delito y la victimización efectiva de los trabajadores, pero aumentó el temor entre quienes fueron abordados directamente por las autoridades — lo que resalta la importancia de cómo se focalizan y entregan los mensajes de prevención del delito.',
+      a23f:'Estudiamos un programa piloto en Santiago de Chile, en el que carabineros y funcionarios de gobierno repartieron folletos de seguridad cerca de un centro comercial. Usando una estrategia de diferencias en diferencias que compara a trabajadores cercanos al centro comercial con otros más alejados, encontramos que el programa redujo el temor general al delito y la victimización efectiva entre los trabajadores de la zona tratada. Paradójicamente, entre las personas que fueron abordadas directamente y recibieron un folleto, el temor al delito medido aumentó. Estos efectos opuestos resaltan la complejidad de la comunicación en prevención del delito y la importancia de la focalización en las políticas de seguridad pública.',
+      a22s:'Las barreras de demanda y financieras son los principales obstáculos a la innovación entre las empresas chilenas y tienden a pesar más que otras restricciones cuando están presentes. Otras barreras varían según el sector: las restricciones de conocimiento afectan a la manufactura, y la estructura de mercado y la regulación afectan a los servicios — lo que resalta la necesidad de políticas de innovación específicas por sector.',
+      a22f:'Estudiamos los efectos de distintos tipos de obstáculos a la innovación sobre la probabilidad de obtener distintos resultados de innovación a nivel de empresa. Consideramos obstáculos financieros, de conocimiento, de cooperación, regulatorios y de demanda, que separamos en dos categorías: estructura de mercado, y falta o incertidumbre sobre la demanda. Usando una muestra combinada de cuatro encuestas de innovación chilenas y un enfoque de variables instrumentales novedoso para esta literatura para abordar la endogeneidad, encontramos que solo las barreras de demanda y financieras parecen tener un efecto negativo sobre la probabilidad de generar innovaciones. Cuando las barreras financieras o de demanda están presentes, parecen ser vinculantes y prevalecen sobre todos los demás obstáculos; cuando están ausentes, otras barreras se vuelven significativas. Aportamos evidencia de efectos heterogéneos entre sectores, considerando no solo manufactura y servicios sino también actividades primarias, una comparación no realizada previamente y relevante para las economías en desarrollo. Mostramos que los obstáculos de conocimiento son relevantes para la manufactura y que los obstáculos de estructura de mercado y regulatorios lo son en el sector servicios, mientras que los de demanda y financieros parecen importar en todos los sectores. La omnipresencia de los obstáculos financieros y de demanda, su relación con las demás barreras y las diferencias sectoriales observadas tienen implicancias importantes de política.',
+      a21es:'La transición energética aumenta drásticamente la demanda de minerales, generando oportunidades económicas para los países ricos en recursos y, al mismo tiempo, amplificando los conflictos sociales y ambientales — un punto ciego en la investigación sobre transiciones de sostenibilidad.',
+      a21ef:'La transición energética global requiere enormes cantidades de minerales, incluidos cobre, litio, cobalto y tierras raras. Esto genera oportunidades económicas significativas para los países en desarrollo ricos en recursos, pero también intensifica los conflictos sociales y ambientales asociados a la expansión minera. Sostenemos que la investigación sobre transiciones ha pasado por alto en gran medida este “lado oscuro”, centrándose en descarbonizar los sistemas de energía y descuidando los costos sociales y ambientales incorporados en las cadenas de suministro que hacen posibles esas transiciones. Desarrollamos un marco conceptual que integra las perspectivas del desarrollo y de las transiciones, y recurrimos a evidencia de América Latina para ilustrar las tensiones y disyuntivas involucradas.',
+      a21ms:'La competencia de las importaciones se transmite a través de las cadenas de suministro: cuando cae la demanda de un producto, las plantas nacionales multiproducto abandonan las variedades que proveen como insumos — especialmente las plantas pequeñas y de baja productividad con líneas de bajo margen.',
+      a21mf:'Estudiamos cómo la competencia de las importaciones chinas afecta el rango de productos (product scope) de las plantas nacionales multiproducto, con foco en el canal de la cadena de suministro. Usando datos chilenos de planta-producto vinculados a matrices insumo-producto, mostramos que una caída en la demanda de un bien final reduce la variedad de insumos que las plantas nacionales producen para abastecer a ese sector. El efecto se concentra en plantas pequeñas, de baja productividad y con productos de bajo margen, consistente con que las empresas abandonan primero sus líneas de producto menos competitivas. Esta transmisión en red de la competencia representa un margen de ajuste adicional a menudo ignorado en la literatura de comercio y empleo.',
+      a20s:'Un tipo de cambio más depreciado se asocia a una mayor variedad de exportaciones, mientras que una mayor volatilidad cambiaria reduce la variedad exportada, en particular para bienes intensivos en tecnología — lo que sugiere que las condiciones cambiarias pueden moldear la estructura exportadora y la ventaja comparativa de los países en el largo plazo.',
+      a20f:'Examinamos cómo el nivel y la volatilidad del tipo de cambio real afectan la variedad exportada en un amplio panel de países durante tres décadas. Usando estimadores heterogéneos de panel largo que permiten dependencia de corte transversal y heterogeneidad de pendientes, encontramos que un tipo de cambio más depreciado se asocia a una mayor variedad exportada, mientras que una mayor volatilidad la reduce. Estos efectos son heterogéneos entre categorías de productos, siendo particularmente pronunciados para los bienes intensivos en tecnología. Los resultados sugieren que la política cambiaria puede moldear el margen extensivo de las exportaciones y, a su vez, la estructura de la ventaja comparativa en el largo plazo.',
+      a19s:'Los nuevos productos de exportación tienen más probabilidades de sobrevivir cuando están estrechamente relacionados con las capacidades existentes de la empresa, especialmente durante el primer año — lo que sugiere que el conocimiento y la experiencia acumulados condicionan la diversificación exportadora y deberían considerarse en la política comercial e industrial.',
+      a19f:'Estudiamos la supervivencia de nuevos productos de exportación usando un panel de exportadores chilenos multiproducto. Aprovechando la variación intra-empresa en la distancia de los nuevos productos de exportación respecto de la canasta de competencias existente de la empresa, mostramos que las exportaciones más cercanas a las competencias centrales de la empresa sobreviven significativamente más tiempo. El efecto se concentra en el primer año de exportación y es robusto al controlar por efectos fijos de empresa, producto y destino. Los resultados sugieren que la diversificación exportadora está condicionada por las capacidades organizacionales, con implicancias para la política comercial e industrial.'
+    },
+    en: {
+      brand:'Daniel Goya', navHome:'Home', navResearch:'Research', navOpinion:'Opinion', navTeaching:'Teaching',
+      pageTitle:'Research',
+      hWip:'Work in Progress', hJournal:'Journal Articles', hWorking:'Working Papers', hBooks:'Books and Book Chapters', hOther:'Other Research',
+      fullAbstract:'Full abstract', projectOutputs:'Project outputs', natResBadge:'Natural Resources',
+      coAnabel:'with Anabel Marín', coCabello:'with Diego Cabello Moya', coBenavente:'with J.M. Benavente', coZahlerCaamano:'with Andrés Zahler and Matías Caamaño', coZahler:'with Andrés Zahler',
+      idrcFunding:'with Anabel Marín · Funded by International Development Research Centre (IDRC)',
+      wip1:'The paper develops a framework to characterise the socio-technical regime of mining, analysing forces of lock-in and transformation. It bridges transition studies with development perspectives relevant for resource-dependent economies facing the energy transition, digitalisation, and defence-driven mineral demand.',
+      wip2:'This paper examines the applicability and limitations of Mission-Oriented Innovation Policy (MOIP) frameworks at the subnational level, drawing on the case of the Valparaíso Region in Chile.',
+      wip3:'Recent advances in cross-country data on industrial policy create new opportunities for comparative research. This paper assesses the coverage and comparability of leading databases and proposes a measurable and robust industrial policy mix vector.',
+      a24s:'Specialisation in creative sectors is associated with higher sales and more firms within the same sector (“Marshallian” effects), but no spillovers to other sectors (“Jacobian” effects) are found—evidence from Chile that suggests caution in policy prescriptions for creative industries.',
+      a24f:'This paper analyses Marshallian and Jacobian localisation externalities in creative industries using a panel of Chilean municipalities. We exploit variation in creative industry specialisation across municipalities to identify the causal effect on sales and firm entry in the same sector (Marshallian) and in other sectors (Jacobian). While specialisation in creative industries raises own-sector outcomes, we find no evidence of cross-sector spillovers — calling for caution in policy prescriptions that justify creative industry support on the basis of broader economic spillovers.',
+      a23s:'A security information campaign near a shopping mall in Santiago reduced workers’ overall fear of crime and actual victimisation, but increased fear among those directly approached by officials—highlighting the importance of how crime-prevention messages are targeted and delivered.',
+      a23f:'We study a pilot programme in Santiago, Chile, in which police officers and government officials distributed security leaflets near a shopping mall. Using a difference-in-differences strategy comparing workers near the mall with those further away, we find that the programme reduced overall fear of crime and actual victimisation among workers in the treated area. Paradoxically, among individuals who were directly approached and handed a leaflet, measured fear of crime increased. These opposing effects highlight the complexity of crime-prevention communication and the importance of targeting in public safety policy.',
+      a22s:'Demand and financial barriers are the main obstacles to innovation among Chilean firms and tend to outweigh other constraints when present. Other barriers vary by sector, with knowledge constraints affecting manufacturing and market structure and regulation affecting services—highlighting the need for sector-specific innovation policies.',
+      a22f:'We study the effects of different types of obstacles to innovation on the probability of obtaining different firm-level innovation outcomes. We consider financial, knowledge, cooperation, regulatory and demand-related obstacles, which we separate into two categories: market structure, and lack or uncertainty about demand. Using a pooled sample of four Chilean innovation surveys and an instrumental variables approach novel to this literature to address endogeneity, we find that only demand and financial barriers seem to have a negative effect on the probability of generating innovations. When financial or demand barriers are present, they seem to be binding and take prevalence over all other obstacles, and when they are absent, other barriers become significant. We provide evidence of heterogeneous effects on different sectors, considering not only manufacturing and services but also primaries, a comparison that has not been previously conducted and holds relevance for developing economies. We show that knowledge obstacles are relevant to manufacturing and market structure and regulatory obstacles are relevant in the services sector, while demand and financial obstacles appear to matter across the board. The pervasiveness of financial and demand obstacles, their relationship with the remaining barriers, and the observed sectoral differences have important policy implications.',
+      a21es:'The energy transition dramatically increases mineral demand, creating economic opportunities for resource-rich countries while simultaneously amplifying social and environmental conflicts — a blind spot in sustainability transitions research.',
+      a21ef:'The global energy transition requires vast amounts of minerals, including copper, lithium, cobalt, and rare earths. This creates significant economic opportunities for resource-rich developing countries, yet it also intensifies social and environmental conflicts associated with mining expansion. We argue that transitions research has largely overlooked this "dark side," focusing on decarbonising energy systems while neglecting the social and environmental costs embedded in the supply chains that make those transitions possible. We develop a conceptual framework integrating development and transitions perspectives, and draw on evidence from Latin America to illustrate the tensions and trade-offs involved.',
+      a21ms:'Import competition transmits through supply chains: as demand for a product falls, domestic multi-product plants drop the varieties they supply as inputs — especially small, low-productivity plants with low-markup lines.',
+      a21mf:'We study how Chinese import competition affects the product scope of domestic multi-product plants, focusing on the supply chain channel. Using Chilean plant-product data matched to input-output tables, we show that a fall in demand for a final good reduces the variety of inputs that domestic plants produce to supply that sector. The effect is concentrated in small plants with low productivity and low markup products, consistent with firms dropping their least competitive product lines first. This network transmission of competition represents an additional margin of adjustment often overlooked in the trade and employment literature.',
+      a20s:'A more depreciated exchange rate is associated with a wider range of exports, while greater exchange-rate volatility reduces export variety, particularly for technology-intensive goods—suggesting that exchange-rate conditions can shape countries’ long-term export structure and comparative advantage.',
+      a20f:'We examine how the real exchange rate level and volatility affect export variety across a large panel of countries over three decades. Using heterogeneous long-panel estimators that allow for cross-sectional dependence and slope heterogeneity, we find that a more depreciated exchange rate is associated with greater export variety, while higher volatility reduces it. These effects are heterogeneous across product categories, being particularly pronounced for technologically intensive goods. The results suggest that exchange rate policy can shape the extensive margin of exports and, in turn, the long-run structure of comparative advantage.',
+      a19s:'New export products are more likely to survive when they are closely related to a firm’s existing capabilities, especially during the first year—suggesting that firms’ accumulated knowledge and experience constrain export diversification and should be considered in trade and industrial policy.',
+      a19f:'We study the survival of new export products using a panel of Chilean multi-product exporters. Exploiting within-firm variation in the distance of new export products from a firm\u2019s existing competence basket, we show that exports closer to a firm\u2019s core competences survive significantly longer. The effect is concentrated in the first year of export and is robust to controlling for firm, product, and destination fixed effects. The results suggest that export diversification is constrained by organisational capabilities, with implications for trade and industrial policy.'
+    }
+  };
+  function apply(lang) {
+    if (!dict[lang]) lang = 'es';
+    var d = dict[lang];
+    document.documentElement.setAttribute('data-lang', lang);
+    document.documentElement.setAttribute('lang', lang);
+    var nodes = document.querySelectorAll('[data-i18n]');
+    for (var i = 0; i < nodes.length; i++) {
+      var k = nodes[i].getAttribute('data-i18n');
+      if (d[k] != null) nodes[i].textContent = d[k];
+    }
+    var btns = document.querySelectorAll('.lang-btn');
+    for (var j = 0; j < btns.length; j++) {
+      btns[j].setAttribute('aria-pressed', btns[j].getAttribute('data-lang') === lang ? 'true' : 'false');
+    }
+    try { localStorage.setItem('dg-lang', lang); } catch (e) {}
+  }
+  var saved = null;
+  try { saved = localStorage.getItem('dg-lang'); } catch (e) {}
+  var initial = saved || ((navigator.language || 'es').toLowerCase().indexOf('es') === 0 ? 'es' : 'en');
+  var btns = document.querySelectorAll('.lang-btn');
+  for (var j = 0; j < btns.length; j++) {
+    btns[j].addEventListener('click', (function (b) { return function () { apply(b.getAttribute('data-lang')); }; })(btns[j]));
+  }
+  apply(initial);
+})();
 </script>
+
 </body>
 </html>
