@@ -30,6 +30,9 @@
   * { box-sizing: border-box; }
   a { text-decoration: none; transition: opacity 0.12s; }
   a:hover { opacity: 0.72; }
+  a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid #f59e0b; outline-offset: 3px; }
+  .skip-link { position: fixed; top: 8px; left: 8px; z-index: 100; padding: 10px 14px; border-radius: 6px; background: #0f172a; color: #fff; font-family: 'IBM Plex Sans',sans-serif; font-size: 14px; font-weight: 600; transform: translateY(-150%); transition: transform 0.15s ease; }
+  .skip-link:focus { transform: translateY(0); opacity: 1; }
 
   /* language show/hide for block-level bilingual content */
   [data-lang-only] { display: none; }
@@ -42,25 +45,40 @@
 
   .lang-pill { display: flex; align-items: center; padding: 0 8px; }
   .lang-pill > div { display: flex; background: #f1f5f9; border-radius: 7px; padding: 3px; gap: 2px; }
-  .lang-btn { font-family: 'IBM Plex Sans',sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.05em; padding: 4px 11px; border-radius: 5px; border: none; cursor: pointer; background: transparent; color: #94a3b8; box-shadow: none; transition: background 0.15s, color 0.15s, box-shadow 0.15s; }
+  .lang-btn { font-family: 'IBM Plex Sans',sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; padding: 4px 11px; border-radius: 5px; border: none; cursor: pointer; background: transparent; color: #64748b; box-shadow: none; transition: background 0.15s, color 0.15s, box-shadow 0.15s; }
   .lang-btn[aria-pressed="true"] { background: #fff; color: #1d4ed8; box-shadow: 0 1px 3px rgba(0,0,0,0.10); }
 
   @media (max-width: 640px) {
-    .r-nav { padding: 0 !important; }
-    .r-nav-brand { padding: 0 0 0 14px !important; font-size: 15px !important; flex: 0 0 auto !important; white-space: nowrap !important; }
-    .r-nav-links { flex: 1 1 auto !important; min-width: 0 !important; overflow-x: auto !important; scrollbar-width: none !important; }
-    .r-nav-links::-webkit-scrollbar { display: none; }
-    .r-nav-links a, .r-nav-links span, .r-nav-links .lang-pill { flex-shrink: 0 !important; white-space: nowrap !important; }
-    .r-nav-links a, .r-nav-links > span { height: 42px !important; font-size: 12px !important; padding: 0 8px !important; }
-    .r-hero { grid-template-columns: 1fr !important; padding: 32px 16px 36px !important; gap: 20px !important; }
-    .r-photo { width: 88px !important; height: 88px !important; }
+    .r-nav { padding: 0 12px !important; flex-wrap: wrap !important; }
+    .r-nav-brand { min-height: 44px !important; padding: 0 108px 0 2px !important; font-size: 16px !important; flex: 1 0 100% !important; justify-content: flex-start !important; white-space: nowrap !important; }
+    .r-nav-links { flex: 1 0 100% !important; min-width: 0 !important; overflow-x: auto !important; flex-wrap: nowrap !important; justify-content: flex-start !important; scrollbar-width: thin !important; scrollbar-color: #94a3b8 #f1f5f9; }
+    .r-nav-links::-webkit-scrollbar { display: block; height: 4px; }
+    .r-nav-links::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 999px; }
+    .r-nav-links::-webkit-scrollbar-track { background: #f1f5f9; }
+    .r-nav-links a { flex-shrink: 0 !important; white-space: nowrap !important; }
+    .r-nav-links a { height: 38px !important; font-size: 12px !important; padding: 0 8px !important; }
+    .r-nav-links .lang-pill { position: absolute !important; top: 4px; right: 10px; min-height: 36px !important; padding: 0 !important; }
+    .r-hero { grid-template-columns: minmax(0, 1fr) 86px !important; grid-template-areas: "tagline tagline" "title photo" "copy copy" "actions actions" !important; padding: 32px 16px 36px !important; column-gap: 12px !important; row-gap: 0 !important; }
+    .r-hero > div:first-child { display: contents !important; }
+    .r-hero > div:first-child > p:first-child { grid-area: tagline; }
+    .r-hero > div:first-child > h1 { grid-area: title; font-size: 29px !important; margin-bottom: 20px !important; }
+    .r-hero > div:first-child > div[data-lang-only] { grid-column: 1 / -1; }
+    .r-hero > div:first-child > div:not([data-lang-only]) { grid-area: actions; }
+    .r-photo { grid-area: photo; width: 86px !important; height: 86px !important; margin-top: 26px !important; align-self: start; }
     .r-main { padding: 28px 16px 52px !important; }
     .r-activity-grid { grid-template-columns: 1fr !important; }
     .r-footer { padding: 20px 16px !important; }
   }
+  @media (max-width: 360px) {
+    .r-hero { grid-template-columns: minmax(0, 1fr) 74px !important; }
+    .r-hero > div:first-child > h1 { font-size: 27px !important; }
+    .r-photo { width: 74px !important; height: 74px !important; }
+  }
 </style>
 </head>
 <body>
+
+<a class="skip-link" href="#main-content" data-i18n="skipLink">Saltar al contenido principal</a>
 
 <div style="max-width: 820px; margin: 0 auto; background: white; min-height: 100vh; box-shadow: 0 0 60px rgba(0,0,0,0.07);">
 
@@ -68,7 +86,7 @@
   <nav class="r-nav" style="display:flex; align-items:stretch; padding:0 40px; border-bottom:1px solid #e2e8f0; position:sticky; top:0; background:white; z-index:10;">
     <span class="r-nav-brand" data-i18n="brand" style="font-family:'IBM Plex Sans',sans-serif; font-size:23px; font-weight:700; color:#1d4ed8; display:flex; align-items:center; padding:0 24px 0 0; flex:1;">Daniel Goya León</span>
     <div class="r-nav-links" style="display:flex; align-items:stretch;">
-      <span data-i18n="navHome" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#1d4ed8; font-weight:600; border-bottom:2px solid #1d4ed8; height:56px;">Inicio</span>
+      <a href="index.html" aria-current="page" data-i18n="navHome" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#1d4ed8; font-weight:600; border-bottom:2px solid #1d4ed8; height:56px;">Inicio</a>
       <a href="research.html" data-i18n="navResearch" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">Investigación</a>
       <a href="opinion.html" data-i18n="navOpinion" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">Opinión</a>
       <a href="cv.html" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">CV</a>
@@ -81,6 +99,8 @@
       </div>
     </div>
   </nav>
+
+  <main id="main-content" tabindex="-1">
 
   <!-- HERO -->
   <div class="r-hero" style="padding: 64px 40px 52px; border-bottom: 1px solid #e2e8f0; display: grid; grid-template-columns: 1fr 190px; gap: 48px; align-items: start;">
@@ -112,47 +132,49 @@
 
   <!-- RECENT ACTIVITY -->
   <div class="r-main" style="padding: 44px 40px 64px;">
-    <p data-i18n="recent" style="font-family:'IBM Plex Sans',sans-serif; font-size:10px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#94a3b8; margin:0 0 22px;">Actividad reciente</p>
+    <p data-i18n="recent" style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#64748b; margin:0 0 22px;">Actividad reciente</p>
 
     <div class="r-activity-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px;">
 
       <a href="research.html#journal-articles" class="recent-card">
         <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:6px; margin-bottom:10px;">
-          <span style="font-family:'IBM Plex Sans',sans-serif; font-size:10.5px; font-weight:600; color:#1d4ed8; background:#dbeafe; padding:2px 8px; border-radius:3px; letter-spacing:0.04em; flex-shrink:0;">Paper 2024</span>
-          <span style="font-family:'IBM Plex Sans',sans-serif; font-size:10.5px; color:#94a3b8; text-align:right; line-height:1.3;">Papers in<br>Regional Science</span>
+          <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#1d4ed8; background:#dbeafe; padding:2px 8px; border-radius:3px; letter-spacing:0.04em; flex-shrink:0;">Paper 2024</span>
+          <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#64748b; text-align:right; line-height:1.3;">Papers in<br>Regional Science</span>
         </div>
         <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#1e3a5f; margin:0; line-height:1.45; text-wrap:pretty;">Marshallian and Jacobian externalities in creative industries</p>
       </a>
 
       <a href="opinion.html#articulos" class="recent-card">
         <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:6px; margin-bottom:10px;">
-          <span data-i18n="art2025label" style="font-family:'IBM Plex Sans',sans-serif; font-size:10.5px; font-weight:600; color:#1d4ed8; background:#eff6ff; padding:2px 8px; border-radius:3px; letter-spacing:0.04em; flex-shrink:0;">Artículo 2025</span>
-          <span style="font-family:'IBM Plex Sans',sans-serif; font-size:10.5px; color:#94a3b8; text-align:right; line-height:1.3;">ENE Perspectivas · PUCV</span>
+          <span data-i18n="art2025label" style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#1d4ed8; background:#eff6ff; padding:2px 8px; border-radius:3px; letter-spacing:0.04em; flex-shrink:0;">Artículo 2025</span>
+          <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#64748b; text-align:right; line-height:1.3;">ENE Perspectivas · PUCV</span>
         </div>
         <p data-i18n="art2025title" style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#1e3a5f; margin:0 0 8px; line-height:1.45; text-wrap:pretty;">Análisis al Premio Nobel de Economía 2025</p>
-        <span data-lang-only="en-inline" style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#94a3b8; background:#f1f5f9; padding:1px 7px; border-radius:4px;">en español</span>
+        <span data-lang-only="en-inline" style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#64748b; background:#f1f5f9; padding:1px 7px; border-radius:4px;">en español</span>
       </a>
 
     </div>
 
     <a href="research.html#wip-research" class="recent-card" style="border-left:3px solid #2563eb; border-radius:0 10px 10px 3px; display:block; margin-bottom:0;">
       <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:6px; margin-bottom:10px;">
-        <span data-i18n="wipLabel" style="font-family:'IBM Plex Sans',sans-serif; font-size:10.5px; font-weight:600; color:#6d28d9; background:#ede9fe; padding:2px 8px; border-radius:3px; letter-spacing:0.04em; flex-shrink:0;">En curso</span>
+        <span data-i18n="wipLabel" style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:#6d28d9; background:#ede9fe; padding:2px 8px; border-radius:3px; letter-spacing:0.04em; flex-shrink:0;">En curso</span>
       </div>
       <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#1e3a5f; margin:0; line-height:1.45; text-wrap:pretty;">Sustainability transitions in mining: forces of lock in and change</p>
-      <p data-i18n="wipCo" style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#94a3b8; margin:8px 0 0;">con Anabel Marín</p>
+      <p data-i18n="wipCo" style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; margin:8px 0 0;">con Anabel Marín</p>
     </a>
 
     <div style="display:flex; gap:24px; margin-top:28px; padding-top:24px; border-top:1px solid #f1f5f9;">
       <a href="research.html" data-i18n="seeResearch" style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#2563eb; font-weight:500;">Ver toda la investigación →</a>
-      <a href="opinion.html" data-i18n="seeOpinion" style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#0891b2; font-weight:500;">Ver columnas y divulgación →</a>
+      <a href="opinion.html" data-i18n="seeOpinion" style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#0e7490; font-weight:500;">Ver columnas y divulgación →</a>
     </div>
   </div>
 
+  </main>
+
   <!-- FOOTER -->
   <footer class="r-footer" style="border-top:1px solid #e2e8f0; padding:24px 40px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; background:#fafcff;">
-    <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#94a3b8;">daniel.goya AT pucv.cl · +56 32 227 3585</span>
-    <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#94a3b8;">Amunátegui 1838, Recreo, Viña del Mar, Chile</span>
+    <span style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b;">daniel.goya AT pucv.cl · +56 32 227 3585</span>
+    <span style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b;">Amunátegui 1838, Recreo, Viña del Mar, Chile</span>
   </footer>
 
 </div>
@@ -160,8 +182,8 @@
 <script>
 (function () {
   var dict = {
-    es: { brand:'Daniel Goya León', navHome:'Inicio', navResearch:'Investigación', navOpinion:'Opinión', navTeaching:'Docencia', tagline:'Economista · PUCV · Valparaíso, Chile', h1l1:'Políticas públicas para', h1l2:'la innovación y el cambio estructural', h1em:'en economías en desarrollo.', recent:'Actividad reciente', art2025label:'Artículo 2025', art2025title:'Análisis al Premio Nobel de Economía 2025', wipLabel:'En curso', wipCo:'con Anabel Marín', seeResearch:'Ver toda la investigación →', seeOpinion:'Ver columnas y divulgación →' },
-    en: { brand:'Daniel Goya', navHome:'Home', navResearch:'Research', navOpinion:'Opinion', navTeaching:'Teaching', tagline:'Economist · PUCV · Valparaíso, Chile', h1l1:'Policies for innovation', h1l2:'and structural change', h1em:'in developing economies.', recent:'Recent activity', art2025label:'Article 2025', art2025title:'Analysis of the 2025 Nobel Prize in Economics', wipLabel:'In progress', wipCo:'with Anabel Marín', seeResearch:'View all research →', seeOpinion:'View opinion & outreach (in Spanish) →' }
+    es: { skipLink:'Saltar al contenido principal', brand:'Daniel Goya León', navHome:'Inicio', navResearch:'Investigación', navOpinion:'Opinión', navTeaching:'Docencia', tagline:'Economista · PUCV · Valparaíso, Chile', h1l1:'Políticas públicas para', h1l2:'la innovación y el cambio estructural', h1em:'en economías en desarrollo.', recent:'Actividad reciente', art2025label:'Artículo 2025', art2025title:'Análisis al Premio Nobel de Economía 2025', wipLabel:'En curso', wipCo:'con Anabel Marín', seeResearch:'Ver toda la investigación →', seeOpinion:'Ver columnas y divulgación →' },
+    en: { skipLink:'Skip to main content', brand:'Daniel Goya', navHome:'Home', navResearch:'Research', navOpinion:'Opinion', navTeaching:'Teaching', tagline:'Economist · PUCV · Valparaíso, Chile', h1l1:'Policies for innovation', h1l2:'and structural change', h1em:'in developing economies.', recent:'Recent activity', art2025label:'Article 2025', art2025title:'Analysis of the 2025 Nobel Prize in Economics', wipLabel:'In progress', wipCo:'with Anabel Marín', seeResearch:'View all research →', seeOpinion:'View opinion & outreach (in Spanish) →' }
   };
   function apply(lang) {
     if (!dict[lang]) lang = 'es';

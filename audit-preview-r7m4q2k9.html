@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <title>Vista previa privada · Mejoras críticas de accesibilidad</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #0f172a;
+      --muted: #475569;
+      --line: #cbd5e1;
+      --paper: #ffffff;
+      --ground: #f1f5f9;
+      --accent: #0e7490;
+      --accent-soft: #ecfeff;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--ground);
+      font: 15px/1.5 "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+    }
+
+    .preview-shell {
+      min-height: 100%;
+      display: grid;
+      grid-template-columns: minmax(250px, 320px) minmax(0, 1fr);
+    }
+
+    aside {
+      padding: 24px 20px;
+      background: var(--paper);
+      border-right: 1px solid var(--line);
+      overflow: auto;
+    }
+
+    .eyebrow {
+      margin: 0 0 6px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.15;
+      letter-spacing: -.025em;
+    }
+
+    .intro {
+      margin: 12px 0 18px;
+      color: var(--muted);
+    }
+
+    nav {
+      display: grid;
+      gap: 7px;
+      margin-bottom: 24px;
+    }
+
+    nav a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 12px;
+      color: var(--ink);
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      font-weight: 650;
+      text-decoration: none;
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      background: var(--accent-soft);
+      border-color: var(--accent);
+      outline: 3px solid rgba(14, 116, 144, .24);
+      outline-offset: 2px;
+    }
+
+    nav span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    h2 {
+      margin: 22px 0 10px;
+      font-size: 15px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 19px;
+      color: var(--muted);
+    }
+
+    li + li { margin-top: 7px; }
+
+    .privacy-note {
+      margin: 22px 0 0;
+      padding: 12px;
+      color: #155e75;
+      background: var(--accent-soft);
+      border: 1px solid #a5f3fc;
+      border-radius: 9px;
+      font-size: 13px;
+    }
+
+    main {
+      min-width: 0;
+      padding: 14px;
+    }
+
+    iframe {
+      display: block;
+      width: 100%;
+      height: calc(100vh - 28px);
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      box-shadow: 0 16px 42px rgba(15, 23, 42, .12);
+    }
+
+    @media (max-width: 760px) {
+      .preview-shell { grid-template-columns: 1fr; }
+      aside { border-right: 0; border-bottom: 1px solid var(--line); }
+      main { padding: 8px; }
+      iframe { height: 76vh; }
+    }
+  </style>
+</head>
+<body>
+  <div class="preview-shell">
+    <aside>
+      <p class="eyebrow">Vista previa local</p>
+      <h1>Mejoras críticas</h1>
+      <p class="intro">Navega la versión alternativa sin modificar ni enlazar la portada pública.</p>
+
+      <nav aria-label="Páginas de la vista previa">
+        <a href="index.html" target="preview-frame">Inicio <span>contraste + foco</span></a>
+        <a href="research.html" target="preview-frame">Investigación <span>estructura</span></a>
+        <a href="opinion.html" target="preview-frame">Opinión <span>pestañas</span></a>
+        <a href="cv.html" target="preview-frame">CV <span>enlaces</span></a>
+        <a href="teaching.html" target="preview-frame">Docencia <span>móvil</span></a>
+      </nav>
+
+      <h2>Qué comprobar</h2>
+      <ul>
+        <li>Presiona Tab al cargar: aparece “Saltar al contenido”.</li>
+        <li>La página activa permanece como enlace y se anuncia correctamente.</li>
+        <li>Fechas y textos secundarios tienen mayor contraste y tamaño.</li>
+        <li>En Opinión, usa flechas, Inicio y Fin para mover las pestañas y las tarjetas.</li>
+        <li>En el CV, usa ←/→ entre secciones y ↑/↓ dentro de cada lista.</li>
+        <li>En una ventana estrecha, el nombre queda arriba a la izquierda y el idioma arriba a la derecha.</li>
+      </ul>
+
+      <p class="privacy-note"><strong>No publicada:</strong> este archivo usa <code>noindex</code> y no recibe enlaces desde ninguna página del sitio.</p>
+    </aside>
+
+    <main>
+      <iframe name="preview-frame" src="index.html" title="Vista previa del sitio alternativo"></iframe>
+    </main>
+  </div>
+</body>
+</html>
