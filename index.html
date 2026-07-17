@@ -58,11 +58,21 @@
     .r-nav-links a { flex-shrink: 0 !important; white-space: nowrap !important; }
     .r-nav-links a { height: 38px !important; font-size: 12px !important; padding: 0 8px !important; }
     .r-nav-links .lang-pill { position: absolute !important; top: 4px; right: 10px; min-height: 36px !important; padding: 0 !important; }
-    .r-hero { grid-template-columns: 1fr !important; padding: 32px 16px 36px !important; gap: 20px !important; }
-    .r-photo { width: 88px !important; height: 88px !important; }
+    .r-hero { grid-template-columns: minmax(0, 1fr) 86px !important; grid-template-areas: "tagline tagline" "title photo" "copy copy" "actions actions" !important; padding: 32px 16px 36px !important; column-gap: 12px !important; row-gap: 0 !important; }
+    .r-hero > div:first-child { display: contents !important; }
+    .r-hero > div:first-child > p:first-child { grid-area: tagline; }
+    .r-hero > div:first-child > h1 { grid-area: title; font-size: 29px !important; margin-bottom: 20px !important; }
+    .r-hero > div:first-child > div[data-lang-only] { grid-column: 1 / -1; }
+    .r-hero > div:first-child > div:not([data-lang-only]) { grid-area: actions; }
+    .r-photo { grid-area: photo; width: 86px !important; height: 86px !important; margin-top: 26px !important; align-self: start; }
     .r-main { padding: 28px 16px 52px !important; }
     .r-activity-grid { grid-template-columns: 1fr !important; }
     .r-footer { padding: 20px 16px !important; }
+  }
+  @media (max-width: 360px) {
+    .r-hero { grid-template-columns: minmax(0, 1fr) 74px !important; }
+    .r-hero > div:first-child > h1 { font-size: 27px !important; }
+    .r-photo { width: 74px !important; height: 74px !important; }
   }
 </style>
 </head>
