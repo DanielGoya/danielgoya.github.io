@@ -51,14 +51,14 @@
   .r-main [style*="font-size:11px"], .r-main [style*="font-size:12px"], .r-footer [style*="font-size:12px"] { font-size: 13px !important; }
 
   @media (max-width: 640px) {
-    .r-nav { padding: 0 !important; }
-    .r-nav-brand { padding: 0 0 0 14px !important; font-size: 15px !important; flex: 0 0 auto !important; white-space: nowrap !important; }
-    .r-nav-links { flex: 1 1 auto !important; min-width: 0 !important; overflow-x: auto !important; scrollbar-width: thin !important; scrollbar-color: #94a3b8 #f1f5f9; }
+    .r-nav { padding: 0 12px !important; flex-wrap: wrap !important; }
+    .r-nav-brand { min-height: 44px !important; padding: 0 108px 0 2px !important; font-size: 16px !important; flex: 1 0 100% !important; justify-content: flex-start !important; white-space: nowrap !important; }
+    .r-nav-links { flex: 1 0 100% !important; min-width: 0 !important; overflow-x: auto !important; flex-wrap: nowrap !important; justify-content: flex-start !important; scrollbar-width: thin !important; scrollbar-color: #94a3b8 #f1f5f9; }
     .r-nav-links::-webkit-scrollbar { display: block; height: 4px; }
     .r-nav-links::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 4px; }
     .r-nav-links::-webkit-scrollbar-track { background: #f1f5f9; }
-    .r-nav-links a, .r-nav-links span, .r-nav-links .lang-pill { flex-shrink: 0 !important; white-space: nowrap !important; }
-    .r-nav-links a, .r-nav-links > span { height: 42px !important; font-size: 12px !important; padding: 0 8px !important; }
+    .r-nav-links a { flex-shrink: 0 !important; white-space: nowrap !important; height: 38px !important; font-size: 12px !important; padding: 0 8px !important; }
+    .r-nav-links .lang-pill { position: absolute !important; top: 4px; right: 10px; min-height: 36px !important; padding: 0 !important; }
     .r-main { padding: 28px 16px 60px !important; }
     .r-cards-grid { grid-template-columns: 1fr !important; }
     .r-footer { padding: 20px 16px !important; }
@@ -484,6 +484,36 @@
         pills[nextIndex].focus();
       });
     })(pills[i]);
+  }
+
+  // Arrow-key navigation between cards inside the active opinion category.
+  var opinionPanels = document.querySelectorAll('.section-panel');
+  for (var panelIndex = 0; panelIndex < opinionPanels.length; panelIndex++) {
+    (function (panel) {
+      var cards = Array.prototype.slice.call(panel.querySelectorAll('a.card'));
+      for (var cardIndex = 0; cardIndex < cards.length; cardIndex++) {
+        cards[cardIndex].setAttribute('aria-keyshortcuts', 'ArrowLeft ArrowRight ArrowUp ArrowDown Home End');
+        cards[cardIndex].addEventListener('keydown', function (event) {
+          if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+          var currentIndex = cards.indexOf(event.currentTarget);
+          var columns = 1;
+          var parentStyle = window.getComputedStyle(event.currentTarget.parentElement);
+          if (parentStyle.display === 'grid' && parentStyle.gridTemplateColumns !== 'none') {
+            columns = parentStyle.gridTemplateColumns.split(' ').filter(Boolean).length;
+          }
+          var nextIndex = currentIndex;
+          if (event.key === 'ArrowRight') nextIndex = Math.min(cards.length - 1, currentIndex + 1);
+          else if (event.key === 'ArrowLeft') nextIndex = Math.max(0, currentIndex - 1);
+          else if (event.key === 'ArrowDown') nextIndex = Math.min(cards.length - 1, currentIndex + columns);
+          else if (event.key === 'ArrowUp') nextIndex = Math.max(0, currentIndex - columns);
+          else if (event.key === 'Home') nextIndex = 0;
+          else if (event.key === 'End') nextIndex = cards.length - 1;
+          else return;
+          event.preventDefault();
+          cards[nextIndex].focus();
+        });
+      }
+    })(opinionPanels[panelIndex]);
   }
   var hash = window.location.hash.slice(1);
   if (['columnas','articulos','ensayos','medios'].indexOf(hash) !== -1) switchTo(hash);
