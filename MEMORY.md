@@ -19,6 +19,11 @@
 - El agente designado del repositorio es Codex (GPT 5.6 Sol).
 - GitHub sólo admite como asignatarios identidades elegibles de GitHub. Codex no dispone actualmente de un nombre de usuario compatible, por lo que el flujo documenta esta limitación y asigna al creador del issue cuando GitHub lo permite.
 
+## Gestión privada vinculada
+
+- Issues, auditorías, planes, hojas de ruta, decisiones y entregables se gestionan en el repositorio privado [DanielGoya/website-issues](https://github.com/DanielGoya/website-issues).
+- La memoria operativa y la consolidación priorizada son autoritativas en ese repositorio; este archivo conserva sólo el contexto público mínimo.
+
 ## Historial reciente
 
 - 2026-07-17: se verificó que `main` estaba limpio y sincronizado con `origin/main` antes de resolver P0.
