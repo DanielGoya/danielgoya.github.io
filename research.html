@@ -29,6 +29,12 @@
   body { margin: 0; background: #eef2f7; }
   * { box-sizing: border-box; }
   a:hover { text-decoration: underline !important; }
+  a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid #f59e0b; outline-offset: 3px; }
+  .skip-link { position: fixed; top: 8px; left: 8px; z-index: 100; padding: 10px 14px; border-radius: 6px; background: #0f172a; color: #fff; font-family: 'IBM Plex Sans',sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; transform: translateY(-150%); transition: transform 0.15s ease; }
+  .skip-link:focus { transform: translateY(0); }
+  [style*="color:#94a3b8"] { color: #64748b !important; }
+  [style*="color:#cbd5e1"] { color: #64748b !important; }
+  [style*="font-size:11px"] { font-size: 12px !important; }
   details summary { list-style: none; cursor: pointer; user-select: none; }
   details summary::-webkit-details-marker { display: none; }
   .chevron { display: inline-block; transition: transform 0.18s ease; margin-right: 4px; font-style: normal; }
@@ -37,25 +43,28 @@
 
   .lang-pill { display: flex; align-items: center; padding: 0 8px; }
   .lang-pill > div { display: flex; background: #f1f5f9; border-radius: 7px; padding: 3px; gap: 2px; }
-  .lang-btn { font-family: 'IBM Plex Sans',sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.05em; padding: 4px 11px; border-radius: 5px; border: none; cursor: pointer; background: transparent; color: #94a3b8; box-shadow: none; transition: background 0.15s, color 0.15s, box-shadow 0.15s; }
+  .lang-btn { font-family: 'IBM Plex Sans',sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; padding: 4px 11px; border-radius: 5px; border: none; cursor: pointer; background: transparent; color: #64748b; box-shadow: none; transition: background 0.15s, color 0.15s, box-shadow 0.15s; }
   .lang-btn[aria-pressed="true"] { background: #fff; color: #1d4ed8; box-shadow: 0 1px 3px rgba(0,0,0,0.10); }
 
   @media (max-width: 640px) {
-    .r-nav { padding: 0 !important; }
-    .r-nav-brand { padding: 0 0 0 14px !important; font-size: 15px !important; flex: 0 0 auto !important; white-space: nowrap !important; }
-    .r-nav-links { flex: 1 1 auto !important; min-width: 0 !important; overflow-x: auto !important; scrollbar-width: none !important; }
-    .r-nav-links::-webkit-scrollbar { display: none; }
-    .r-nav-links a, .r-nav-links span, .r-nav-links .lang-pill { flex-shrink: 0 !important; white-space: nowrap !important; }
-    .r-nav-links a, .r-nav-links > span { height: 42px !important; font-size: 12px !important; padding: 0 8px !important; }
-    .r-main { padding: 28px 16px 60px !important; }
+    .r-nav { padding: 0 10px !important; flex-wrap: wrap !important; }
+    .r-nav-brand { min-height: 40px !important; padding: 0 6px !important; font-size: 16px !important; flex: 1 0 100% !important; justify-content: center !important; white-space: nowrap !important; }
+    .r-nav-links { flex: 1 0 100% !important; min-width: 0 !important; flex-wrap: wrap !important; justify-content: center !important; }
+    .r-nav-links a, .r-nav-links .lang-pill { white-space: nowrap !important; }
+    .r-nav-links a { height: 38px !important; font-size: 12px !important; padding: 0 8px !important; }
+    .lang-pill { min-height: 38px !important; padding: 0 4px !important; }
+    .r-main { padding: 28px 16px 0 !important; }
     .r-article { flex-direction: column !important; gap: 16px !important; }
     .r-article-fig { flex: 0 0 auto !important; width: 100% !important; }
     .r-article-fig svg, .r-article-fig img { width: 100% !important; max-width: 300px; height: auto !important; }
-    .r-footer { padding: 16px 0 !important; }
+    .r-footer { margin: 0 16px !important; padding: 16px 0 60px !important; }
+    section { scroll-margin-top: 124px !important; }
   }
 </style>
 </head>
 <body>
+
+<a class="skip-link" href="#main-content" data-i18n="skipLink">Saltar al contenido principal</a>
 
 <div style="max-width: 820px; margin: 0 auto; background: white; min-height: 100vh; box-shadow: 0 0 60px rgba(0,0,0,0.07);">
 
@@ -64,7 +73,7 @@
     <a href="index.html" class="r-nav-brand" data-i18n="brand" style="font-family:'IBM Plex Sans',sans-serif; font-size:20px; font-weight:700; color:#1d4ed8; text-decoration:none; display:flex; align-items:center; padding:0 24px 0 0; flex:1;">Daniel Goya León</a>
     <div class="r-nav-links" style="display:flex; align-items:stretch;">
       <a href="index.html" data-i18n="navHome" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; text-decoration:none; height:56px;">Inicio</a>
-      <span data-i18n="navResearch" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#1d4ed8; font-weight:600; border-bottom:2px solid #1d4ed8; height:56px;">Investigación</span>
+      <a href="research.html" aria-current="page" data-i18n="navResearch" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#1d4ed8; font-weight:600; border-bottom:2px solid #1d4ed8; height:56px; text-decoration:none;">Investigación</a>
       <a href="opinion.html" data-i18n="navOpinion" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; text-decoration:none; height:56px;">Opinión</a>
       <a href="cv.html" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; text-decoration:none; height:56px;">CV</a>
       <a href="teaching.html" data-i18n="navTeaching" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; text-decoration:none; height:56px;">Docencia</a>
@@ -77,7 +86,7 @@
     </div>
   </nav>
 
-  <div class="r-main" style="padding: 52px 40px 80px;">
+  <main id="main-content" tabindex="-1" class="r-main" style="padding: 52px 40px 0;">
 
     <!-- PAGE TITLE -->
     <div style="margin-bottom: 44px; padding-bottom: 32px; border-bottom: 1px solid #e2e8f0;">
@@ -429,7 +438,7 @@
       <div style="padding:14px 0; border-bottom:1px solid #f1f5f9; display:flex; gap:12px;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#cbd5e1; min-width:30px; padding-top:3px;">2012</span>
         <div>
-          <a href="http://ideas.repec.org/p/udc/wpaper/wp350.html" style="font-family:'IBM Plex Sans',sans-serif; font-size:14.5px; color:#1e3a5f; text-decoration:none;">The Economics of IP in the Context of a Middle Income Country</a>
+          <a href="https://ideas.repec.org/p/udc/wpaper/wp350.html" style="font-family:'IBM Plex Sans',sans-serif; font-size:14.5px; color:#1e3a5f; text-decoration:none;">The Economics of IP in the Context of a Middle Income Country</a>
           <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#94a3b8;"> with J.M. Benavente</span>
         </div>
       </div>
@@ -437,7 +446,7 @@
       <div style="padding:14px 0; display:flex; gap:12px;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#cbd5e1; min-width:30px; padding-top:3px;">2012</span>
         <div>
-          <a href="https://seer.cgee.org.br/parcerias_estrategicas/article/view/679" style="font-family:'IBM Plex Sans',sans-serif; font-size:14.5px; color:#1e3a5f; text-decoration:none;" target="_blank">Biodiversity and Natural Resources for Sustainability</a><span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#94a3b8;"> · <em>Parcerias Estratégicas</em>, 17(35)</span>
+          <a href="https://seer.cgee.org.br/parcerias_estrategicas/article/view/679" style="font-family:'IBM Plex Sans',sans-serif; font-size:14.5px; color:#1e3a5f; text-decoration:none;" target="_blank" rel="noopener noreferrer">Biodiversity and Natural Resources for Sustainability</a><span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#94a3b8;"> · <em>Parcerias Estratégicas</em>, 17(35)</span>
         </div>
       </div>
 
@@ -454,12 +463,12 @@
 
       <div style="padding:14px 0; border-bottom:1px solid #f1f5f9; display:flex; gap:12px;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#cbd5e1; min-width:30px; padding-top:3px;">2016</span>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6;"><a href="https://publications.iadb.org/en/two-tango-public-private-collaboration-productive-development-policies-0" style="color:#334155; text-decoration:none;" target="_blank">Collaboration in Clusters and Technology Consortia: The Case of Chile.</a> With A. Zahler, C. Bravo-Ortega, J.M. Benavente. In: <em>Two to Tango</em>. IDB.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6;"><a href="https://publications.iadb.org/en/two-tango-public-private-collaboration-productive-development-policies-0" style="color:#334155; text-decoration:none;" target="_blank" rel="noopener noreferrer">Collaboration in Clusters and Technology Consortia: The Case of Chile.</a> With A. Zahler, C. Bravo-Ortega, J.M. Benavente. In: <em>Two to Tango</em>. IDB.</p>
       </div>
 
       <div style="padding:14px 0; border-bottom:1px solid #f1f5f9; display:flex; gap:12px;">
         <span style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; color:#cbd5e1; min-width:30px; padding-top:3px;">2014</span>
-        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6;"><a href="http://www.academia.edu/8282399/Redes_complejas_un_caso_de_estudio_sobre_la_colaboraci%C3%B3n_cient%C3%ADfica" style="color:#334155; text-decoration:none;" target="_blank">Redes complejas: un caso de estudio sobre la colaboración científica.</a> In: <em>Las Rutas de la Complejidad</em>. ISCV.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#475569; margin:0; line-height:1.6;"><a href="https://www.academia.edu/8282399/Redes_complejas_un_caso_de_estudio_sobre_la_colaboraci%C3%B3n_cient%C3%ADfica" style="color:#334155; text-decoration:none;" target="_blank" rel="noopener noreferrer">Redes complejas: un caso de estudio sobre la colaboración científica.</a> In: <em>Las Rutas de la Complejidad</em>. ISCV.</p>
       </div>
 
       <div style="padding:14px 0; border-bottom:1px solid #f1f5f9; display:flex; gap:12px;">
@@ -488,37 +497,37 @@
           <summary style="display:inline-flex; align-items:center; font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:#2563eb; cursor:pointer; list-style:none; user-select:none;"><em class="chevron">›</em> <span data-i18n="projectOutputs">Documentos del proyecto</span></summary>
           <div style="margin-top:14px; display:flex; flex-direction:column; gap:6px;">
 
-            <a href="uploads/sectorial%20report%20copper%20-%202011.PDF" style="display:flex; align-items:center; gap:10px; padding:10px 14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#334155; text-decoration:none;" target="_blank">
+            <a href="uploads/sectorial%20report%20copper%20-%202011.PDF" style="display:flex; align-items:center; gap:10px; padding:10px 14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#334155; text-decoration:none;" target="_blank" rel="noopener noreferrer">
               <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="1" width="9" height="12" rx="1" stroke="#2563eb" stroke-width="1.2"/><path d="M4 5h5M4 7h4M4 9h3" stroke="#2563eb" stroke-width="1" stroke-linecap="round"/></svg>
               Sectorial Report: Copper
               <span style="margin-left:auto; font-size:11px; color:#94a3b8;">2011 · PDF ↓</span>
             </a>
 
-            <a href="uploads/NR%20Project_Case%20Study_Aguamarina.pdf" style="display:flex; align-items:center; gap:10px; padding:10px 14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#334155; text-decoration:none;" target="_blank">
+            <a href="uploads/NR%20Project_Case%20Study_Aguamarina.pdf" style="display:flex; align-items:center; gap:10px; padding:10px 14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#334155; text-decoration:none;" target="_blank" rel="noopener noreferrer">
               <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="1" width="9" height="12" rx="1" stroke="#2563eb" stroke-width="1.2"/><path d="M4 5h5M4 7h4M4 9h3" stroke="#2563eb" stroke-width="1" stroke-linecap="round"/></svg>
               Case Study: Aguamarina
               <span style="margin-left:auto; font-size:11px; color:#94a3b8;">2012 · PDF ↓</span>
             </a>
 
-            <a href="uploads/NR%20Project_Case%20Study_CMM.pdf" style="display:flex; align-items:center; gap:10px; padding:10px 14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#334155; text-decoration:none;" target="_blank">
+            <a href="uploads/NR%20Project_Case%20Study_CMM.pdf" style="display:flex; align-items:center; gap:10px; padding:10px 14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#334155; text-decoration:none;" target="_blank" rel="noopener noreferrer">
               <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="1" width="9" height="12" rx="1" stroke="#2563eb" stroke-width="1.2"/><path d="M4 5h5M4 7h4M4 9h3" stroke="#2563eb" stroke-width="1" stroke-linecap="round"/></svg>
               Case Study: CMM
               <span style="margin-left:auto; font-size:11px; color:#94a3b8;">2012 · PDF ↓</span>
             </a>
 
-            <a href="uploads/NR%20Project_Case%20Study_Seawater.pdf" style="display:flex; align-items:center; gap:10px; padding:10px 14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#334155; text-decoration:none;" target="_blank">
+            <a href="uploads/NR%20Project_Case%20Study_Seawater.pdf" style="display:flex; align-items:center; gap:10px; padding:10px 14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#334155; text-decoration:none;" target="_blank" rel="noopener noreferrer">
               <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="1" width="9" height="12" rx="1" stroke="#2563eb" stroke-width="1.2"/><path d="M4 5h5M4 7h4M4 9h3" stroke="#2563eb" stroke-width="1" stroke-linecap="round"/></svg>
               Case Study: Seawater Desalination
               <span style="margin-left:auto; font-size:11px; color:#94a3b8;">2012 · PDF ↓</span>
             </a>
 
-            <a href="uploads/NR%20Project_Case%20Study_Thickened%20Tailings.pdf" style="display:flex; align-items:center; gap:10px; padding:10px 14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#334155; text-decoration:none;" target="_blank">
+            <a href="uploads/NR%20Project_Case%20Study_Thickened%20Tailings.pdf" style="display:flex; align-items:center; gap:10px; padding:10px 14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#334155; text-decoration:none;" target="_blank" rel="noopener noreferrer">
               <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="1" width="9" height="12" rx="1" stroke="#2563eb" stroke-width="1.2"/><path d="M4 5h5M4 7h4M4 9h3" stroke="#2563eb" stroke-width="1" stroke-linecap="round"/></svg>
               Case Study: Thickened Tailings
               <span style="margin-left:auto; font-size:11px; color:#94a3b8;">2012 · PDF ↓</span>
             </a>
 
-            <a href="uploads/quantitative_report_final_version.pdf" style="display:flex; align-items:center; gap:10px; padding:10px 14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#334155; text-decoration:none;" target="_blank">
+            <a href="uploads/quantitative_report_final_version.pdf" style="display:flex; align-items:center; gap:10px; padding:10px 14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#334155; text-decoration:none;" target="_blank" rel="noopener noreferrer">
               <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="1" width="9" height="12" rx="1" stroke="#2563eb" stroke-width="1.2"/><path d="M4 5h5M4 7h4M4 9h3" stroke="#2563eb" stroke-width="1" stroke-linecap="round"/></svg>
               Quantitative Report
               <span style="margin-left:auto; font-size:11px; color:#94a3b8;">2012 · PDF ↓</span>
@@ -529,19 +538,20 @@
       </article>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="r-footer" style="border-top:1px solid #e2e8f0; padding-top:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
-      <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#94a3b8;">daniel.goya AT pucv.cl</span>
-      <span style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:#94a3b8;">Amunátegui 1838, Recreo · Viña del Mar, Chile</span>
-    </footer>
+  </main>
 
-  </div>
+  <!-- FOOTER -->
+  <footer class="r-footer" style="border-top:1px solid #e2e8f0; margin:0 40px; padding:24px 0 80px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+    <span style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b;">daniel.goya AT pucv.cl</span>
+    <span style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b;">Amunátegui 1838, Recreo · Viña del Mar, Chile</span>
+  </footer>
 </div>
 
 <script>
 (function () {
   var dict = {
     es: {
+      skipLink:'Saltar al contenido principal',
       brand:'Daniel Goya León', navHome:'Inicio', navResearch:'Investigación', navOpinion:'Opinión', navTeaching:'Docencia',
       pageTitle:'Investigación',
       hWip:'Trabajos en curso', hJournal:'Artículos en revistas', hWorking:'Documentos de trabajo', hBooks:'Libros y capítulos de libros', hOther:'Otras investigaciones',
@@ -567,6 +577,7 @@
       a19f:'Estudiamos la supervivencia de nuevos productos de exportación usando un panel de exportadores chilenos multiproducto. Aprovechando la variación intra-empresa en la distancia de los nuevos productos de exportación respecto de la canasta de competencias existente de la empresa, mostramos que las exportaciones más cercanas a las competencias centrales de la empresa sobreviven significativamente más tiempo. El efecto se concentra en el primer año de exportación y es robusto al controlar por efectos fijos de empresa, producto y destino. Los resultados sugieren que la diversificación exportadora está condicionada por las capacidades organizacionales, con implicancias para la política comercial e industrial.'
     },
     en: {
+      skipLink:'Skip to main content',
       brand:'Daniel Goya', navHome:'Home', navResearch:'Research', navOpinion:'Opinion', navTeaching:'Teaching',
       pageTitle:'Research',
       hWip:'Work in Progress', hJournal:'Journal Articles', hWorking:'Working Papers', hBooks:'Books and Book Chapters', hOther:'Other Research',

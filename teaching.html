@@ -30,17 +30,27 @@
   * { box-sizing: border-box; }
   a { text-decoration: none; color: #2563eb; transition: opacity 0.12s; }
   a:hover { opacity: 0.72; }
+  a:focus-visible, button:focus-visible { outline: 3px solid #1d4ed8; outline-offset: 3px; border-radius: 3px; box-shadow: 0 0 0 2px #fff; }
+  .skip-link { position: fixed; top: 8px; left: 8px; z-index: 100; padding: 10px 14px; border-radius: 6px; background: #0f172a; color: #fff; font: 600 14px/1.2 'IBM Plex Sans',sans-serif; transform: translateY(-150%); transition: transform 0.15s; }
+  .skip-link:focus { transform: translateY(0); }
+  [style*="color:#94a3b8"], [style*="color: #94a3b8"] { color: #64748b !important; }
+  [style*="color:#cbd5e1"], [style*="color: #cbd5e1"] { color: #64748b !important; }
+  [style*="font-size:11px"], [style*="font-size: 11px"] { font-size: 13px !important; }
+  [style*="font-size:12px"], [style*="font-size: 12px"] { font-size: 13px !important; }
+  [style*="font-size:12.5px"], [style*="font-size: 12.5px"] { font-size: 14px !important; }
 
   .lang-pill { display: flex; align-items: center; padding: 0 8px; }
   .lang-pill > div { display: flex; background: #f1f5f9; border-radius: 7px; padding: 3px; gap: 2px; }
-  .lang-btn { font-family: 'IBM Plex Sans',sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.05em; padding: 4px 11px; border-radius: 5px; border: none; cursor: pointer; background: transparent; color: #94a3b8; box-shadow: none; transition: background 0.15s, color 0.15s, box-shadow 0.15s; }
+  .lang-btn { font-family: 'IBM Plex Sans',sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; padding: 4px 11px; border-radius: 5px; border: none; cursor: pointer; background: transparent; color: #64748b; box-shadow: none; transition: background 0.15s, color 0.15s, box-shadow 0.15s; }
   .lang-btn[aria-pressed="true"] { background: #fff; color: #1d4ed8; box-shadow: 0 1px 3px rgba(0,0,0,0.10); }
 
   @media (max-width: 640px) {
     .r-nav { padding: 0 !important; }
     .r-nav-brand { padding: 0 0 0 14px !important; font-size: 15px !important; flex: 0 0 auto !important; white-space: nowrap !important; }
-    .r-nav-links { flex: 1 1 auto !important; min-width: 0 !important; overflow-x: auto !important; scrollbar-width: none !important; }
-    .r-nav-links::-webkit-scrollbar { display: none; }
+    .r-nav-links { flex: 1 1 auto !important; min-width: 0 !important; overflow-x: auto !important; scrollbar-width: thin !important; scrollbar-color: #94a3b8 #f1f5f9; }
+    .r-nav-links::-webkit-scrollbar { display: block; height: 4px; }
+    .r-nav-links::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 999px; }
+    .r-nav-links::-webkit-scrollbar-track { background: #f1f5f9; }
     .r-nav-links a, .r-nav-links span, .r-nav-links .lang-pill { flex-shrink: 0 !important; white-space: nowrap !important; }
     .r-nav-links a, .r-nav-links > span { height: 42px !important; font-size: 12px !important; padding: 0 8px !important; }
     .r-main { padding: 28px 16px 60px !important; }
@@ -50,6 +60,8 @@
 </style>
 </head>
 <body>
+
+<a class="skip-link" href="#main-content">Saltar al contenido / Skip to content</a>
 
 <div style="max-width: 820px; margin: 0 auto; background: white; min-height: 100vh; box-shadow: 0 0 60px rgba(0,0,0,0.07);">
 
@@ -61,7 +73,7 @@
       <a href="research.html" data-i18n="navResearch" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">Investigación</a>
       <a href="opinion.html" data-i18n="navOpinion" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">Opinión</a>
       <a href="cv.html" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#64748b; height:56px;">CV</a>
-      <span data-i18n="navTeaching" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#1d4ed8; font-weight:600; border-bottom:2px solid #1d4ed8; height:56px;">Docencia</span>
+      <a href="teaching.html" aria-current="page" data-i18n="navTeaching" style="display:flex; align-items:center; padding:0 14px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#1d4ed8; font-weight:600; border-bottom:2px solid #1d4ed8; height:56px;">Docencia</a>
       <div class="lang-pill">
         <div>
           <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
@@ -71,7 +83,7 @@
     </div>
   </nav>
 
-  <div class="r-main" style="padding:52px 40px 80px;">
+  <main id="main-content" class="r-main" style="padding:52px 40px 80px;" tabindex="-1">
 
     <!-- PAGE TITLE -->
     <div style="margin-bottom:44px; padding-bottom:32px; border-bottom:1px solid #e2e8f0;">
@@ -159,7 +171,7 @@
       </div>
     </section>
 
-  </div>
+  </main>
 
   <!-- FOOTER -->
   <footer class="r-footer" style="border-top:1px solid #e2e8f0; padding:24px 40px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; background:#fafcff;">
