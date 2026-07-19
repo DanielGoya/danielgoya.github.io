@@ -61,7 +61,7 @@
     .r-hero { grid-template-columns: minmax(0, 1fr) 86px !important; grid-template-areas: "tagline tagline" "title photo" "copy copy" "actions actions" !important; padding: 32px 16px 36px !important; column-gap: 12px !important; row-gap: 0 !important; }
     .r-hero > div:first-child { display: contents !important; }
     .r-hero > div:first-child > p:first-child { grid-area: tagline; }
-    .r-hero > div:first-child > h1 { grid-area: title; font-size: 29px !important; margin-bottom: 20px !important; }
+    .r-hero > div:first-child > h1 { grid-area: title; font-size: 27px !important; margin-bottom: 20px !important; }
     .r-hero > div:first-child > div[data-lang-only] { grid-column: 1 / -1; }
     .r-hero > div:first-child > div:not([data-lang-only]) { grid-area: actions; }
     .r-photo { grid-area: photo; width: 86px !important; height: 86px !important; margin-top: 26px !important; align-self: start; }
@@ -71,7 +71,7 @@
   }
   @media (max-width: 360px) {
     .r-hero { grid-template-columns: minmax(0, 1fr) 74px !important; }
-    .r-hero > div:first-child > h1 { font-size: 27px !important; }
+    .r-hero > div:first-child > h1 { font-size: 26px !important; }
     .r-photo { width: 74px !important; height: 74px !important; }
   }
 </style>
@@ -106,7 +106,7 @@
   <div class="r-hero" style="padding: 64px 40px 52px; border-bottom: 1px solid #e2e8f0; display: grid; grid-template-columns: 1fr 190px; gap: 48px; align-items: start;">
     <div>
       <p data-i18n="tagline" style="font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:#2563eb; margin:0 0 18px;">Economista · PUCV · Valparaíso, Chile</p>
-      <h1 style="font-family:'IBM Plex Sans',sans-serif; font-size:33px; font-weight:700; color:#0f172a; margin:0 0 20px; line-height:1.15; letter-spacing:-0.5px;"><span data-i18n="h1l1">Políticas públicas para</span><br><span data-i18n="h1l2">la innovación y el cambio estructural</span><br><em data-i18n="h1em" style="font-weight:400; color:#475569;">en economías en desarrollo.</em></h1>
+      <h1 style="font-family:'IBM Plex Sans',sans-serif; font-size:33px; font-weight:700; color:#0f172a; margin:0 0 20px; line-height:1.15; letter-spacing:-0.5px;"><span data-i18n="h1l1">Políticas públicas de innovación</span><br><span data-i18n="h1l2">y cambio estructural</span><br><em data-i18n="h1em" style="font-weight:400; color:#475569;">en economías en desarrollo.</em></h1>
 
       <div data-lang-only="es">
         <p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#475569; line-height:1.8; margin:0 0 28px; max-width:520px; text-wrap:pretty;">Académico de la Escuela de Negocios y Economía de la <strong style="color:#334155; font-weight:500;">Pontificia Universidad Católica de Valparaíso</strong>. Trabajo con métodos cuantitativos y cualitativos para estudiar la innovación, el comercio y el cambio estructural en economías en desarrollo, con énfasis en el diseño de políticas públicas.</p>
@@ -182,7 +182,7 @@
 <script>
 (function () {
   var dict = {
-    es: { skipLink:'Saltar al contenido principal', brand:'Daniel Goya León', navHome:'Inicio', navResearch:'Investigación', navOpinion:'Opinión', navTeaching:'Docencia', tagline:'Economista · PUCV · Valparaíso, Chile', h1l1:'Políticas públicas para', h1l2:'la innovación y el cambio estructural', h1em:'en economías en desarrollo.', recent:'Actividad reciente', art2025label:'Artículo 2025', art2025title:'Análisis al Premio Nobel de Economía 2025', wipLabel:'En curso', wipCo:'con Anabel Marín', seeResearch:'Ver toda la investigación →', seeOpinion:'Ver columnas y divulgación →' },
+    es: { skipLink:'Saltar al contenido principal', brand:'Daniel Goya León', navHome:'Inicio', navResearch:'Investigación', navOpinion:'Opinión', navTeaching:'Docencia', tagline:'Economista · PUCV · Valparaíso, Chile', h1l1:'Políticas públicas de innovación', h1l2:'y cambio estructural', h1em:'en economías en desarrollo.', recent:'Actividad reciente', art2025label:'Artículo 2025', art2025title:'Análisis al Premio Nobel de Economía 2025', wipLabel:'En curso', wipCo:'con Anabel Marín', seeResearch:'Ver toda la investigación →', seeOpinion:'Ver columnas y divulgación →' },
     en: { skipLink:'Skip to main content', brand:'Daniel Goya', navHome:'Home', navResearch:'Research', navOpinion:'Opinion', navTeaching:'Teaching', tagline:'Economist · PUCV · Valparaíso, Chile', h1l1:'Policies for innovation', h1l2:'and structural change', h1em:'in developing economies.', recent:'Recent activity', art2025label:'Article 2025', art2025title:'Analysis of the 2025 Nobel Prize in Economics', wipLabel:'In progress', wipCo:'with Anabel Marín', seeResearch:'View all research →', seeOpinion:'View opinion & outreach (in Spanish) →' }
   };
   function apply(lang) {
